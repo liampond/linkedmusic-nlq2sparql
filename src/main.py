@@ -8,7 +8,15 @@ def main():
     parser.add_argument("--batch", action="store_true", help="Use Batch API where available")
     parser.add_argument("--check-batch", action="store_true", help="Check status of pending batches and retrieve results")
     parser.add_argument("--filter-db", help="Filter queries by target database (e.g. DIAMM)")
+    parser.add_argument("--build-ontology", action="store_true", help="Rebuild the combined ontology file before running")
     args = parser.parse_args()
+
+    if args.build_ontology:
+        print("Rebuilding ontology...")
+        from src.ontology_manager import combine_ontologies
+        combine_ontologies()
+        if not (args.model or args.batch or args.check_batch):
+            return
 
     evaluator = Evaluator(args.config)
     

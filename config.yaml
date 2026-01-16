@@ -1,4 +1,4 @@
-ontology_file: "ontology.txt"
+ontology_file: "ontologies/combined.ttl"
 input_data: "data/queries.json"
 output_dir: "outputs"
 

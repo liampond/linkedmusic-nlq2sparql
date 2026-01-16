@@ -1,0 +1,70 @@
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix diamm:	<https://linkedmusic.ca/graphs/diamm/> .
+@prefix wdt:	<http://www.wikidata.org/prop/direct/> .
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
+
+diamm:Composition
+	rdfs:label	"label" ;
+	wdt:P136	"genre" ;
+	wdt:P361	diamm:Source ;
+	wdt:P86	diamm:Person , "composer" .
+diamm:Archive
+	rdfs:label	"label" ;
+	wdt:P11550	"RISM siglum" ;
+	wdt:P131	diamm:City ;
+	wdt:P2888	"exact match" ;
+	wdt:P5504	"RISM ID" .
+diamm:City
+	rdfs:label	"label" ;
+	wdt:P131	diamm:Region ;
+	wdt:P17	diamm:Country ;
+	wdt:P2888	"exact match" .
+diamm:Country
+	rdfs:label	"label" ;
+	wdt:P2888	"exact match" .
+diamm:Organization
+	rdfs:label	"label" ;
+	wdt:P131	diamm:City ;
+	wdt:P17	diamm:Country ;
+	wdt:P2888	"exact match" ;
+	wdt:P1343	diamm:Source ;
+	wdt:P31	"instance of" .
+diamm:Person
+	rdfs:label	"label" ;
+	wdt:P2888	"exact match" ;
+	wdt:P5504	"RISM ID" ;
+	wdt:P1343	diamm:Source ;
+	wdt:P214	"VIAF cluster ID" ;
+	wdt:P569	"date of birth" ;
+	wdt:P570	"date of death" ;
+	skos:altLabel	"alt label" .
+diamm:Region
+	rdfs:label	"label" ;
+	wdt:P17	diamm:Country ;
+	wdt:P2888	"exact match" .
+diamm:Set
+	wdt:P217	"inventory number" ;
+	wdt:P31	"instance of" .
+diamm:Source
+	rdfs:label	"label" ;
+	wdt:P88	diamm:Organization , diamm:Person ;
+	wdt:P131	diamm:City ;
+	wdt:P361	diamm:Set ;
+	wdt:P547	diamm:Person ;
+	wdt:P941	diamm:Organization , diamm:Person ;
+	wdt:P276	diamm:Archive , diamm:Organization ;
+	wdt:P31	"instance of" ;
+	wdt:P767	diamm:Person ;
+	wdt:P123	diamm:Organization , diamm:Person ;
+	wdt:P127	diamm:Organization , diamm:Person ;
+	wdt:P825	diamm:Organization , diamm:Person ;
+	wdt:P61	diamm:Person ;
+	wdt:P11603	diamm:Person ;
+	wdt:P1535	diamm:Organization , diamm:Person ;
+	wdt:P2679	diamm:Person ;
+	wdt:P859	diamm:Organization , diamm:Person ;
+	wdt:P655	diamm:Person ;
+	wdt:P1071	diamm:Organization ;
+	wdt:P98	diamm:Person ;
+	wdt:P50	diamm:Organization , diamm:Person ;
+	wdt:P872	diamm:Person .

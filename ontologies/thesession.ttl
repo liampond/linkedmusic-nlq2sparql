@@ -1,0 +1,37 @@
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ts:	<https://linkedmusic.ca/graphs/thesession/> .
+@prefix wdt:	<http://www.wikidata.org/prop/direct/> .
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
+
+ts:Member
+	rdfs:label	"label" .
+ts:Session
+	wdt:P131	"located in the administrative territorial entity" ;
+	wdt:P17	"country" ;
+	wdt:P276	"location" ;
+	wdt:P625	"coordinate location" .
+ts:Events
+	rdfs:label	"label" ;
+	wdt:P131	"located in the administrative territorial entity" ;
+	wdt:P17	"country" ;
+	wdt:P276	"location" ;
+	wdt:P580	"start time" ;
+	wdt:P582	"end time" ;
+	wdt:P625	"coordinate location" .
+ts:Tuneset
+	wdt:P527	ts:Tune ;
+	wdt:P170	ts:Member ;
+	wdt:P571	"inception" .
+ts:Tune
+	rdfs:label	"label" ;
+	skos:altLabel	"alt label" ;
+	wdt:P747	ts:TuneSetting .
+ts:TuneSetting
+	wdt:P826	"tonality" ;
+	wdt:P136	"genre" ;
+	wdt:P3440	"time signature" .
+ts:Recording
+	rdfs:label	"label" ;
+	wdt:P2888	"exact match" ;
+	wdt:P175	"performer" ;
+	wdt:P658	ts:Tune .

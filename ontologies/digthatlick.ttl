@@ -1,0 +1,15 @@
+@prefix wdt:	<http://www.wikidata.org/prop/direct/> .
+@prefix dtl:	<https://linkedmusic.ca/graphs/dig-that-lick/> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+
+dtl:Solo
+	wdt:P361	dtl:Track ;
+	wdt:P175	"performer" ;
+	wdt:P870	"instrumentation" .
+dtl:Track
+	rdfs:label	"label" ;
+	wdt:P2888	"exact match" ;
+	wdt:P361	"part of" ;
+	wdt:P10135	"recording date" ;
+	wdt:P175	"performer" ;
+	wdt:P8546	"recording location" .

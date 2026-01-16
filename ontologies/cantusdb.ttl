@@ -1,0 +1,14 @@
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cdb:	<https://linkedmusic.ca/graphs/cantusdb/> .
+@prefix wdt:	<http://www.wikidata.org/prop/direct/> .
+
+cdb:Source
+	rdfs:label	"label" ;
+	wdt:P276	"location" .
+cdb:Chant
+	rdfs:label	"label" ;
+	wdt:P826	"tonality" ;
+	wdt:P136	"genre" ;
+	wdt:P361	cdb:Source ;
+	wdt:P366	"has use" ;
+	wdt:P837	"day in year for periodic occurrence" .
