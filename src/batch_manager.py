@@ -6,17 +6,21 @@ import datetime
 from typing import Dict, List
 import openai
 import anthropic
+
 # Gemini import
 try:
     from google import genai
     from google.genai import types
+    HAS_GOOGLE = True
 except ImportError:
-    pass
+    HAS_GOOGLE = False
+
 # DashScope import
 try:
     from dashscope import BatchTextGeneration
+    HAS_DASHSCOPE = True
 except ImportError:
-    pass
+    HAS_DASHSCOPE = False
 
 class BatchManager:
     def __init__(self, config):
@@ -35,9 +39,11 @@ class BatchManager:
         if self.anthropic_key:
             self.anthropic_client = anthropic.Anthropic(api_key=self.anthropic_key)
             
-        if self.google_key:
+        if self.google_key and HAS_GOOGLE:
             # Initialize official Google GenAI Client
             self.google_client = genai.Client(api_key=self.google_key)
+        elif self.google_key and not HAS_GOOGLE:
+            print("Warning: GOOGLE_API_KEY found but google-genai not installed.")
 
     def load_jobs(self):
         if os.path.exists(self.jobs_file):
@@ -46,6 +52,9 @@ class BatchManager:
         return {}
 
     def save_jobs(self, jobs):
+        dir_path = os.path.dirname(self.jobs_file)
+        if dir_path:
+            os.makedirs(dir_path, exist_ok=True)
         with open(self.jobs_file, 'w') as f:
             json.dump(jobs, f, indent=2)
 
@@ -65,7 +74,6 @@ class BatchManager:
             # For Qwen (DashScope) which supports strict OpenAI Batch format
             return self._submit_openai_compatible(model_key, model_name, payloads, output_dir, model_config)
         
-            
         elif provider == "qwen":
             return self._submit_qwen(model_key, model_name, payloads, output_dir)
         elif provider == "anthropic":
@@ -86,7 +94,7 @@ class BatchManager:
             for p in payloads:
                 # OpenAI Batch Format
                 request_obj = {
-                    "custom_id": p['id'],
+                    "custom_id": str(p['id']),
                     "method": "POST",
                     "url": "/v1/chat/completions",
                     "body": {
@@ -132,7 +140,7 @@ class BatchManager:
 
     def _submit_openai_compatible(self, model_key, model_name, payloads, output_dir, model_config):
         """
-        Special handler for compatible APIs (like Qwen/DashScope)
+        Special handler for compatible APIs (like Qwen/DashScope using OpenAI SDK)
         """
         base_url = model_config.get('base_url')
         env_key = model_config.get('env_key')
@@ -146,7 +154,7 @@ class BatchManager:
         with jsonlines.open(jsonl_path, mode='w') as writer:
             for p in payloads:
                 request_obj = {
-                    "custom_id": p['id'],
+                    "custom_id": str(p['id']),
                     "method": "POST",
                     "url": "/v1/chat/completions",
                     "body": {
@@ -154,8 +162,7 @@ class BatchManager:
                         "messages": [
                             {"role": "system", "content": p['system_prompt']},
                             {"role": "user", "content": p['user_query']}
-                        ],
-                        # Qwen sometimes requires strict parameter sets, remove temp if issues arise
+                        ]
                     }
                 }
                 writer.write(request_obj)
@@ -167,7 +174,6 @@ class BatchManager:
         print(f"Uploaded file {file_id} to {base_url}")
         
         # 3. Create Batch
-        # Note: metadata syntax might vary, keeping it simple
         batch_response = client.batches.create(
             input_file_id=file_id,
             endpoint="/v1/chat/completions",
@@ -195,17 +201,13 @@ class BatchManager:
         # 1. Create Gemini JSONL
         jsonl_path = os.path.join(output_dir, f"batch_input_{model_key}.jsonl")
         
-        # "key" is usually the ID in Gemini Batch
         with jsonlines.open(jsonl_path, mode='w') as writer:
             for p in payloads:
-                # Construct query. Since system prompts are often model-level in Gemini,
-                # we can try to merge system + user or use specific fields if Batch supports it.
-                # The generic format is 'contents' -> parts -> text.
-                
                 full_text = f"System: {p['system_prompt']}\n\nUser: {p['user_query']}"
                 
                 request_obj = {
-                    "key": p['id'], # Custom ID
+                    "custom_id": str(p['id']),
+                    "method": "generateContent",
                     "request": {
                         "contents": [
                             {"parts": [{"text": full_text}]}
@@ -224,14 +226,13 @@ class BatchManager:
         print(f"Uploaded file uri: {uploaded_file.uri}")
         
         # 3. Submit Batch
-        # Note: Ensure model_name is valid (e.g. gemini-1.5-flash-002)
         batch_job = self.google_client.batches.create(
             model=model_name,
             src=uploaded_file.name,
             config={'display_name': f"batch_run_{model_key}"}
         )
         
-        batch_id = batch_job.name # format "batches/..."
+        batch_id = batch_job.name
         print(f"Batch submitted: {batch_id}")
         
         jobs = self.load_jobs()
@@ -247,25 +248,20 @@ class BatchManager:
         return batch_id
 
     def _submit_anthropic(self, model_key, model_name, payloads, output_dir):
-        # Anthropic allows direct list submission (up to specific size), 
-        # but large batches might need standard mechanics. 
-        # The Beta Message Batches API takes a list of requests.
-
         requests = []
         for p in payloads:
             requests.append({
-                "custom_id": p['id'],
+                "custom_id": str(p['id']),
                 "params": {
                     "model": model_name,
                     "max_tokens": 1024,
-                    "system": p['system_prompt'], # Anthropic system param
+                    "system": p['system_prompt'],
                     "messages": [
                         {"role": "user", "content": p['user_query']}
                     ]
                 }
             })
         
-        # Create Batch
         batch = self.anthropic_client.messages.batches.create(
             requests=requests
         )
@@ -280,34 +276,26 @@ class BatchManager:
             "timestamp": datetime.datetime.now().isoformat(),
             "output_dir": output_dir
         }
-        _submit_qwen(self, model_key, model_name, payloads, output_dir):
-        # Using DashScope Python SDK (Official)
-        # 1. Create JSONL File (DashScope format)
-        # DashScope batch format is similar to OpenAI but we use the SDK utility or standard jsonl
-        # The file needs to be uploaded or passed as path.
-        
+        self.save_jobs(jobs)
+        if not HAS_DASHSCOPE:
+            print("Error: dashscope package not installed, cannot submit Qwen batch.")
+            return None
+
+        return batch.id
+
+    def _submit_qwen(self, model_key, model_name, payloads, output_dir):
+        # Using DashScope Python SDK (Official) if available
         jsonl_path = os.path.join(output_dir, f"batch_input_{model_key}.jsonl")
         
         with jsonlines.open(jsonl_path, mode='w') as writer:
             for p in payloads:
-                # Construct messages
                 messages = [
                     {"role": "system", "content": p['system_prompt']},
                     {"role": "user", "content": p['user_query']}
                 ]
                 
-                # DashScope Batch Input: {"custom_id": "...", "body": {"model": "...", "input": {...}, "parameters": {...}}}
-                # But typically using BatchTextGeneration.call with a file expects:
-                # {"custom_id": "1", "url": "HTTP_METHOD", ...} if using OpenAI compatible
-                # OR if using SDK: 
-                # The SDK expects a file where each line is input to the model.
-                
-                # Check documentation: https://www.alibabacloud.com/help/en/model-studio/batch-inference
-                # "The input file must be a JSONL file."
-                # {"custom_id": "001", "body": {"model": "qwen-max", "input": {"messages": [...]}, "parameters": {}}}
-                
                 request_obj = {
-                    "custom_id": p['id'],
+                    "custom_id": str(p['id']),
                     "body": {
                         "model": model_name,
                         "input": {
@@ -322,12 +310,6 @@ class BatchManager:
 
         print(f"Created Qwen input file {jsonl_path}")
 
-        # 2. Upload file & Submit Job via SDK
-        # DashScope SDK handles upload implicitly if path provided, or requires OSS.
-        # However, the SDK `BatchTextGeneration.call` takes `input_path`.
-        # If input_path is local, it might need to be uploaded to OSS first.
-        # But `dashscope` starting from version 1.14 supports uploading local files automatically.
-        
         api_key = os.getenv("DASHSCOPE_API_KEY")
         if not api_key:
              raise ValueError("DASHSCOPE_API_KEY not found.")
@@ -335,7 +317,7 @@ class BatchManager:
         job = BatchTextGeneration.call(
             job_name=f"batch_run_{model_key}",
             input_path=jsonl_path,
-            output_path=os.path.join(output_dir, "qwen_output.jsonl"), # This path is for OSS, usually ignored if accessing via ID
+            output_path=os.path.join(output_dir, "qwen_output.jsonl"), 
             api_key=api_key
         )
         
@@ -357,73 +339,51 @@ class BatchManager:
         self.save_jobs(jobs)
         return batch_id
 
-    def self.save_jobs(jobs)
-        return batch.id
-
     def check_and_retrieve(self):
         jobs = self.load_jobs()
         
         for batch_id, job in jobs.items():
-            if job['status'] == 'completed':
+            if job.get('status') == 'completed':
                 continue
             
             provider = job['provider']
             print(f"Checking {batch_id} ({provider})...")
             
-            if provider == "openai":
-                self._check_openai(batch_id, job, jobs)
-            elif provider == "anthropic":
-                self._check_anthropic(batch_id, job, jobs)
-            elif provider == "google":
-                self._check_google(batch_id, job, jobs)
-            elif provider == "openai_compatible":
-                self._check_openai_compatible(batch_id, job, jobs)
-            elif provider == "qwen":
-                self._check_qwen(batch_id, job, jobs)
+            try:
+                if provider == "openai":
+                    self._check_openai(batch_id, job, jobs)
+                elif provider == "anthropic":
+                    self._check_anthropic(batch_id, job, jobs)
+                elif provider == "google":
+                    self._check_google(batch_id, job, jobs)
+                elif provider == "openai_compatible":
+                    self._check_openai_compatible(batch_id, job, jobs)
+                elif provider == "qwen":
+                    self._check_qwen(batch_id, job, jobs)
+            except Exception as e:
+                print(f"Error checking status for {batch_id}: {e}")
         
         self.save_jobs(jobs)
 
     def _check_qwen(self, batch_id, job, jobs_dict):
         api_key = os.getenv("DASHSCOPE_API_KEY")
-        # Use simple retrieve or wait
-        # The 'dashscope' library typically uses wait(job_id) which blocks, or we can check status via API
-        # But SDK doesn't expose a simple 'retrieve' method easily without job object sometimes.
-        # Actually checking status can usually be done via `BatchTextGeneration.call(start_time=...)` to list, 
-        # OR just attempting to wait/get.
-        # However, official docs suggest polling.
-        
-        # We can re-use BatchTextGeneration.call logic or use lower-level http
-        # Let's use the .fetch() style if available or call.
-        
-        # It seems dashscope SDK is evolving. A common pattern:
-        # job = BatchTextGeneration.get(batch_id) 
-        # (This method might be fictional depending on version, let's try strict docs: 
-        # "You can view the state... via the console" or using list API).
-        
-        # Let's assume we can fetch by job_id using the internal async client or just a GET.
-        # Reverting to `requests` might be safer if SDK 'retrieve' is obscure.
         import requests
         headers = {
             "Authorization": f"Bearer {api_key}", 
             "Content-Type": "application/json"
         }
-        # Endpoint: https://dashscope.aliyuncs.com/api/v1/tasks/{task_id}
         url = f"https://dashscope.aliyuncs.com/api/v1/tasks/{batch_id}"
         
         try:
             resp = requests.get(url, headers=headers)
             data = resp.json()
-            # Status: PENDING, RUNNING, SUCCEEDED, FAILED
             status = data.get('output', {}).get('task_status', data.get('status'))
             
             print(f"  Status: {status}")
             
             if status == 'SUCCEEDED':
-                # results url
-                # often in output.results_url
                 res_url = data.get('output', {}).get('results_url')
                 if res_url:
-                     # download
                      print(f"  Downloading from {res_url}")
                      r = requests.get(res_url)
                      output_path = os.path.join(job['output_dir'], f"batch_results_{batch_id}.jsonl")
@@ -443,7 +403,6 @@ class BatchManager:
         print(f"  Status: {current_status}")
         
         if current_status == "completed" and batch.output_file_id:
-            # Download results
             file_response = self.openai_client.files.content(batch.output_file_id)
             content = file_response.text
             
@@ -456,7 +415,6 @@ class BatchManager:
             print(f"  Downloaded results to {output_path}")
 
     def _check_openai_compatible(self, batch_id, job, jobs_dict):
-        # Reconstruct client
         client = openai.OpenAI(api_key=os.getenv(job['env_key']), base_url=job['base_url'])
         
         batch = client.batches.retrieve(batch_id)
@@ -476,10 +434,8 @@ class BatchManager:
             print(f"  Downloaded results to {output_path}")
 
     def _check_google(self, batch_id, job, jobs_dict):
-        # Gemini check
         batch_job = self.google_client.batches.get(name=batch_id)
-        # State enum mapping to string
-        state = batch_job.state.name # JOB_STATE_SUCCEEDED, etc.
+        state = batch_job.state.name
         print(f"  Status: {state}")
         
         if state == "JOB_STATE_SUCCEEDED":
@@ -501,117 +457,125 @@ class BatchManager:
         print(f"  Status: {current_status}")
         
         if current_status == "ended":
-             # In Anthropic, checking the result URL
-             if hasattr(batch, 'results_url') and batch.results_url:
-                 # Depending on SDK, might need separate download steps or 'results()' method
-                 # For now, let's look at iterating over results using the batch object if the SDK supports it
-                 # The SDK typically exposes a method to stream results.
-                 
-                 results_list = []
+             # Iterating over results
+             results = []
+             try:
                  for result in self.anthropic_client.messages.batches.results(batch_id):
-                     results_list.append(result)
-                     
-                 # Save
-                 output_path = os.path.join(job['output_dir'], f"batch_results_{batch_id}.jsonl")
-                 # We'll save as generic jsonl
-                 with jsonlines.open(output_path, mode='w') as writer:
-                     for r in results_list:
-                        # Serialize the Anthropic object to dict
-                        writer.write(r.to_dict())
+                     results.append(result.to_dict()) # Ensure dict serializable
+             except Exception as e:
+                 print(f"Error fetching Anthropic results: {e}")
+                 # Try simple list fallback if SDK allows
+                 pass
 
-                 job['status'] = "completed"
-                 job['result_file'] = output_path
-                 print(f"  Downloaded results to {output_path}")
+             output_path = os.path.join(job['output_dir'], f"batch_results_{batch_id}.jsonl")
+             with open(output_path, "w") as f:
+                 for r in results:
+                     f.write(json.dumps(r) + "\n")
+            
+             job['status'] = "completed"
+             job['result_file'] = output_path
+             print(f"  Downloaded results to {output_path}")
 
-    def process_results_to_final_json(self, evaluator_instance):
+    def process_results_to_final_json(self, evaluator):
         """
-                        elif job['provider'] == 'qwen':
-                             # Qwen Results (DashScope)
-                             # Format: {"id": "...", "code": 200, "output": {"text": "...", "finish_reason": "stop"}, "request_id": "..."}
-                             try:
-                                 if obj.get('code') == 200:
-                                     response_text = obj.get('output', {}).get('text') or obj.get('output', {}).get('choices', [{}])[0].get('message', {}).get('content')
-                                 else:
-                                     response_text = f"Error: {obj.get('message')}"
-                             except:
-                                 response_text = "Error extracting content"
-        Converts the raw downloaded batch JSONL files into the standard results.json format
-        and saves them.
+        Processes completed batch jobs and converts their raw output 
+        to the standard results_summary.json format used by the Evaluator.
         """
         jobs = self.load_jobs()
+        processed_count = 0
+        
         for batch_id, job in jobs.items():
-            if job.get('status') == 'completed' and not job.get('processed'):
+            if job.get('status') == 'completed' and not job.get('results_processed'):
                 print(f"Processing results for batch {batch_id}...")
                 
-                results_file = job.get('result_file')
-                if not results_file or not os.path.exists(results_file):
-                    print("  Result file missing.")
+                result_file = job.get('result_file')
+                if not result_file or not os.path.exists(result_file):
+                    print(f"  Result file missing: {result_file}")
                     continue
-
-                processed_results = []
+                    
+                model_key = job['model_key']
+                output_dir = job['output_dir']
                 
-                # Load ground truth map
-                # We need the original queries to map ground truths if not present in custom_id metadata
-                # Assuming custom_id == query_id
+                query_map = {str(q['id']): q for q in evaluator.queries}
                 
-                query_map = {q['id']: q for q in evaluator_instance.queries}
-
-                with jsonlines.open(results_file) as reader:
-                    for obj in reader:
-                        custom_id = obj.get('custom_id')
-                        
-                        original_query = query_map.get(custom_id)
-                        if not original_query:
-                            continue
-                        
-                        # Extract response text based on provider
+                results = []
+                logs_path = os.path.join(output_dir, "detailed_logs.jsonl")
+                
+                with jsonlines.open(result_file) as reader:
+                    for line in reader:
+                        provider = job['provider']
+                        custom_id = None
                         response_text = ""
-                        if job['provider'] in ['openai', 'openai_compatible']:
-                            # OpenAI Batch Result Format: { "response": { "body": { "choices": [ ... ] } } }
-                            try:
-                                choices = obj['response']['body']['choices']
-                                response_text = choices[0]['message']['content']
-                            except:
-                                response_text = "Error extracting content"
-                        elif job['provider'] == 'anthropic':
-                            # Anthropic Result: { "result": { "message": { "content": [...] } } }
-                            try:
-                                content_list = obj['result']['message']['content']
-                                response_text = content_list[0]['text']
-                            except:
-                                response_text = "Error extracting content"
-                        elif job['provider'] == 'google':
-                            # Gemini Batch Result
-                            try:
-                                # candidates -> content -> parts -> text
-                                cand = obj['response']['candidates'][0]
-                                parts = cand['content']['parts']
-                                response_text = parts[0]['text']
-                            except:
-                                response_text = "Error extracting content"
-
-                        generated_sparql = evaluator_instance.clean_sparql(response_text)
                         
-                        result_record = {
-                            "id": custom_id,
-                            "query": original_query['query'],
-                            "model": job['model_key'],
-                            "generated_sparql": generated_sparql,
-                            "ground_truth_sparql": original_query.get('ground_truth_sparql'),
-                            "generated_count": -1,
-                            "ground_truth_count": -1,
-                            "is_match": False,
-                            "execution_error": "Execution Skipped",
-                            "raw_llm_response": response_text
-                        }
-                        processed_results.append(result_record)
+                        try:
+                            if provider in ["openai", "openai_compatible", "qwen"]:
+                                custom_id = line.get('custom_id')
+                                choice = line.get('response', {}).get('body', {}).get('choices', [{}])[0]
+                                response_text = choice.get('message', {}).get('content', "")
+                            elif provider == "anthropic":
+                                custom_id = line.get('custom_id')
+                                result = line.get('result', {})
+                                if result.get('type') == 'succeeded':
+                                    content_list = result.get('message', {}).get('content', [])
+                                    if content_list:
+                                        response_text = content_list[0].get('text', "")
+                            elif provider == "google":
+                                custom_id = line.get('custom_id') 
+                                # Gemini Batch Output often matches input structure or uses custom_id if provided 
+                                # In the newest API, check 'custom_id' field.
+                                if not custom_id and 'request' in line:
+                                     # Sometimes it echoes request
+                                     pass
+                                # Response part
+                                try:
+                                    response_text = line['response']['candidates'][0]['content']['parts'][0]['text']
+                                except:
+                                    pass
+
+                        except Exception as e:
+                            print(f"  Error parsing line: {e}")
+                            continue
+
+                        if custom_id and custom_id in query_map:
+                            item = query_map[custom_id]
+                            nl_query = item['query']
+                            generated_sparql = evaluator.clean_sparql(response_text)
+                            
+                            # Log
+                            log_entry = {
+                                "id": custom_id,
+                                "timestamp": datetime.datetime.now().isoformat(),
+                                "model": model_key,
+                                "user_query": nl_query,
+                                "full_response": response_text,
+                                "extracted_sparql": generated_sparql
+                            }
+                            with open(logs_path, "a") as f:
+                                f.write(json.dumps(log_entry) + "\n")
+                                
+                            result_record = {
+                                "id": custom_id,
+                                "query": nl_query,
+                                "model": model_key,
+                                "generated_sparql": generated_sparql,
+                                "ground_truth_sparql": item.get('ground_truth_sparql'),
+                                "generated_count": -1,
+                                "ground_truth_count": -1,
+                                "is_match": False,
+                                "execution_error": "Execution Skipped (Batch Mode)",
+                                "raw_llm_response": response_text
+                            }
+                            results.append(result_record)
                 
-                # Save final JSON
-                final_path = os.path.join(job['output_dir'], "results_summary_batch.json")
-                with open(final_path, 'w') as f:
-                    json.dump(processed_results, f, indent=2)
+                summary_path = os.path.join(output_dir, "results_summary.json")
+                with open(summary_path, 'w') as f:
+                    json.dump(results, f, indent=2)
                 
-                print(f"  Final results saved to {final_path}")
-                job['processed'] = True
-        
-        self.save_jobs(jobs)
+                job['results_processed'] = True
+                processed_count += 1
+                
+        if processed_count > 0:
+            self.save_jobs(jobs)
+            print(f"Processed {processed_count} completed batches.")
+        else:
+            print("No new completed batches to process.")

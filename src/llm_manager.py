@@ -41,6 +41,9 @@ class LLMManager:
         elif provider == "openai_compatible":
             base_url = model_config.get('base_url')
             return self._call_openai(api_key, model_name, prompt, system_prompt, base_url=base_url)
+        elif provider == "qwen":
+            # Use OpenAI compatible client for Qwen
+            return self._call_openai(api_key, model_name, prompt, system_prompt, base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
         else:
             raise ValueError(f"Unknown provider: {provider}")
 

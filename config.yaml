@@ -20,10 +20,11 @@ models:
     env_key: "GOOGLE_API_KEY"
   
   qwen:
-    # Use native dashscope provider
-    provider: "qwen" 
-    model_name: "qwen-max"
+    # Use native dashscope provider via OpenAI compatible interface
+    provider: "openai_compatible" 
+    model_name: "qwen3-max"
     env_key: "DASHSCOPE_API_KEY"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
 batch:
   metadata_file: "outputs/batch_jobs.json"
   check_interval: 60 # seconds (if running in a loop)

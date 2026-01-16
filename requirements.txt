@@ -1,6 +1,5 @@
 openai
 anthropic
-google-generativeai
 requests
 SPARQLWrapper
 pyyaml
