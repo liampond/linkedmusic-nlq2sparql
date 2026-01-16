@@ -1,0 +1,247 @@
+[
+  {
+    "id": "1",
+    "challenge_level": "Challenge 1",
+    "query": "Find all compositions in DIAMM that are composed by Guillaume de Machaut",
+    "target_databases": "DIAMM",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "2",
+    "challenge_level": "Challenge 1",
+    "query": "Find all sessions in France in The Session",
+    "target_databases": "The Session",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "3",
+    "challenge_level": "Challenge 1",
+    "query": "Find all MusicBrainz recordings made by Taylor Swift",
+    "target_databases": "MusicBrainz",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "4",
+    "challenge_level": "Challenge 1",
+    "query": "Find all Ethiopian songs in The Global Jukebox",
+    "target_databases": "The Global Jukebox",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "5",
+    "challenge_level": "Challenge 1",
+    "query": "Find all solos in Dig That Lick",
+    "target_databases": "Dig That Lick",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "6",
+    "challenge_level": "Challenge 1",
+    "query": "Find all chants in Cantus DB in Lydian mode.",
+    "target_databases": "Cantus DB",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "7",
+    "challenge_level": "Challenge 1",
+    "query": "Find all chants associated witht he Feast 'Purification of Mary'",
+    "target_databases": "Cantus Index",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "8",
+    "challenge_level": "Challenge 1",
+    "query": "Find all compositions by Josquin des Prez.",
+    "target_databases": "SIMSSA DB",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "9",
+    "challenge_level": "Challenge 1",
+    "query": "Find all symphonies composed in 1788.",
+    "target_databases": "RISM",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "10",
+    "challenge_level": "Challenge 1",
+    "query": "Retrieve all Viennese Waltzes that have a BPM over 100.",
+    "target_databases": "AcousticBrainz",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "11",
+    "challenge_level": "Challenge 2",
+    "query": "Find all DIAMM archives and sort them by the number of sources that they contain",
+    "target_databases": "DIAMM",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "12",
+    "challenge_level": "Challenge 2",
+    "query": "Find all the different time signatures for jigs in The Session",
+    "target_databases": "The Session",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "13",
+    "challenge_level": "Challenge 2",
+    "query": "Find all bands that share at least two members with Radiohead in MusicBrainz",
+    "target_databases": "MusicBrainz",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "14",
+    "challenge_level": "Challenge 2",
+    "query": "Find all Global Jukebox cultures that have at least one song with flute instrumentation",
+    "target_databases": "The Global Jukebox",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "15",
+    "challenge_level": "Challenge 2",
+    "query": "Find all tracks in Dig That Lick recorded in New York City",
+    "target_databases": "Dig That Lick",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "16",
+    "challenge_level": "Challenge 2",
+    "query": "Find all Antiphons with Volpiano melodies longer than 50 characters",
+    "target_databases": "Cantus DB",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "17",
+    "challenge_level": "Challenge 2",
+    "query": "Return the average number of Cantus IDs associated with each feast.",
+    "target_databases": "Cantus Index",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "18",
+    "challenge_level": "Challenge 2",
+    "query": "Return the number of musical works that have at least one associated MEI file AND at least one associated image file in SIMSSA DB.",
+    "target_databases": "SIMSSA DB",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "19",
+    "challenge_level": "Challenge 2",
+    "query": "List all individuals who are both translators and composers but translated more works than they composed.",
+    "target_databases": "RISM",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "21",
+    "challenge_level": "Challenge 3",
+    "query": "Find archives in DIAMM with an inception after 1900",
+    "target_databases": "DIAMM",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "22",
+    "challenge_level": "Challenge 3",
+    "query": "Find the capital city of the country with the most sessions",
+    "target_databases": "The Session",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "23",
+    "challenge_level": "Challenge 3",
+    "query": "What\u2019s the average number of record labels that female singers in MusicBrainz have signed with?",
+    "target_databases": "MusicBrainz",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "24",
+    "challenge_level": "Challenge 3",
+    "query": "Find all Global Jukebox songs from Africa",
+    "target_databases": "The Global Jukebox",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "25",
+    "challenge_level": "Challenge 3",
+    "query": "Count how many solos were done by artists of each gender in Dig That Lick",
+    "target_databases": "Dig That Lick",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "26",
+    "challenge_level": "Challenge 3",
+    "query": "Retrieve all events associated with G minor chants that are named after women from Cantus DB.",
+    "target_databases": "Cantus DB",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "27",
+    "challenge_level": "Challenge 3",
+    "query": "Which modern-day country is the place of birth for the most number of saints who have chants in Cantus Index associated them?",
+    "target_databases": "Cantus Index",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "28",
+    "challenge_level": "Challenge 3",
+    "query": "What is the most common religious affiliation (e.g., Catholic, Lutheran, Anglican) of composers of sacred works in SIMSSA DB?",
+    "target_databases": "SIMSSA DB",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "29",
+    "challenge_level": "Challenge 3",
+    "query": "Find all operas who have a premiere performance location that matches the city where the manuscript is currently held.",
+    "target_databases": "RISM",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "30",
+    "challenge_level": "Challenge 3",
+    "query": "For composers educated at the Paris Conservatoire, return the average number of works composed in C major.",
+    "target_databases": "AcousticBrainz",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "31",
+    "challenge_level": "Challenge 4",
+    "query": "Find all songs in The Global Jukebox from countries with more than four sessions in the Session",
+    "target_databases": "The Global Jukebox, The Session",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "32",
+    "challenge_level": "Challenge 4",
+    "query": "Find all works in MusicBrainz that, according to Dig that Lick, contains a solo performed by Charlie Parker",
+    "target_databases": "MusicBrainz, Dig That Lick",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "33",
+    "challenge_level": "Challenge 4",
+    "query": "Find all compositions or recordings with \"death\" in the title",
+    "target_databases": "MusicBrainz, Dig That Lick, The Session, DIAMM, The Global Jukebox",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "34",
+    "challenge_level": "Challenge 4",
+    "query": "Find all musical instruments in the Global Jukebox featured in songs indigenous to Madagascar, and find recordings in MusicBrainz featuring these same instruments",
+    "target_databases": "MusicBrainz, The Global Jukebox",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "35",
+    "challenge_level": "Challenge 4",
+    "query": "Find all music events that happened on a day where at least one South Korean music label dissolved",
+    "target_databases": "MusicBrainz, The Session",
+    "ground_truth_sparql": null
+  },
+  {
+    "id": "36",
+    "challenge_level": "Challenge 4",
+    "query": "Identify the mode common to both Cantus DB and MusicBrainz that shows the largest difference in the number of chants and songs.",
+    "target_databases": "MusicBrainz, Cantus DB",
+    "ground_truth_sparql": null
+  }
+]

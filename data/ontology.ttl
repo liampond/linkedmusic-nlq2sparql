@@ -1,0 +1,4 @@
+# Place your ontology definitions here
+# Example:
+# @prefix : <http://example.org/> .
+# :MusicTrack a owl:Class .

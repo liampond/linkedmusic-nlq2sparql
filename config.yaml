@@ -1,0 +1,31 @@
+ontology_file: "ontology.txt"
+input_data: "data/queries.json"
+output_dir: "outputs"
+
+# Configuration for the different models
+models:
+  openai: 
+    provider: "openai"
+    model_name: "gpt-5.2-2025-12-11"
+    env_key: "OPENAI_API_KEY"
+  
+  claude:
+    provider: "anthropic"
+    model_name: "claude-opus-4-5"
+    env_key: "ANTHROPIC_API_KEY"
+  
+  gemini:
+    provider: "google"
+    model_name: "gemini-3-pro-preview"
+    env_key: "GOOGLE_API_KEY"
+  
+  qwen:
+    # Use native dashscope provider
+    provider: "qwen" 
+    model_name: "qwen-max"
+    env_key: "DASHSCOPE_API_KEY"
+batch:
+  metadata_file: "outputs/batch_jobs.json"
+  check_interval: 60 # seconds (if running in a loop)
+evaluation:
+  metric: "count_match" # Options: count_match, set_match (future)

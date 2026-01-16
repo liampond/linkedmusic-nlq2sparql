@@ -1,0 +1,12 @@
+openai
+anthropic
+google-generativeai
+requests
+SPARQLWrapper
+pyyaml
+python-dotenv
+pandas
+tqdm
+jsonlines
+google-genai
+dashscope
