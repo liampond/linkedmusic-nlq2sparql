@@ -1,0 +1,39 @@
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT
+  ?band
+  (SAMPLE(?bandLabel_) AS ?bandLabel)
+  (COUNT(DISTINCT ?sharedMember) AS ?sharedMemberCount)
+  (GROUP_CONCAT(DISTINCT CONCAT(STR(?sharedMember), " | ", COALESCE(?sharedMemberLabel_, "")); separator=" ; ") AS ?sharedMembers)
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+
+    # --- Identify Radiohead in MusicBrainz via its reconciled Wikidata entity ---
+    # Wikidata QID for Radiohead: Q1771
+    ?radiohead rdf:type mb:Artist ;
+               wdt:P2888 <http://www.wikidata.org/entity/Q1771> ;
+               wdt:P31 <http://www.wikidata.org/entity/Q215380> .  # musical group (checked locally via wdt:P31)
+
+    # Radiohead members (MusicBrainz uses wdt:P527 "has part" for members)
+    ?radiohead wdt:P527 ?sharedMember .
+    ?sharedMember rdf:type mb:Artist .
+
+    # --- Other bands that have (at least) the same members ---
+    ?band rdf:type mb:Artist ;
+          wdt:P31 <http://www.wikidata.org/entity/Q215380> ;  # musical group (checked locally via wdt:P31)
+          wdt:P527 ?sharedMember .
+
+    # Exclude Radiohead itself
+    FILTER(?band != ?radiohead)
+
+    # Labels (prefer local labels)
+    OPTIONAL { ?band rdfs:label ?bandLabel_ . }
+    OPTIONAL { ?sharedMember rdfs:label ?sharedMemberLabel_ . }
+  }
+}
+GROUP BY ?band
+HAVING (COUNT(DISTINCT ?sharedMember) >= 2)
+ORDER BY DESC(?sharedMemberCount) ?band

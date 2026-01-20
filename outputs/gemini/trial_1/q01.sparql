@@ -1,0 +1,20 @@
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?composition ?compositionLabel
+WHERE {
+    GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+        # 1. Identify the composer entity within DIAMM
+        # We verify it is a Person and matches the Wikidata QID for Guillaume de Machaut (Q42824)
+        ?composer rdf:type diamm:Person ;
+                  wdt:P2888 wd:Q42824 .
+
+        # 2. Find compositions composed by this person
+        ?composition rdf:type diamm:Composition ;
+                     wdt:P86 ?composer ;
+                     rdfs:label ?compositionLabel .
+    }
+}

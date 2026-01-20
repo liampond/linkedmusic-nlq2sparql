@@ -1,0 +1,25 @@
+PREFIX dtl:  <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT ?gender ?genderLabel (COUNT(?solo) AS ?soloCount)
+WHERE {
+  # Subquery first (avoids Virtuoso SP031 and keeps SERVICE efficient)
+  {
+    SELECT ?solo ?performer
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+        ?solo rdf:type dtl:Solo .
+        ?solo wdt:P175 ?performer .
+      }
+    }
+  }
+
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?performer wdt:P21 ?gender .
+    OPTIONAL { ?gender rdfs:label ?genderLabel . FILTER(LANG(?genderLabel) = "en") }
+  }
+}
+GROUP BY ?gender ?genderLabel
+ORDER BY DESC(?soloCount)

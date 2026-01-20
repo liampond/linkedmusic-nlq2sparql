@@ -1,0 +1,92 @@
+I'll work through this step-by-step.
+
+## Step 1: Examine the ontology and extract relevant parts
+
+Looking for compositions and recordings across all databases:
+
+**DIAMM:**
+- `diamm:Composition` - has `rdfs:label "label"`
+
+**MusicBrainz:**
+- `mb:Recording` - has `rdfs:label "label"`
+- `mb:Work` - has `rdfs:label "label"` (compositions/works)
+
+**The Session:**
+- `ts:Recording` - has `rdfs:label "label"`
+
+**Dig That Lick:**
+- `dtl:Track` - has `rdfs:label "label"`
+
+**Global Jukebox:**
+- `gj:Song` - has `rdfs:label "label"`
+
+## Step 2: Q-IDs needed
+
+Since this query explicitly asks for finding entities based on text content ("death" in the title), I should use string matching functions like `CONTAINS()` rather than Q-IDs. This is one of the exceptions mentioned in the instructions.
+
+## Step 3: Build the SPARQL query
+
+I'll search across all relevant databases for compositions/recordings with "death" in their title/label using string matching.
+
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+
+SELECT DISTINCT ?entity ?label ?type ?source WHERE {
+  {
+    # DIAMM Compositions
+    GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+      ?entity rdf:type diamm:Composition .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(STR(?label)), "death"))
+      BIND("Composition" AS ?type)
+      BIND("DIAMM" AS ?source)
+    }
+  }
+  UNION
+  {
+    # MusicBrainz Recordings
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?entity rdf:type mb:Recording .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(STR(?label)), "death"))
+      BIND("Recording" AS ?type)
+      BIND("MusicBrainz" AS ?source)
+    }
+  }
+  UNION
+  {
+    # MusicBrainz Works (compositions)
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?entity rdf:type mb:Work .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(STR(?label)), "death"))
+      BIND("Work" AS ?type)
+      BIND("MusicBrainz" AS ?source)
+    }
+  }
+  UNION
+  {
+    # The Session Recordings
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?entity rdf:type ts:Recording .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(STR(?label)), "death"))
+      BIND("Recording" AS ?type)
+      BIND("The Session" AS ?source)
+    }
+  }
+  UNION
+  {
+    # Dig That Lick Tracks
+    GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+      ?entity rdf:type dtl:Track .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(STR(?label)), "death"))
+      BIND("Track" AS ?type)
+      BIND("Dig That Lick" AS ?source)

@@ -1,0 +1,34 @@
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?band ?bandLabel (COUNT(DISTINCT ?member) AS ?sharedMembers)
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    # Find Radiohead via Wikidata reconciliation
+    ?radiohead rdf:type mb:Artist .
+    ?radiohead wdt:P2888 wd:Q44190 .
+    
+    # Find members of Radiohead (band has part member)
+    ?radiohead wdt:P527 ?member .
+    ?member rdf:type mb:Artist .
+    
+    # Find other bands that have the same members
+    ?band rdf:type mb:Artist .
+    ?band wdt:P527 ?member .
+    
+    # Ensure the band is a musical group (not Radiohead itself)
+    ?band wdt:P31 wd:Q215380 .
+    
+    # Exclude Radiohead itself
+    FILTER(?band != ?radiohead)
+    
+    # Get band label
+    OPTIONAL { ?band rdfs:label ?bandLabel . }
+  }
+}
+GROUP BY ?band ?bandLabel
+HAVING (COUNT(DISTINCT ?member) >= 2)
+ORDER BY DESC(?sharedMembers)

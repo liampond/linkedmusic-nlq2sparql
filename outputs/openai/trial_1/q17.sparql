@@ -1,0 +1,45 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX dtl:  <https://linkedmusic.ca/graphs/dig-that-lick/>
+
+SELECT DISTINCT
+  ?mbWork ?mbWorkLabel
+  ?dtlTrack ?dtlTrackLabel
+  ?dtlSolo
+WHERE {
+  # --- Subquery to avoid Virtuoso SP031 and to keep the join small ---
+  {
+    SELECT DISTINCT ?wdCharlieParker ?wdWork WHERE {
+      VALUES ?wdCharlieParker { <http://www.wikidata.org/entity/Q103801> }  # Charlie Parker
+
+      GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+        ?dtlSolo rdf:type dtl:Solo ;
+                 wdt:P175 ?wdCharlieParker ;   # performer (points directly to Wikidata entity)
+                 wdt:P361 ?dtlTrack .          # part of (track)
+
+        ?dtlTrack rdf:type dtl:Track ;
+                  wdt:P2888 ?wdWork .          # exact match to Wikidata work
+      }
+    }
+  }
+
+  # --- Now find the corresponding MusicBrainz Work(s) reconciled to the same Wikidata Work ---
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?mbWork rdf:type mb:Work ;
+            wdt:P2888 ?wdWork .
+
+    OPTIONAL { ?mbWork rdfs:label ?mbWorkLabel . }
+  }
+
+  # --- Return the Dig that Lick track/solo too (with labels when available) ---
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    ?dtlSolo rdf:type dtl:Solo ;
+             wdt:P361 ?dtlTrack .
+
+    ?dtlTrack rdf:type dtl:Track .
+    OPTIONAL { ?dtlTrack rdfs:label ?dtlTrackLabel . }
+  }
+}
+ORDER BY LCASE(STR(?mbWorkLabel)) LCASE(STR(?dtlTrackLabel))

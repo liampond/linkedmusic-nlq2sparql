@@ -1,0 +1,19 @@
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?archive ?archiveLabel (COUNT(?source) AS ?sourceCount)
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+    # Find all entities strictly typed as a DIAMM Archive
+    ?archive rdf:type diamm:Archive .
+    ?archive rdfs:label ?archiveLabel .
+
+    # Find Sources that are located in (P276) these archives
+    ?source rdf:type diamm:Source .
+    ?source wdt:P276 ?archive .
+  }
+}
+GROUP BY ?archive ?archiveLabel
+ORDER BY DESC(?sourceCount)

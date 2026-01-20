@@ -1,0 +1,44 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?event ?eventLabel ?eventDate ?label ?labelName ?dissolutionDate
+WHERE {
+  # Find South Korean labels with dissolution dates
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?label rdf:type mb:Label .
+    ?label wdt:P576 ?dissolutionDate .
+    ?label wdt:P17 ?area .
+    ?label rdfs:label ?labelName .
+    
+    ?area rdf:type mb:Area .
+    ?area wdt:P2888 wd:Q884 .
+  }
+  
+  # Find events from MusicBrainz that happened on the same day
+  {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?event rdf:type mb:Event .
+      ?event wdt:P585 ?eventDate .
+      OPTIONAL { ?event rdfs:label ?eventLabel }
+      
+      FILTER(STR(?eventDate) = STR(?dissolutionDate))
+    }
+  }
+  UNION
+  # Find events from The Session that started on the same day
+  {
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?event rdf:type ts:Events .
+      ?event wdt:P580 ?eventDate .
+      OPTIONAL { ?event rdfs:label ?eventLabel }
+      
+      FILTER(STR(?eventDate) = STR(?dissolutionDate))
+    }
+  }
+}
+ORDER BY ?eventDate

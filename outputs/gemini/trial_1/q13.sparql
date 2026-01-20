@@ -1,0 +1,33 @@
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT (AVG(?labelCount) AS ?averageLabels)
+WHERE {
+  {
+    SELECT ?artist (COUNT(DISTINCT ?label) AS ?labelCount)
+    WHERE {
+      # 1. Local Selection: Get female artists and their labels from MusicBrainz
+      {
+        SELECT ?artist ?wdArtist ?label
+        WHERE {
+          GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+            ?artist rdf:type mb:Artist .
+            # Check Gender: Female (Q6581072) locally
+            ?artist wdt:P21 <http://www.wikidata.org/entity/Q6581072> .
+            # Get reconciled Wikidata URI
+            ?artist wdt:P2888 ?wdArtist .
+            # Get the labels they signed with
+            ?artist wdt:P264 ?label .
+          }
+        }
+      }
+
+      # 2. Federated Check: Verify the artist is a Singer (Q177220) via Wikidata
+      SERVICE <https://query.wikidata.org/sparql> {
+        ?wdArtist wdt:P106 <http://www.wikidata.org/entity/Q177220> .
+      }
+    }
+    GROUP BY ?artist
+  }
+}

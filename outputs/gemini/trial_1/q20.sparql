@@ -1,0 +1,28 @@
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?event ?eventLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    # 1. Identify South Korean Music Labels and their dissolution date
+    ?labelEntity rdf:type mb:Label .
+    ?labelEntity wdt:P576 ?dissolutionDate .
+
+    # Navigate from Label -> Country (Area) -> Wikidata QID
+    ?labelEntity wdt:P17 ?countryArea .
+    ?countryArea rdf:type mb:Area .
+    ?countryArea wdt:P2888 <http://www.wikidata.org/entity/Q884> .
+
+    # 2. Identify Music Events and their date
+    ?event rdf:type mb:Event .
+    ?event rdfs:label ?eventLabel .
+    ?event wdt:P585 ?eventDate .
+
+    # 3. Match the event date to the label's dissolution date
+    # Casting to xsd:date ensures we compare the calendar day, ignoring specific timestamps if present.
+    FILTER(xsd:date(?eventDate) = xsd:date(?dissolutionDate))
+  }
+}

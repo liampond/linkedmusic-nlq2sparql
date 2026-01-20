@@ -1,0 +1,40 @@
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT ?culture ?cultureLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    # Verify types (per instructions)
+    ?culture rdf:type gj:Culture .
+    ?song    rdf:type gj:Song .
+
+    # Culture has at least one song
+    ?song wdt:P2596 ?culture .
+
+    # Song has instrumentation
+    ?song wdt:P870 ?instrument .
+
+    # Prefer local labels when available
+    OPTIONAL { ?culture rdfs:label ?cultureLabel . }
+  }
+
+  # --- Subquery before SERVICE to avoid Virtuoso SP031 ---
+  {
+    SELECT DISTINCT ?instrumentWikidata
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+        # If the instrument is a local GJ instrument entity, it should be reconciled via P2888
+        ?instrument wdt:P2888 ?instrumentWikidata .
+      }
+    }
+  }
+
+  # Federated lookup: accept "flute" and any of its subclasses (e.g., bamboo flute, pan flute, etc.)
+  SERVICE <https://query.wikidata.org/sparql> {
+    VALUES ?flute { wd:Q11405 }  # flute
+    ?instrumentWikidata wdt:P279* ?flute .
+  }
+}
+ORDER BY LCASE(STR(?cultureLabel)) STR(?culture)

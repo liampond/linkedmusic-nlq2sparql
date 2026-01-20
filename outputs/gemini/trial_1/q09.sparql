@@ -1,0 +1,30 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT ?culture ?cultureLabel
+WHERE {
+  # Subquery to retrieve all instruments that are Flutes (or subclasses of Flute) from Wikidata
+  {
+    SELECT ?instrument
+    WHERE {
+      SERVICE <https://query.wikidata.org/sparql> {
+        # Q11405 is the Wikidata Q-ID for "Flute"
+        ?instrument wdt:P279* wd:Q11405 .
+      }
+    }
+  }
+
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    # Find Songs that use one of the identified flute instruments
+    ?song rdf:type gj:Song ;
+          wdt:P870 ?instrument ;
+          wdt:P2596 ?culture .
+
+    # Retrieve the Culture and its label
+    ?culture rdf:type gj:Culture ;
+             rdfs:label ?cultureLabel .
+  }
+}

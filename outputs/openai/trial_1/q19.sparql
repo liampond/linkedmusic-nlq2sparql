@@ -1,0 +1,48 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+
+SELECT DISTINCT
+  ?gjInstrument ?gjInstrumentLabel
+  ?mbInstrument ?mbInstrumentLabel
+  ?mbRecording  ?mbRecordingLabel
+WHERE {
+  # --- Subquery to avoid Virtuoso SP031 before any cross-graph joins ---
+  {
+    SELECT DISTINCT ?instrumentWD
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+        # Songs indigenous to Madagascar (Wikidata Q1019)
+        ?song rdf:type gj:Song ;
+              wdt:P2341 <http://www.wikidata.org/entity/Q1019> ;
+              wdt:P870 ?gjInstrument .
+
+        # Ensure the instrument is a Global Jukebox instrument and is reconciled to Wikidata
+        ?gjInstrument rdf:type gj:Instrument ;
+                      wdt:P2888 ?instrumentWD .
+      }
+    }
+  }
+
+  # --- Bring back the GJ instrument entities/labels for those Wikidata-matched instruments ---
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?gjInstrument rdf:type gj:Instrument ;
+                  wdt:P2888 ?instrumentWD .
+    OPTIONAL { ?gjInstrument rdfs:label ?gjInstrumentLabel . }
+  }
+
+  # --- Find MusicBrainz recordings that use the same instrument (via the same Wikidata URI) ---
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?mbInstrument rdf:type mb:Instrument ;
+                  wdt:P2888 ?instrumentWD .
+    OPTIONAL { ?mbInstrument rdfs:label ?mbInstrumentLabel . }
+
+    ?mbRecording rdf:type mb:Recording ;
+                 wdt:P870 ?mbInstrument .
+    OPTIONAL { ?mbRecording rdfs:label ?mbRecordingLabel . }
+  }
+}
+ORDER BY ?gjInstrumentLabel ?mbInstrumentLabel ?mbRecordingLabel

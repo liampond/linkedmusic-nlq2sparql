@@ -1,0 +1,39 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT ?song ?songLabel
+WHERE {
+  # Step 1: Subquery to extract songs and their associated location URIs from the local graph.
+  # We use a subquery to avoid SP031 errors and ensure efficient federated querying.
+  {
+    SELECT ?song ?songLabel ?location
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+        # Identify entities that are explicitly Global Jukebox Songs
+        ?song rdf:type gj:Song .
+        ?song rdfs:label ?songLabel .
+
+        # Find the location (Wikidata URI) associated with the song.
+        # Path A: The song has a direct country of origin (P495)
+        {
+          ?song wdt:P495 ?location .
+        }
+        UNION
+        # Path B: The song belongs to a culture, which is linked to a country (P17)
+        {
+          ?song wdt:P2596 ?culture .
+          ?culture wdt:P17 ?location .
+        }
+      }
+    }
+  }
+
+  # Step 2: Federated query to Wikidata to verify if the location is in Africa.
+  SERVICE <https://query.wikidata.org/sparql> {
+    # Check if the location (?location) has the property 'continent' (P30) pointing to 'Africa' (Q15)
+    ?location wdt:P30 wd:Q15 .
+  }
+}

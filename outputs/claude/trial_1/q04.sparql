@@ -1,0 +1,27 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?song ?songLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song .
+    
+    {
+      # Songs with country of origin = Ethiopia
+      ?song wdt:P495 wd:Q115 .
+    }
+    UNION
+    {
+      # Songs linked to a Culture that is associated with Ethiopia
+      ?song wdt:P2596 ?culture .
+      ?culture rdf:type gj:Culture .
+      ?culture wdt:P17 wd:Q115 .
+    }
+    
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+  }
+}
+ORDER BY ?songLabel

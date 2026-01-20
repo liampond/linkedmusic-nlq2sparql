@@ -1,0 +1,26 @@
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?archive ?archiveLabel ?wikidataURI ?inception
+WHERE {
+  # First, get all archives and their Wikidata URIs from the LinkedMusic graph
+  {
+    SELECT ?archive ?archiveLabel ?wikidataURI
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+        ?archive a diamm:Archive .
+        OPTIONAL { ?archive rdfs:label ?archiveLabel . }
+        ?archive wdt:P2888 ?wikidataURI .
+      }
+    }
+  }
+  
+  # Federated query to Wikidata to get inception dates
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?wikidataURI wdt:P571 ?inception .
+    FILTER(?inception > "1900-01-01"^^xsd:dateTime)
+  }
+}
+ORDER BY ?inception

@@ -1,0 +1,79 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX ts:   <https://linkedmusic.ca/graphs/thesession/>
+
+SELECT DISTINCT
+  ?event ?eventLabel
+  ?eventDate
+  ?label ?labelLabel
+  ?labelDissolvedDate
+WHERE {
+  # ----------------------------
+  # Subquery: compute (day) dates where a South Korean music label dissolved
+  # ----------------------------
+  {
+    SELECT DISTINCT ?eventDate ?label ?labelDissolvedDate WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+        ?label rdf:type mb:Label ;
+               wdt:P17 ?labelCountry ;
+               wdt:P576 ?labelDissolvedDate .
+        ?labelCountry rdf:type mb:Area ;
+                      wdt:P2888 ?labelCountryWD .
+
+        # South Korea (Q884)
+        FILTER(?labelCountryWD = <http://www.wikidata.org/entity/Q884>)
+
+        # Compare by calendar day (ignore time-of-day if present)
+        BIND( xsd:date(?labelDissolvedDate) AS ?eventDate )
+      }
+    }
+  }
+
+  # ----------------------------
+  # Music events in LinkedMusic that happened on one of those days
+  # (scan across relevant event-bearing datasets)
+  # ----------------------------
+
+  # MusicBrainz events
+  {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?event rdf:type mb:Event ;
+             rdfs:label ?eventLabel .
+
+      # Prefer point-in-time; fall back to start time
+      OPTIONAL { ?event wdt:P585 ?eventPIT . }
+      OPTIONAL { ?event wdt:P580 ?eventStart . }
+
+      BIND(
+        COALESCE(
+          IF(BOUND(?eventPIT), xsd:date(?eventPIT), UNDEF),
+          IF(BOUND(?eventStart), xsd:date(?eventStart), UNDEF)
+        ) AS ?eventDate2
+      )
+      FILTER(BOUND(?eventDate2))
+    }
+  }
+  UNION
+  # TheSession events
+  {
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?event rdf:type ts:Events ;
+             rdfs:label ?eventLabel ;
+             wdt:P580 ?eventStart .
+      BIND(xsd:date(?eventStart) AS ?eventDate2)
+    }
+  }
+
+  # Join on same calendar day
+  FILTER(?eventDate2 = ?eventDate)
+
+  # ----------------------------
+  # Labels for the dissolved label (from LinkedMusic, not Wikidata)
+  # ----------------------------
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    OPTIONAL { ?label rdfs:label ?labelLabel . }
+  }
+}
+ORDER BY ?eventDate ?eventLabel ?labelLabel

@@ -1,0 +1,31 @@
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT ?timeSignature ?timeSignatureLabel
+WHERE {
+  # Subquery to identify unique Time Signature URIs used in Jig settings within The Session
+  {
+    SELECT DISTINCT ?timeSignature
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+        # Verify the entity type is a TuneSetting
+        ?tuneSetting rdf:type ts:TuneSetting .
+        
+        # Filter for the genre "Jig" using the Wikidata Q-ID
+        ?tuneSetting wdt:P136 wd:Q466391 .
+        
+        # Retrieve the time signature entity
+        ?tuneSetting wdt:P3440 ?timeSignature .
+      }
+    }
+  }
+
+  # Federated query to retrieve the English label for the time signature from Wikidata
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?timeSignature rdfs:label ?timeSignatureLabel .
+    FILTER(LANG(?timeSignatureLabel) = "en")
+  }
+}

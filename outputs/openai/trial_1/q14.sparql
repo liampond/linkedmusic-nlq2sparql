@@ -1,0 +1,44 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+
+SELECT DISTINCT
+  ?song ?songLabel
+  ?culture ?cultureLabel
+  ?countryWD
+WHERE {
+  # --- Global Jukebox graph only ---
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song .
+
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+
+    # In the GJ ontology, songs link to a culture (gj:Culture) via wdt:P2596
+    ?song wdt:P2596 ?culture .
+    ?culture rdf:type gj:Culture .
+    OPTIONAL { ?culture rdfs:label ?cultureLabel . }
+
+    # In the GJ ontology, culture has a country via wdt:P17, which links directly to a Wikidata URI
+    ?culture wdt:P17 ?countryWD .
+  }
+
+  # --- Subquery before SERVICE to avoid Virtuoso SP031 ---
+  {
+    SELECT DISTINCT ?countryWD
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+        ?song0 rdf:type gj:Song ;
+               wdt:P2596 ?culture0 .
+        ?culture0 rdf:type gj:Culture ;
+                  wdt:P17 ?countryWD .
+      }
+    }
+  }
+
+  # --- Federated check: country is in Africa (continent = Africa) ---
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?countryWD wdt:P30 wd:Q15 .
+  }
+}
+ORDER BY LCASE(STR(?songLabel)) LCASE(STR(?cultureLabel)) STR(?song)

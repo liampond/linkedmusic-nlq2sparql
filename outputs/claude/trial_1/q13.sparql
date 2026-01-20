@@ -1,0 +1,30 @@
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT (AVG(?labelCount) AS ?averageLabels)
+WHERE {
+  {
+    SELECT ?artist (COUNT(DISTINCT ?label) AS ?labelCount)
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+        # Verify the entity is an mb:Artist
+        ?artist rdf:type mb:Artist .
+        
+        # Check that the artist is a singer (instance of Q177220)
+        ?artist wdt:P31 wd:Q177220 .
+        
+        # Check that the artist is female (Q6581072)
+        ?artist wdt:P21 wd:Q6581072 .
+        
+        # Get record labels the artist has signed with
+        ?artist wdt:P264 ?label .
+        
+        # Verify the label is an mb:Label
+        ?label rdf:type mb:Label .
+      }
+    }
+    GROUP BY ?artist
+  }
+}

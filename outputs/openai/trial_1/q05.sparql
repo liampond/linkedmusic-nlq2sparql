@@ -1,0 +1,23 @@
+PREFIX dtl:  <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT
+  ?solo ?track ?trackLabel
+  ?performer ?instrument
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    ?solo rdf:type dtl:Solo .
+
+    OPTIONAL {
+      ?solo wdt:P361 ?track .
+      ?track rdf:type dtl:Track .
+      OPTIONAL { ?track rdfs:label ?trackLabel . }
+    }
+
+    OPTIONAL { ?solo wdt:P175 ?performer . }
+    OPTIONAL { ?solo wdt:P870 ?instrument . }
+  }
+}
+ORDER BY ?trackLabel ?solo

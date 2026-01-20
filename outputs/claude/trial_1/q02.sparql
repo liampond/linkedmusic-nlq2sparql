@@ -1,0 +1,17 @@
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT ?session ?sessionLabel ?location ?coordinates
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+    ?session rdf:type ts:Session .
+    ?session wdt:P17 wd:Q142 .
+    
+    OPTIONAL { ?session rdfs:label ?sessionLabel . }
+    OPTIONAL { ?session wdt:P276 ?location . }
+    OPTIONAL { ?session wdt:P625 ?coordinates . }
+  }
+}

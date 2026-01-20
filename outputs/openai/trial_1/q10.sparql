@@ -1,0 +1,24 @@
+PREFIX dtl:  <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT
+  ?track ?trackLabel
+  ?recordingLocation ?recordingLocationLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    # Verify type (LinkedMusic type, not Wikidata)
+    ?track rdf:type dtl:Track ;
+           rdfs:label ?trackLabel ;
+           wdt:P8546 ?recordingLocation .
+
+    # recording location is expected to be a Wikidata entity IRI in DTL
+    # (ontology: dtl:Track wdt:P8546 "recording location")
+    OPTIONAL { ?recordingLocation rdfs:label ?recordingLocationLabel . }
+  }
+
+  # New York City (Wikidata Q60)
+  FILTER(?recordingLocation = <http://www.wikidata.org/entity/Q60>)
+}
+ORDER BY LCASE(STR(?trackLabel)) STR(?track)

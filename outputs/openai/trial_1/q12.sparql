@@ -1,0 +1,31 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ts:   <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT
+  ?country ?countryLabel
+  ?capital ?capitalLabel
+  ?sessionCount
+WHERE {
+  {
+    SELECT ?country (COUNT(?session) AS ?sessionCount)
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+        ?session rdf:type ts:Session ;
+                 wdt:P17 ?country .
+      }
+    }
+    GROUP BY ?country
+    ORDER BY DESC(?sessionCount)
+    LIMIT 1
+  }
+
+  # Prefer LinkedMusic label for the country if present anywhere locally
+  OPTIONAL { ?country rdfs:label ?countryLabel . }
+
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?country wdt:P36 ?capital .
+    OPTIONAL { ?capital rdfs:label ?capitalLabel . FILTER(LANG(?capitalLabel) = "en") }
+  }
+}

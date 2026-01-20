@@ -1,0 +1,25 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+
+SELECT DISTINCT ?song ?songLabel ?culture ?cultureLabel ?country
+WHERE {
+  # Get songs and their cultures from Global Jukebox graph
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song .
+    ?song wdt:P2596 ?culture .
+    ?culture rdf:type gj:Culture .
+    ?culture wdt:P17 ?country .
+    
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+    OPTIONAL { ?culture rdfs:label ?cultureLabel . }
+  }
+  
+  # Federated query to check if the country is in Africa
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?country wdt:P30 wd:Q15 .
+  }
+}
+ORDER BY ?songLabel

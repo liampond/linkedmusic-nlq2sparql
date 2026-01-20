@@ -1,0 +1,29 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+
+SELECT ?capitalLabel ?capital ?countryLabel ?country ?sessionCount
+WHERE {
+  # Subquery to find the country with the most sessions
+  {
+    SELECT ?country (COUNT(?session) AS ?sessionCount)
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+        ?session a ts:Session .
+        ?session wdt:P17 ?country .
+      }
+    }
+    GROUP BY ?country
+    ORDER BY DESC(?sessionCount)
+    LIMIT 1
+  }
+  
+  # Federated query to get the capital city and labels from Wikidata
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?country wdt:P36 ?capital .
+    ?country rdfs:label ?countryLabel .
+    ?capital rdfs:label ?capitalLabel .
+    FILTER(LANG(?countryLabel) = "en")
+    FILTER(LANG(?capitalLabel) = "en")
+  }
+}

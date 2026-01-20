@@ -1,0 +1,36 @@
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?gender ?genderLabel (COUNT(?solo) AS ?count)
+WHERE {
+    # Subquery to identify Solos and their reconciled Performer URIs locally.
+    # This prevents the Virtuoso SP031 error by ensuring variables are bound before the SERVICE call.
+    {
+        SELECT DISTINCT ?solo ?wdPerformer
+        WHERE {
+            GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+                # Identify the Solo entity
+                ?solo rdf:type dtl:Solo .
+                
+                # Find the Performer of the solo
+                ?solo wdt:P175 ?performer .
+                
+                # Get the reconciled Wikidata URI for the Performer
+                ?performer wdt:P2888 ?wdPerformer .
+            }
+        }
+    }
+
+    # Federated query to Wikidata to get the gender of the performer
+    SERVICE <https://query.wikidata.org/sparql> {
+        # Retrieve the gender entity
+        ?wdPerformer wdt:P21 ?gender .
+        
+        # Retrieve the English label for the gender
+        ?gender rdfs:label ?genderLabel .
+        FILTER(LANG(?genderLabel) = "en")
+    }
+}
+GROUP BY ?gender ?genderLabel

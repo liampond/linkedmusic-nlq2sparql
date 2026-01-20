@@ -1,0 +1,17 @@
+{
+    "1": {
+        "openai": "raw_outputs/run_20260119_171951_openai/results_summary.json",
+        "claude": "raw_outputs/run_20260119_171954_claude/results_summary.json",
+        "gemini": "raw_outputs/run_20260119_171954_gemini/results_summary.json"
+    },
+    "2": {
+        "openai": "raw_outputs/run_20260120_154128_openai/results_summary.json",
+        "claude": "raw_outputs/run_20260120_154130_claude/results_summary.json",
+        "gemini": "raw_outputs/run_20260120_154130_gemini/results_summary.json"
+    },
+    "3": {
+        "openai": "raw_outputs/run_20260120_154216_openai/results_summary.json",
+        "claude": "raw_outputs/run_20260120_154218_claude/results_summary.json",
+        "gemini": "raw_outputs/run_20260120_154218_gemini/results_summary.json"
+    }
+}

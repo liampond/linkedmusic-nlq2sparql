@@ -1,0 +1,22 @@
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT
+  ?recording ?recordingLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+
+    # --- Taylor Swift (local MusicBrainz artist), reconciled to Wikidata ---
+    ?artist rdf:type mb:Artist ;
+            wdt:P2888 <http://www.wikidata.org/entity/Q26876> .
+
+    # --- MusicBrainz recordings "made by" (performed by) Taylor Swift ---
+    ?recording rdf:type mb:Recording ;
+               wdt:P175 ?artist .
+
+    OPTIONAL { ?recording rdfs:label ?recordingLabel . }
+  }
+}
+ORDER BY LCASE(STR(?recordingLabel)) STR(?recording)

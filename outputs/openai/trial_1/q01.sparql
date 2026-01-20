@@ -1,0 +1,26 @@
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:   <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT
+  ?composition ?compositionLabel
+  ?composer ?composerLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+    # --- Verify types (LinkedMusic types, not Wikidata) ---
+    ?composition rdf:type diamm:Composition .
+    ?composer     rdf:type diamm:Person .
+
+    # --- DIAMM composition -> composer ---
+    ?composition wdt:P86 ?composer .
+
+    # --- Constrain composer to Guillaume de Machaut via Wikidata reconciliation ---
+    ?composer wdt:P2888 <http://www.wikidata.org/entity/Q170003> .
+
+    # --- Labels (prefer local DIAMM labels) ---
+    OPTIONAL { ?composition rdfs:label ?compositionLabel . }
+    OPTIONAL { ?composer rdfs:label ?composerLabel . }
+  }
+}
+ORDER BY LCASE(STR(?compositionLabel)) STR(?composition)

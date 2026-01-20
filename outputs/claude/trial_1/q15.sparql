@@ -1,0 +1,28 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+
+SELECT ?genderLabel (COUNT(?solo) AS ?soloCount)
+WHERE {
+  # Subquery to get distinct performer URIs from Dig That Lick
+  {
+    SELECT ?solo ?performer
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+        ?solo rdf:type dtl:Solo .
+        ?solo wdt:P175 ?performer .
+      }
+    }
+  }
+  
+  # Federated query to get gender from Wikidata
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?performer wdt:P21 ?gender .
+    ?gender rdfs:label ?genderLabel .
+    FILTER(LANG(?genderLabel) = "en")
+  }
+}
+GROUP BY ?genderLabel
+ORDER BY DESC(?soloCount)

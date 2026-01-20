@@ -1,0 +1,29 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ts:   <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT
+  ?timeSignature
+  ?timeSignatureLabel
+  ?timeSignatureWD
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+
+    # --- Tunes in The Session ---
+    ?tune rdf:type ts:Tune ;
+          wdt:P747 ?tuneSetting .
+
+    # --- Tune settings that are jigs and have a time signature ---
+    ?tuneSetting rdf:type ts:TuneSetting ;
+                 wdt:P136 ?genreWD ;
+                 wdt:P3440 ?timeSignature .
+
+    # Jig (Wikidata Q-ID)
+    FILTER(?genreWD = <http://www.wikidata.org/entity/Q131436>)
+    
+    OPTIONAL { ?timeSignature rdfs:label ?timeSignatureLabel }
+    OPTIONAL { ?timeSignature wdt:P2888 ?timeSignatureWD }
+  }
+}
+ORDER BY LCASE(STR(?timeSignatureLabel)) STR(?timeSignature)

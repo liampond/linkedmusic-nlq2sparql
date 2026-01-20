@@ -1,0 +1,18 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+
+SELECT DISTINCT ?timeSignature
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+    # Get tune settings
+    ?tuneSetting a ts:TuneSetting .
+    
+    # Filter for jigs (Q1247082 is the Wikidata ID for jig)
+    ?tuneSetting wdt:P136 <http://www.wikidata.org/entity/Q1247082> .
+    
+    # Get the time signature
+    ?tuneSetting wdt:P3440 ?timeSignature .
+  }
+}
+ORDER BY ?timeSignature

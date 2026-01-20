@@ -1,0 +1,32 @@
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX ts:   <https://linkedmusic.ca/graphs/thesession/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT
+  ?song ?songLabel
+  ?country
+  ?sessionCount
+WHERE {
+  # --- Subquery: countries with > 4 sessions in The Session ---
+  {
+    SELECT ?country (COUNT(DISTINCT ?session) AS ?sessionCount)
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+        ?session rdf:type ts:Session ;
+                 wdt:P17 ?country .
+      }
+    }
+    GROUP BY ?country
+    HAVING (COUNT(DISTINCT ?session) > 4)
+  }
+
+  # --- Global Jukebox songs whose country of origin is one of those countries ---
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song ;
+          wdt:P495 ?country .
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+  }
+}
+ORDER BY DESC(?sessionCount) ?country ?songLabel

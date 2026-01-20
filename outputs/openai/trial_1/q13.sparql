@@ -1,0 +1,32 @@
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+SELECT (AVG(?labelCount) AS ?avgRecordLabelsPerFemaleSinger)
+WHERE {
+  # --- Subquery to bind variables before SERVICE (avoids Virtuoso SP031) ---
+  {
+    SELECT ?artist ?artistLabel ?artistWD (COUNT(DISTINCT ?label) AS ?labelCount)
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+        ?artist rdf:type mb:Artist ;
+                wdt:P21 wd:Q6581072 ;     # female
+                wdt:P2888 ?artistWD .     # reconciled Wikidata URI
+
+        OPTIONAL { ?artist rdfs:label ?artistLabel . }
+
+        # "record label" relationship in the provided ontology
+        ?artist wdt:P264 ?label .
+        ?label rdf:type mb:Label .
+      }
+    }
+    GROUP BY ?artist ?artistLabel ?artistWD
+  }
+
+  # --- Federated filter: keep only those artists whose Wikidata occupation is singer ---
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?artistWD wdt:P106 wd:Q177220 .
+  }
+}

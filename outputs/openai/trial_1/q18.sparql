@@ -1,0 +1,68 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX dtl:   <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX ts:    <https://linkedmusic.ca/graphs/thesession/>
+PREFIX gj:    <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX mb:    <https://linkedmusic.ca/graphs/musicbrainz/>
+
+SELECT DISTINCT ?entity ?label ?sourceGraph ?entityType
+WHERE {
+  {
+    GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+      ?entity rdf:type diamm:Composition ;
+              rdfs:label ?label .
+      BIND(<https://linkedmusic.ca/graphs/diamm/> AS ?sourceGraph)
+      BIND(diamm:Composition AS ?entityType)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?entity rdf:type mb:Work ;
+              rdfs:label ?label .
+      BIND(<https://linkedmusic.ca/graphs/musicbrainz/> AS ?sourceGraph)
+      BIND(mb:Work AS ?entityType)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?entity rdf:type mb:Recording ;
+              rdfs:label ?label .
+      BIND(<https://linkedmusic.ca/graphs/musicbrainz/> AS ?sourceGraph)
+      BIND(mb:Recording AS ?entityType)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?entity rdf:type ts:Recording ;
+              rdfs:label ?label .
+      BIND(<https://linkedmusic.ca/graphs/thesession/> AS ?sourceGraph)
+      BIND(ts:Recording AS ?entityType)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+      ?entity rdf:type dtl:Track ;
+              rdfs:label ?label .
+      BIND(<https://linkedmusic.ca/graphs/dig-that-lick/> AS ?sourceGraph)
+      BIND(dtl:Track AS ?entityType)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+      ?entity rdf:type gj:Song ;
+              rdfs:label ?label .
+      BIND(<https://linkedmusic.ca/graphs/theglobaljukebox/> AS ?sourceGraph)
+      BIND(gj:Song AS ?entityType)
+    }
+  }
+
+  FILTER(CONTAINS(LCASE(STR(?label)), "death"))
+}
+ORDER BY ?sourceGraph ?entityType ?label

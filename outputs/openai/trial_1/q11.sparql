@@ -1,0 +1,26 @@
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wdt:   <http://www.wikidata.org/prop/direct/>
+PREFIX wd:    <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT ?archive ?archiveLabel ?wikidata ?inception
+WHERE {
+  # Subquery to avoid Virtuoso SP031 before the SERVICE call
+  {
+    SELECT DISTINCT ?archive ?archiveLabel ?wikidata
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+        ?archive rdf:type diamm:Archive ;
+                 wdt:P2888 ?wikidata .
+        OPTIONAL { ?archive rdfs:label ?archiveLabel . }
+      }
+    }
+  }
+
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?wikidata wdt:P571 ?inception .
+    FILTER(?inception > "1900-12-31T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>)
+  }
+}
+ORDER BY ?inception ?archiveLabel
