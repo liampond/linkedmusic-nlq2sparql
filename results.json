@@ -149,8 +149,8 @@
             "TIMEOUT"
         ],
         "openai": [
-            "Timeout",
-            "TIMEOUT"
+            "55",
+            "PASS"
         ]
     },
     "12": {
@@ -205,8 +205,8 @@
             ""
         ],
         "openai": [
-            "",
-            ""
+            "2",
+            "PASS - Male: 1055, Female: 18"
         ]
     },
     "16": {

@@ -18,7 +18,6 @@ except ImportError:
 class BatchManager:
     def __init__(self, config):
         self.config = config
-        # Default to raw_outputs instead of outputs
         default_dir = config.get('output_dir', 'raw_outputs')
         self.jobs_file = config.get('batch', {}).get('metadata_file', os.path.join(default_dir, 'batch_jobs.json'))
         self.setup_clients()
