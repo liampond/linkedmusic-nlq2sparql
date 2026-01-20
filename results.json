@@ -1,0 +1,282 @@
+{
+    "1": {
+        "claude": [
+            "0",
+            "FAIL - Expected 172"
+        ],
+        "gemini": [
+            "0",
+            "FAIL - Expected 172"
+        ],
+        "openai": [
+            "0",
+            "FAIL - Expected 172"
+        ]
+    },
+    "2": {
+        "claude": [
+            "101",
+            "PASS"
+        ],
+        "gemini": [
+            "101",
+            "PASS"
+        ],
+        "openai": [
+            "101",
+            "PASS"
+        ]
+    },
+    "3": {
+        "claude": [
+            "2544",
+            "PASS"
+        ],
+        "gemini": [
+            "2544",
+            "PASS"
+        ],
+        "openai": [
+            "2544",
+            "PASS"
+        ]
+    },
+    "4": {
+        "claude": [
+            "136",
+            "FAIL - Expected 114"
+        ],
+        "gemini": [
+            "136",
+            "FAIL - Expected 114"
+        ],
+        "openai": [
+            "114",
+            "PASS"
+        ]
+    },
+    "5": {
+        "claude": [
+            "1685",
+            "PASS"
+        ],
+        "gemini": [
+            "1685",
+            "PASS"
+        ],
+        "openai": [
+            "1685",
+            "PASS"
+        ]
+    },
+    "6": {
+        "claude": [
+            "681",
+            "PASS"
+        ],
+        "gemini": [
+            "666",
+            "FAIL - Expected 681"
+        ],
+        "openai": [
+            "666",
+            "FAIL - Expected 681"
+        ]
+    },
+    "7": {
+        "claude": [
+            "0",
+            "FAIL - Expected 2"
+        ],
+        "gemini": [
+            "0",
+            "FAIL - Expected 2"
+        ],
+        "openai": [
+            "0",
+            "FAIL - Expected 2"
+        ]
+    },
+    "8": {
+        "claude": [
+            "4",
+            "PASS"
+        ],
+        "gemini": [
+            "4",
+            "PASS"
+        ],
+        "openai": [
+            "0",
+            "FAIL - Expected 4"
+        ]
+    },
+    "9": {
+        "claude": [
+            "75",
+            "PASS (with labels)"
+        ],
+        "gemini": [
+            "111",
+            "FAIL - Expected 69/75"
+        ],
+        "openai": [
+            "Timeout",
+            "TIMEOUT"
+        ]
+    },
+    "10": {
+        "claude": [
+            "263",
+            "PASS"
+        ],
+        "gemini": [
+            "263",
+            "PASS"
+        ],
+        "openai": [
+            "263",
+            "PASS"
+        ]
+    },
+    "11": {
+        "claude": [
+            "55",
+            "PASS"
+        ],
+        "gemini": [
+            "Timeout",
+            "TIMEOUT"
+        ],
+        "openai": [
+            "Timeout",
+            "TIMEOUT"
+        ]
+    },
+    "12": {
+        "claude": [
+            "1",
+            "PASS - Washington DC"
+        ],
+        "gemini": [
+            "1",
+            "PASS - Washington DC"
+        ],
+        "openai": [
+            "1",
+            "PASS - Washington DC"
+        ]
+    },
+    "13": {
+        "claude": [
+            "N/A",
+            "FAIL - Query not executed?"
+        ],
+        "gemini": [
+            "Timeout",
+            "TIMEOUT"
+        ],
+        "openai": [
+            "Timeout",
+            "TIMEOUT"
+        ]
+    },
+    "14": {
+        "claude": [
+            "1720",
+            "FAIL - Expected 1128"
+        ],
+        "gemini": [
+            "Timeout",
+            "TIMEOUT"
+        ],
+        "openai": [
+            "Timeout",
+            "TIMEOUT"
+        ]
+    },
+    "15": {
+        "claude": [
+            "",
+            ""
+        ],
+        "gemini": [
+            "",
+            ""
+        ],
+        "openai": [
+            "",
+            ""
+        ]
+    },
+    "16": {
+        "claude": [
+            "",
+            ""
+        ],
+        "gemini": [
+            "",
+            ""
+        ],
+        "openai": [
+            "8393",
+            "PASS"
+        ]
+    },
+    "17": {
+        "claude": [
+            "",
+            ""
+        ],
+        "gemini": [
+            "",
+            ""
+        ],
+        "openai": [
+            "0",
+            "FAIL"
+        ]
+    },
+    "18": {
+        "claude": [
+            "",
+            ""
+        ],
+        "gemini": [
+            "",
+            ""
+        ],
+        "openai": [
+            "10000",
+            "PASS"
+        ]
+    },
+    "19": {
+        "claude": [
+            "",
+            ""
+        ],
+        "gemini": [
+            "",
+            ""
+        ],
+        "openai": [
+            "0",
+            "FAIL"
+        ]
+    },
+    "20": {
+        "claude": [
+            "",
+            ""
+        ],
+        "gemini": [
+            "",
+            ""
+        ],
+        "openai": [
+            "0",
+            "FAIL"
+        ]
+    }
+}

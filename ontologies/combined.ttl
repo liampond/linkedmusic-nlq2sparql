@@ -1,29 +1,14 @@
 # --- Prefixes ---
-@prefix cdb:	<https://linkedmusic.ca/graphs/cantusdb/> .
 @prefix diamm:	<https://linkedmusic.ca/graphs/diamm/> .
 @prefix dtl:	<https://linkedmusic.ca/graphs/dig-that-lick/> .
 @prefix gj:	<https://linkedmusic.ca/graphs/theglobaljukebox/> .
 @prefix mb:	<https://linkedmusic.ca/graphs/musicbrainz/> .
 @prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rism:	<https://linkedmusic.ca/graphs/rism/> .
 @prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
 @prefix ts:	<https://linkedmusic.ca/graphs/thesession/> .
 @prefix wdt:	<http://www.wikidata.org/prop/direct/> .
 
 # --- Ontology Definitions ---
-
-# --- Source: cantusdb.ttl ---
-
-cdb:Source
-	rdfs:label	"label" ;
-	wdt:P276	"location" .
-cdb:Chant
-	rdfs:label	"label" ;
-	wdt:P826	"tonality" ;
-	wdt:P136	"genre" ;
-	wdt:P361	cdb:Source ;
-	wdt:P366	"has use" ;
-	wdt:P837	"day in year for periodic occurrence" .
 
 # --- Source: diamm.ttl ---
 
@@ -410,72 +395,6 @@ mb:Work
         wdt:P8536        "raga" ;
         wdt:P88        mb:Artist , mb:Area , mb:Label , mb:Place , mb:Series .
 
-# --- Source: rism.ttl ---
-
-rism:Exemplar
-	wdt:P86	rism:Person ;
-	wdt:P276	rism:Institution ;
-	wdt:P127	rism:Institution , rism:Person ;
-	wdt:P825	rism:Institution , rism:Person ;
-	wdt:P110	rism:Person ;
-	wdt:P655	rism:Person ;
-	wdt:P175	rism:Institution , rism:Person ;
-	wdt:P5202	rism:Person ;
-	wdt:P98	rism:Person ;
-	wdt:P872	rism:Institution , rism:Person ;
-	wdt:P6819	rism:Person .
-rism:Incipit
-	rdfs:label	"label" ;
-	wdt:P2701	"file format" ;
-	wdt:P3440	"time signature" .
-rism:Source
-	rdfs:label	"label" ;
-	wdt:P5059	rism:Source ;
-	wdt:P826	"tonality" ;
-	wdt:P136	"genre" ;
-	wdt:P361	rism:Source ;
-	wdt:P86	rism:Institution , rism:Person ;
-	wdt:P527	rism:Source ;
-	wdt:P1922	rism:Incipit ;
-	wdt:P276	rism:Institution ;
-	wdt:P569	"date of birth" ;
-	wdt:P570	"date of death" ;
-	wdt:P767	rism:Person ;
-	wdt:P123	rism:Institution , rism:Person ;
-	wdt:P127	rism:Institution , rism:Person ;
-	wdt:P825	rism:Institution , rism:Person ;
-	wdt:P859	rism:Person ;
-	wdt:P110	rism:Person ;
-	wdt:P655	rism:Person ;
-	wdt:P175	rism:Institution , rism:Person ;
-	wdt:P1809	rism:Person ;
-	wdt:P3931	rism:Institution , rism:Person ;
-	wdt:P5202	rism:Person ;
-	wdt:P98	rism:Institution , rism:Person ;
-	wdt:P87	rism:Person ;
-	wdt:P50	rism:Person ;
-	wdt:P676	rism:Person ;
-	wdt:P872	rism:Institution , rism:Person ;
-	wdt:P750	rism:Institution , rism:Person ;
-	wdt:P6819	rism:Institution , rism:Person ;
-	wdt:P12328	rism:Source .
-rism:Place
-	rdfs:label	"label" .
-rism:Subject
-	rdfs:label	"label" ;
-	wdt:P2888	"exact match" .
-rism:Institution
-	rdfs:label	"label" ;
-	wdt:P2888	"exact match" .
-rism:Person
-	rdfs:label	"label" ;
-	wdt:P2888	"exact match" ;
-	wdt:P1038	rism:Person ;
-	wdt:P26	rism:Person ;
-	wdt:P3373	rism:Person ;
-	wdt:P40	rism:Person ;
-	wdt:P1889	rism:Person .
-
 # --- Source: theglobaljukebox.ttl ---
 
 gj:Culture
@@ -559,3 +478,5 @@ ts:Recording
 	wdt:P2888	"exact match" ;
 	wdt:P175	"performer" ;
 	wdt:P658	ts:Tune .
+
+REMEMBER: Please find the correct QIDs

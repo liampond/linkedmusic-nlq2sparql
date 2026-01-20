@@ -8,7 +8,7 @@ def combine_ontologies(ontology_dir="ontologies", output_file="ontologies/combin
     Extracts prefixes to the top and concatenates the rest of the content.
     """
     if ignore_files is None:
-        ignore_files = ["ontology_Aug2025.ttl", "combined.ttl"]
+        ignore_files = ["ontology_Aug2025.ttl", "combined.ttl", "cantusdb.ttl", "rism.ttl", "cantusindex.ttl"]
 
     ttl_files = glob.glob(os.path.join(ontology_dir, "*.ttl"))
     
@@ -95,6 +95,12 @@ def combine_ontologies(ontology_dir="ontologies", output_file="ontologies/combin
             
             for line in content_lines:
                 f.write(line)
+
+            # Since content_lines preserves newlines, we check the last one
+            if content_lines and not content_lines[-1].endswith('\n'):
+                 f.write('\n') # finish the last line if needed
+            
+            f.write('\nREMEMBER: Please find the correct QIDs')
                 
         print(f"Successfully created combined ontology at: {output_file}")
         return output_file

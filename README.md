@@ -5,9 +5,12 @@ This project evaluates the performance of Large Language Models (LLMs) in conver
 ## Project Structure
 
 - `src/`: Source code for the evaluator, LLM manager, and SPARQL client.
-- `data/`: Contains the input queries and the ontology file.
-- `outputs/`: Stores the JSON results of the evaluation runs.
+- `ontologies/`: Contains the split ontology files.
+- `queries.json`: Contains the input queries.
+- `raw_outputs/`: Stores the raw JSON results from Batch APIs.
+- `outputs/`: Stores the clean, generated SPARQL files organized by model and trial.
 - `config.yaml`: Configuration for model names, API keys, and endpoints.
+- `trials_map.json`: Maps trial numbers to their output files.
 
 ## Setup
 
@@ -18,36 +21,37 @@ This project evaluates the performance of Large Language Models (LLMs) in conver
    ```
 
 2. **Environment Variables**
-   Create a `.env` file in the root directory (or set them in your shell) with your API keys:
+   Create a `.env` file in the root directory:
    ```bash
    OPENAI_API_KEY=sk-...
    ANTHROPIC_API_KEY=sk-ant-...
    GOOGLE_API_KEY=...
-   DASHSCOPE_API_KEY=... # For Qwen if using Dashscope/OpenAI Compatible
    ```
 
 3. **Data Preparation**
-   - **Queries:** Populate `data/queries.json` with your test cases. Format:
-     ```json
-     [
-       {
-         "id": "1",
-         "query": "Find all symphonies by Beethoven",
-         "ground_truth_sparql": "SELECT ?s WHERE { ... }"
-       }
-     ]
-     ```
-   - **Ontology:** Update `data/ontology.ttl` with the relevant RDF schema definitions.
-
-4. **Configuration**
-   Edit `config.yaml` to change model versions or the SPARQL endpoint URL.
+   - **Queries:** `queries.json` contains the evaluation set.
+   - **Ontology:** `ontologies/combined.ttl` is generated from individual files in `ontologies/`.
 
 ## Usage
 
-Run the evaluation for all configured models:
+### 1. Batch Submission (Recommended)
+Submit batch jobs for all configured models:
 ```bash
-python -m src.main
+python -m src.main --batch
 ```
+
+### 2. Check Status & Retrieve Results
+Check pending batches and download completed results:
+```bash
+python -m src.main --check-batch
+```
+
+### 3. Organize SPARQL Outputs
+Once batches are downloaded, organize the SPARQL into the clean folder structure:
+```bash
+python organize_sparql.py
+```
+
 
 Run for a specific model (key must match `config.yaml` keys):
 ```bash

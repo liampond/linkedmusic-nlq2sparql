@@ -15,13 +15,6 @@ try:
 except ImportError:
     HAS_GOOGLE = False
 
-# DashScope import
-try:
-    from dashscope import BatchTextGeneration
-    HAS_DASHSCOPE = True
-except ImportError:
-    HAS_DASHSCOPE = False
-
 class BatchManager:
     def __init__(self, config):
         self.config = config
@@ -70,12 +63,6 @@ class BatchManager:
 
         if provider == "openai": 
             return self._submit_openai(model_key, model_name, payloads, output_dir)
-        elif provider == "openai_compatible":
-            # For Qwen (DashScope) which supports strict OpenAI Batch format
-            return self._submit_openai_compatible(model_key, model_name, payloads, output_dir, model_config)
-        
-        elif provider == "qwen":
-            return self._submit_qwen(model_key, model_name, payloads, output_dir)
         elif provider == "anthropic":
             return self._submit_anthropic(model_key, model_name, payloads, output_dir)
         
@@ -142,60 +129,7 @@ class BatchManager:
         """
         Special handler for compatible APIs (like Qwen/DashScope using OpenAI SDK)
         """
-        base_url = model_config.get('base_url')
-        env_key = model_config.get('env_key')
-        api_key = os.getenv(env_key)
-        
-        # Initialize a specific client for this provider
-        client = openai.OpenAI(api_key=api_key, base_url=base_url)
-        
-        # 1. Create JSONL
-        jsonl_path = os.path.join(output_dir, f"batch_input_{model_key}.jsonl")
-        with jsonlines.open(jsonl_path, mode='w') as writer:
-            for p in payloads:
-                request_obj = {
-                    "custom_id": str(p['id']),
-                    "method": "POST",
-                    "url": "/v1/chat/completions",
-                    "body": {
-                        "model": model_name,
-                        "messages": [
-                            {"role": "system", "content": p['system_prompt']},
-                            {"role": "user", "content": p['user_query']}
-                        ]
-                    }
-                }
-                writer.write(request_obj)
-        
-        # 2. Upload
-        with open(jsonl_path, "rb") as f:
-            file_response = client.files.create(file=f, purpose="batch")
-        file_id = file_response.id
-        print(f"Uploaded file {file_id} to {base_url}")
-        
-        # 3. Create Batch
-        batch_response = client.batches.create(
-            input_file_id=file_id,
-            endpoint="/v1/chat/completions",
-            completion_window="24h"
-        )
-        batch_id = batch_response.id
-        print(f"Batch submitted: {batch_id}")
-        
-        # 4. Record
-        jobs = self.load_jobs()
-        jobs[batch_id] = {
-            "provider": "openai_compatible", # To distinguish when checking
-            "model_key": model_key,
-            "base_url": base_url, # Needed for retrieval
-            "env_key": env_key,   # Needed for retrieval
-            "status": "pending",
-            "timestamp": datetime.datetime.now().isoformat(),
-            "output_dir": output_dir,
-            "input_file": jsonl_path
-        }
-        self.save_jobs(jobs)
-        return batch_id
+        pass
 
     def _submit_google(self, model_key, model_name, payloads, output_dir):
         # 1. Create Gemini JSONL
@@ -277,67 +211,11 @@ class BatchManager:
             "output_dir": output_dir
         }
         self.save_jobs(jobs)
-        if not HAS_DASHSCOPE:
-            print("Error: dashscope package not installed, cannot submit Qwen batch.")
-            return None
-
-        return batch.id
-
-    def _submit_qwen(self, model_key, model_name, payloads, output_dir):
-        # Using DashScope Python SDK (Official) if available
-        jsonl_path = os.path.join(output_dir, f"batch_input_{model_key}.jsonl")
-        
-        with jsonlines.open(jsonl_path, mode='w') as writer:
-            for p in payloads:
-                messages = [
-                    {"role": "system", "content": p['system_prompt']},
-                    {"role": "user", "content": p['user_query']}
-                ]
-                
-                request_obj = {
-                    "custom_id": str(p['id']),
-                    "body": {
-                        "model": model_name,
-                        "input": {
-                            "messages": messages
-                        },
-                        "parameters": {
-                            "temperature": 0
-                        }
-                    }
-                }
-                writer.write(request_obj)
-
-        print(f"Created Qwen input file {jsonl_path}")
-
-        api_key = os.getenv("DASHSCOPE_API_KEY")
-        if not api_key:
-             raise ValueError("DASHSCOPE_API_KEY not found.")
+        if not HAS_GOOGLE:
+             print("Error: google-genai package not installed, cannot submit Gemini batch.")
+             return None
              
-        job = BatchTextGeneration.call(
-            job_name=f"batch_run_{model_key}",
-            input_path=jsonl_path,
-            output_path=os.path.join(output_dir, "qwen_output.jsonl"), 
-            api_key=api_key
-        )
-        
-        if job.status_code == 200:
-             batch_id = job.output.job_id
-             print(f"Batch submitted: {batch_id}")
-        else:
-             raise Exception(f"DashScope submission failed: {job}")
-
-        jobs = self.load_jobs()
-        jobs[batch_id] = {
-            "provider": "qwen",
-            "model_key": model_key,
-            "status": "pending",
-            "timestamp": datetime.datetime.now().isoformat(),
-            "output_dir": output_dir,
-            "input_file": jsonl_path
-        }
-        self.save_jobs(jobs)
-        return batch_id
+        return batch.id
 
     def check_and_retrieve(self):
         jobs = self.load_jobs()
@@ -356,46 +234,10 @@ class BatchManager:
                     self._check_anthropic(batch_id, job, jobs)
                 elif provider == "google":
                     self._check_google(batch_id, job, jobs)
-                elif provider == "openai_compatible":
-                    self._check_openai_compatible(batch_id, job, jobs)
-                elif provider == "qwen":
-                    self._check_qwen(batch_id, job, jobs)
             except Exception as e:
                 print(f"Error checking status for {batch_id}: {e}")
         
         self.save_jobs(jobs)
-
-    def _check_qwen(self, batch_id, job, jobs_dict):
-        api_key = os.getenv("DASHSCOPE_API_KEY")
-        import requests
-        headers = {
-            "Authorization": f"Bearer {api_key}", 
-            "Content-Type": "application/json"
-        }
-        url = f"https://dashscope.aliyuncs.com/api/v1/tasks/{batch_id}"
-        
-        try:
-            resp = requests.get(url, headers=headers)
-            data = resp.json()
-            status = data.get('output', {}).get('task_status', data.get('status'))
-            
-            print(f"  Status: {status}")
-            
-            if status == 'SUCCEEDED':
-                res_url = data.get('output', {}).get('results_url')
-                if res_url:
-                     print(f"  Downloading from {res_url}")
-                     r = requests.get(res_url)
-                     output_path = os.path.join(job['output_dir'], f"batch_results_{batch_id}.jsonl")
-                     with open(output_path, 'wb') as f:
-                         f.write(r.content)
-                     
-                     job['status'] = "completed"
-                     job['result_file'] = output_path
-                     print(f"  Downloaded results to {output_path}")
-
-        except Exception as e:
-            print(f"  Error checking Qwen status: {e}")
 
     def _check_openai(self, batch_id, job, jobs_dict):
         batch = self.openai_client.batches.retrieve(batch_id)
@@ -404,25 +246,6 @@ class BatchManager:
         
         if current_status == "completed" and batch.output_file_id:
             file_response = self.openai_client.files.content(batch.output_file_id)
-            content = file_response.text
-            
-            output_path = os.path.join(job['output_dir'], f"batch_results_{batch_id}.jsonl")
-            with open(output_path, "w") as f:
-                f.write(content)
-            
-            job['status'] = "completed"
-            job['result_file'] = output_path
-            print(f"  Downloaded results to {output_path}")
-
-    def _check_openai_compatible(self, batch_id, job, jobs_dict):
-        client = openai.OpenAI(api_key=os.getenv(job['env_key']), base_url=job['base_url'])
-        
-        batch = client.batches.retrieve(batch_id)
-        current_status = batch.status
-        print(f"  Status: {current_status}")
-        
-        if current_status == "completed" and batch.output_file_id:
-            file_response = client.files.content(batch.output_file_id)
             content = file_response.text
             
             output_path = os.path.join(job['output_dir'], f"batch_results_{batch_id}.jsonl")
@@ -443,7 +266,9 @@ class BatchManager:
             print(f"  Downloading from {output_file_name}")
             content = self.google_client.files.download(file=output_file_name)
             
-            output_path = os.path.join(job['output_dir'], f"batch_results_{batch_id}.jsonl")
+            # Sanitize batch_id for filesystem (Gemini IDs contain '/')
+            safe_batch_id = batch_id.replace("/", "_")
+            output_path = os.path.join(job['output_dir'], f"batch_results_{safe_batch_id}.jsonl")
             with open(output_path, "wb") as f:
                 f.write(content)
                 
@@ -508,7 +333,7 @@ class BatchManager:
                         response_text = ""
                         
                         try:
-                            if provider in ["openai", "openai_compatible", "qwen"]:
+                            if provider in ["openai"]:
                                 custom_id = line.get('custom_id')
                                 choice = line.get('response', {}).get('body', {}).get('choices', [{}])[0]
                                 response_text = choice.get('message', {}).get('content', "")
