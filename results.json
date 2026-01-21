@@ -122,7 +122,7 @@
         ],
         "openai": [
             "Timeout",
-            "TIMEOUT"
+            "FAIL - Gateway Timeout"
         ]
     },
     "10": {
@@ -145,8 +145,8 @@
             "PASS"
         ],
         "gemini": [
-            "Timeout",
-            "TIMEOUT"
+            "55",
+            "PASS"
         ],
         "openai": [
             "55",

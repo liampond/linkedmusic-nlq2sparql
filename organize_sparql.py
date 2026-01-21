@@ -41,7 +41,7 @@ def main():
             
             for item in data:
                 q_id_raw = str(item.get('id', 'unknown'))
-                q_id = q_id_raw.zfill(2)
+                q_id = q_id_raw # No zfill to match "q1", "q2" format
                 sparql = item.get('generated_sparql')
                 
                 # Fallback if sparql is empty/null
