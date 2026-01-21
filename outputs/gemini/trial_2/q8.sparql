@@ -1,0 +1,40 @@
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?band ?bandLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    # 1. Find the entity for Radiohead using its Wikidata Q-ID (Q2025)
+    ?radiohead wdt:P2888 <http://www.wikidata.org/entity/Q2025> .
+    
+    # 2. Verify the type of the Radiohead entity
+    ?radiohead rdf:type mb:Artist .
+
+    # 3. Find members of Radiohead
+    # wdt:P527 (has part) connects the Group to the Member
+    ?radiohead wdt:P527 ?member .
+    
+    # 4. Verify the type of the member entity
+    ?member rdf:type mb:Artist .
+
+    # 5. Find other bands that have the same members
+    ?band wdt:P527 ?member .
+    
+    # 6. Verify the type of the other band
+    ?band rdf:type mb:Artist .
+
+    # 7. Ensure the resulting artist is actually a "musical group" (Band)
+    # Using Q-ID for "musical group": Q215380
+    ?band wdt:P31 <http://www.wikidata.org/entity/Q215380> .
+
+    # 8. Filter out Radiohead itself from the results
+    FILTER (?band != ?radiohead)
+
+    # 9. Retrieve the label for the band
+    ?band rdfs:label ?bandLabel .
+  }
+}
+GROUP BY ?band ?bandLabel
+HAVING (COUNT(?member) >= 2)

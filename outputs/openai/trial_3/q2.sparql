@@ -1,0 +1,16 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ts:   <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT ?session ?sessionLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+    ?session rdf:type ts:Session ;
+             wdt:P17 wd:Q142 .
+
+    OPTIONAL { ?session rdfs:label ?sessionLabel . }
+  }
+}
+ORDER BY LCASE(STR(?sessionLabel)) STR(?session)

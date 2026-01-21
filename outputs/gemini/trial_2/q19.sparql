@@ -1,0 +1,33 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?gjInstrument ?gjInstrumentLabel ?mbRecording ?mbRecordingLabel
+WHERE {
+  # --- Global Jukebox Graph ---
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    # Find songs from Madagascar (Q1019)
+    ?gjSong rdf:type gj:Song ;
+            wdt:P495 <http://www.wikidata.org/entity/Q1019> ;
+            wdt:P870 ?gjInstrument .
+
+    # Identify the instrument and its Wikidata match
+    ?gjInstrument rdf:type gj:Instrument ;
+                  rdfs:label ?gjInstrumentLabel ;
+                  wdt:P2888 ?wdInstrument .
+  }
+
+  # --- MusicBrainz Graph ---
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    # Find MB instruments matching the same Wikidata entity
+    ?mbInstrument rdf:type mb:Instrument ;
+                  wdt:P2888 ?wdInstrument .
+
+    # Find recordings featuring this instrument
+    ?mbRecording rdf:type mb:Recording ;
+                 wdt:P870 ?mbInstrument ;
+                 rdfs:label ?mbRecordingLabel .
+  }
+}

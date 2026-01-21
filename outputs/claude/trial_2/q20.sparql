@@ -1,0 +1,43 @@
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT ?event ?eventLabel ?eventDate ?label ?labelName ?dissolutionDate
+WHERE {
+  # Find South Korean labels with dissolution dates
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?label rdf:type mb:Label .
+    ?label wdt:P576 ?dissolutionDate .
+    ?label wdt:P17 ?country .
+    ?country rdf:type mb:Area .
+    ?country wdt:P2888 wd:Q884 .
+    
+    OPTIONAL { ?label rdfs:label ?labelName . }
+  }
+  
+  # Find events with dates
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?event rdf:type mb:Event .
+    
+    # Check various date properties for events
+    {
+      ?event wdt:P585 ?eventDate .
+    } UNION {
+      ?event wdt:P580 ?eventDate .
+    } UNION {
+      ?event wdt:P582 ?eventDate .
+    }
+    
+    OPTIONAL { ?event rdfs:label ?eventLabel . }
+  }
+  
+  # Match events that happened on the same day as a label dissolution
+  FILTER (
+    (YEAR(?eventDate) = YEAR(?dissolutionDate)) &&
+    (MONTH(?eventDate) = MONTH(?dissolutionDate)) &&
+    (DAY(?eventDate) = DAY(?dissolutionDate))
+  )
+}
+ORDER BY ?eventDate

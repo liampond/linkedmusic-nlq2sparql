@@ -1,0 +1,30 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX dtl:  <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+
+SELECT DISTINCT
+  ?mbWork ?mbWorkLabel
+  ?dtlTrack ?dtlTrackLabel
+  ?dtlSolo
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    ?dtlSolo rdf:type dtl:Solo ;
+             wdt:P175 <http://www.wikidata.org/entity/Q103711> ;
+             wdt:P361 ?dtlTrack .
+
+    ?dtlTrack rdf:type dtl:Track ;
+              wdt:P2888 ?wdWork .
+
+    OPTIONAL { ?dtlTrack rdfs:label ?dtlTrackLabel . }
+  }
+
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?mbWork rdf:type mb:Work ;
+            wdt:P2888 ?wdWork .
+
+    OPTIONAL { ?mbWork rdfs:label ?mbWorkLabel . }
+  }
+}
+ORDER BY LCASE(STR(?mbWorkLabel)) LCASE(STR(?dtlTrackLabel))

@@ -1,0 +1,39 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX ts:   <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT
+  ?country ?countryLabel
+  ?song ?songLabel
+WHERE {
+  # --- Step 1: find countries (Wikidata URIs) that have > 4 ts:Session ---
+  {
+    SELECT ?country WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+        ?session rdf:type ts:Session ;
+                 wdt:P17 ?country .
+      }
+    }
+    GROUP BY ?country
+    HAVING (COUNT(DISTINCT ?session) > 4)
+  }
+
+  # --- Step 2: find Global Jukebox songs whose country of origin is one of those countries ---
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song ;
+          wdt:P495 ?country .
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+  }
+
+  # --- Labels (from LinkedMusic graphs, not Wikidata) ---
+  OPTIONAL {
+    GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> { ?country rdfs:label ?countryLabel . }
+  }
+  OPTIONAL {
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> { ?country rdfs:label ?countryLabel . }
+  }
+}
+ORDER BY LCASE(STR(COALESCE(?countryLabel, STR(?country))))
+         LCASE(STR(COALESCE(?songLabel, STR(?song))))

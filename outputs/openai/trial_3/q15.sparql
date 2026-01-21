@@ -1,0 +1,43 @@
+PREFIX dtl:  <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+  ?gender
+  (SAMPLE(?genderLabel) AS ?genderLabel)
+  (COUNT(DISTINCT ?solo) AS ?soloCount)
+WHERE {
+  # --- Dig That Lick: get solos and their performer (Wikidata entity) ---
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    ?solo rdf:type dtl:Solo ;
+          wdt:P175 ?performerWD .
+  }
+
+  # --- Subquery to avoid Virtuoso SP031 before federated SERVICE ---
+  {
+    SELECT DISTINCT ?performerWD WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+        ?solo rdf:type dtl:Solo ;
+              wdt:P175 ?performerWD .
+      }
+    }
+  }
+
+  # --- Federate to Wikidata to get performer gender (P21) ---
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?performerWD wdt:P21 ?gender .
+  }
+
+  # --- Prefer labels from LinkedMusic (MusicBrainz graph), if available ---
+  OPTIONAL {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?mbGender rdf:type mb:Artist ;   # (best available local type check; may or may not exist)
+                wdt:P2888 ?gender ;
+                rdfs:label ?genderLabel .
+    }
+  }
+}
+GROUP BY ?gender
+ORDER BY DESC(?soloCount)

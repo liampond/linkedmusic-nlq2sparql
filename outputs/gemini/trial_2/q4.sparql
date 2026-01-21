@@ -1,0 +1,18 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?song ?songLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    # Verify the entity is a Song using the local LinkedMusic type
+    ?song rdf:type gj:Song .
+    
+    # Filter for songs where the country of origin (P495) is Ethiopia (Q115)
+    ?song wdt:P495 <http://www.wikidata.org/entity/Q115> .
+    
+    # Retrieve the label when available
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+  }
+}

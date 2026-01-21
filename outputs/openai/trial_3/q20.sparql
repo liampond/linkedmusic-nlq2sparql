@@ -1,0 +1,68 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX ts:   <https://linkedmusic.ca/graphs/thesession/>
+
+SELECT DISTINCT
+  ?event ?eventLabel
+  ?eventDate
+  ?label ?labelLabel
+  ?labelDissolvedDate
+WHERE {
+  # -------------------------
+  # Subquery: compute the set of dates on which a South Korean music label dissolved
+  # (kept local to avoid Virtuoso SP031 issues before SERVICE calls; no SERVICE needed here)
+  # -------------------------
+  {
+    SELECT DISTINCT ?labelDissolvedDate ?label ?labelLabel
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+        ?label rdf:type mb:Label ;
+               wdt:P576 ?labelDissolvedDate ;
+               wdt:P17 ?labelCountry .
+        OPTIONAL { ?label rdfs:label ?labelLabel . }
+
+        # Navigate to mb:Area, then to its Wikidata Q-id via wdt:P2888 (per ontology)
+        ?labelCountry rdf:type mb:Area ;
+                      wdt:P2888 ?countryWD .
+      }
+
+      # South Korea (Q884)
+      FILTER(?countryWD = <http://www.wikidata.org/entity/Q884>)
+    }
+  }
+
+  # -------------------------
+  # Music events across LinkedMusic that have a date, and that date matches a dissolution day
+  # We scan the event-bearing datasets in the ontology: MusicBrainz (mb:Event) and TheSession (ts:Events)
+  # -------------------------
+
+  # --- MusicBrainz events ---
+  {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?event rdf:type mb:Event .
+      OPTIONAL { ?event rdfs:label ?eventLabel . }
+
+      # Prefer point-in-time; fall back to start time if needed
+      OPTIONAL { ?event wdt:P585 ?eventP585 . }
+      OPTIONAL { ?event wdt:P580 ?eventP580 . }
+
+      BIND(COALESCE(?eventP585, ?eventP580) AS ?eventDate)
+    }
+  }
+  UNION
+  # --- The Session events ---
+  {
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?event rdf:type ts:Events .
+      OPTIONAL { ?event rdfs:label ?eventLabel . }
+      ?event wdt:P580 ?eventDate .
+    }
+  }
+
+  # Match "same day" (ignore time-of-day if present)
+  FILTER(STRDT(STR(?eventDate), xsd:dateTime) != "" || true)  # no-op guard for Virtuoso scoping quirks
+  FILTER( xsd:date(?eventDate) = xsd:date(?labelDissolvedDate) )
+}
+ORDER BY ?eventDate ?event

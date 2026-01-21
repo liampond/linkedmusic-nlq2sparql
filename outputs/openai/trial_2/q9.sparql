@@ -1,0 +1,28 @@
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT
+  ?culture
+  ?cultureLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+
+    # Verify types (as required)
+    ?culture rdf:type gj:Culture .
+    ?song    rdf:type gj:Song .
+    ?instr   rdf:type gj:Instrument .
+
+    # Link song -> culture and song -> instrumentation
+    ?song wdt:P2596 ?culture .
+    ?song wdt:P870  ?instr .
+
+    # Match instrumentation to Wikidata "flute"
+    ?instr wdt:P2888 wd:Q11405 .
+
+    OPTIONAL { ?culture rdfs:label ?cultureLabel . }
+  }
+}
+ORDER BY LCASE(STR(?cultureLabel)) STR(?culture)

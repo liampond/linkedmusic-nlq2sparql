@@ -1,0 +1,25 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?song ?songLabel
+{
+    GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+        # Identify the entity as a Song
+        ?song rdf:type gj:Song .
+        ?song rdfs:label ?songLabel .
+        
+        {
+            # Option 1: The song is directly linked to Ethiopia as country of origin
+            ?song wdt:P495 <http://www.wikidata.org/entity/Q115> .
+        }
+        UNION
+        {
+            # Option 2: The song belongs to a Culture linked to Ethiopia
+            ?song wdt:P2596 ?culture .
+            ?culture rdf:type gj:Culture .
+            ?culture wdt:P17 <http://www.wikidata.org/entity/Q115> .
+        }
+    }
+}

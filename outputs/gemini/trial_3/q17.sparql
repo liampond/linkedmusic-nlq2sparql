@@ -1,0 +1,35 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT ?work ?workLabel
+WHERE {
+  # 1. Identify the Artist (Charlie Parker) in MusicBrainz using the Wikidata Q-ID
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?artist wdt:P2888 wd:Q20874 ;
+            rdf:type mb:Artist .
+  }
+
+  # 2. Find Solos in Dig That Lick performed by this Artist
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    ?solo rdf:type dtl:Solo ;
+          wdt:P175 ?artist ;      # Performed by Charlie Parker
+          wdt:P361 ?track .       # The solo is part of a specific track
+
+    ?track rdf:type dtl:Track ;
+           wdt:P2888 ?recording . # The track corresponds to a MusicBrainz Recording
+  }
+
+  # 3. Find the Work associated with the Recording in MusicBrainz
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?recording rdf:type mb:Recording ;
+               wdt:P2550 ?work .  # P2550 links the recording to the Work (composition)
+
+    ?work rdf:type mb:Work .
+    
+    OPTIONAL { ?work rdfs:label ?workLabel . }
+  }
+}

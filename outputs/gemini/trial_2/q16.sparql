@@ -1,0 +1,29 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?song ?songLabel
+WHERE {
+  # Subquery: Find countries (Wikidata URIs) with more than 4 sessions in The Session graph
+  {
+    SELECT ?country
+    WHERE {
+      GRAPH ts: {
+        ?session rdf:type ts:Session ;
+                 wdt:P17 ?country .
+      }
+    }
+    GROUP BY ?country
+    HAVING (COUNT(?session) > 4)
+  }
+
+  # Main Query: Find songs in Global Jukebox from those countries
+  GRAPH gj: {
+    ?song rdf:type gj:Song ;
+          wdt:P495 ?country .
+    
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+  }
+}

@@ -1,0 +1,90 @@
+I'll work through this step by step.
+
+## Step 1: Examine the ontology and extract relevant parts
+
+Looking at the ontology, I need to find entities that represent compositions or recordings:
+
+**Compositions:**
+- `diamm:Composition` - has `rdfs:label "label"`
+- `mb:Work` - has `rdfs:label "label"` (works/compositions in MusicBrainz)
+
+**Recordings:**
+- `mb:Recording` - has `rdfs:label "label"`
+- `ts:Recording` - has `rdfs:label "label"`
+- `dtl:Track` - has `rdfs:label "label"`
+- `gj:Song` - has `rdfs:label "label"`
+
+## Step 2: Q-IDs needed
+
+Since this query asks to find entities based on text content in the title (the word "death"), I should use string matching on the labels rather than Q-ID matching. This is explicitly allowed per the instructions for queries that request finding entities based on text/string content.
+
+## Step 3: Build the SPARQL query
+
+I'll search across all relevant entity types for labels containing "death":
+
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+
+SELECT DISTINCT ?entity ?label ?type WHERE {
+  {
+    # DIAMM Compositions
+    GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+      ?entity rdf:type diamm:Composition .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+      BIND("DIAMM Composition" AS ?type)
+    }
+  }
+  UNION
+  {
+    # MusicBrainz Works (compositions)
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?entity rdf:type mb:Work .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+      BIND("MusicBrainz Work" AS ?type)
+    }
+  }
+  UNION
+  {
+    # MusicBrainz Recordings
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?entity rdf:type mb:Recording .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+      BIND("MusicBrainz Recording" AS ?type)
+    }
+  }
+  UNION
+  {
+    # The Session Recordings
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?entity rdf:type ts:Recording .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+      BIND("The Session Recording" AS ?type)
+    }
+  }
+  UNION
+  {
+    # Dig That Lick Tracks
+    GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+      ?entity rdf:type dtl:Track .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+      BIND("Dig That Lick Track" AS ?type)
+    }
+  }
+  UNION
+  {
+    # Global Jukebox Songs
+    GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+      ?entity rdf:type gj:Song .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))

@@ -1,0 +1,18 @@
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?timeSig
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+    # Verify the entity is a TuneSetting
+    ?setting rdf:type ts:TuneSetting .
+    
+    # Filter for the genre 'Jig' (Q170305)
+    ?setting wdt:P136 <http://www.wikidata.org/entity/Q170305> .
+    
+    # Retrieve the time signature
+    ?setting wdt:P3440 ?timeSig .
+  }
+}
+ORDER BY ?timeSig

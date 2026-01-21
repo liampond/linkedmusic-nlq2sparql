@@ -1,0 +1,25 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+
+SELECT (AVG(?labelCount) AS ?averageLabelCount)
+WHERE {
+  {
+    SELECT ?artist (COUNT(DISTINCT ?label) AS ?labelCount)
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+        ?artist a mb:Artist .
+        ?artist wdt:P21 wd:Q6581072 .
+        ?artist wdt:P264 ?label .
+        ?label a mb:Label .
+        ?artist wdt:P2888 ?wikidataURI .
+      }
+    }
+    GROUP BY ?artist
+  }
+  
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?wikidataURI wdt:P106 wd:Q177220 .
+  }
+}

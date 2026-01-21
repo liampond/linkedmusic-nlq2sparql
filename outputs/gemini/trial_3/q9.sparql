@@ -1,0 +1,35 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT ?culture ?cultureLabel
+WHERE {
+  # Step 1: Subquery to find distinct instruments used in Global Jukebox songs
+  # This optimizes the federated query by reducing the number of candidates to check
+  {
+    SELECT DISTINCT ?instrument
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+        ?song rdf:type gj:Song .
+        ?song wdt:P870 ?instrument .
+      }
+    }
+  }
+
+  # Step 2: Federated query to check if the instrument is a Flute (Q11405) or a subclass of it
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?instrument wdt:P279* wd:Q11405 .
+  }
+
+  # Step 3: Match the valid songs to their cultures in the local graph
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song .
+    ?song wdt:P870 ?instrument .
+    ?song wdt:P2596 ?culture .
+    
+    ?culture rdf:type gj:Culture .
+    ?culture rdfs:label ?cultureLabel .
+  }
+}

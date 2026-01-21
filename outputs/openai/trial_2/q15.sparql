@@ -1,0 +1,39 @@
+PREFIX dtl:  <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+  ?gender
+  (SAMPLE(?genderLabel) AS ?genderLabel)
+  (COUNT(?solo) AS ?soloCount)
+WHERE {
+  # --- Dig That Lick: solos and their performers ---
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    ?solo rdf:type dtl:Solo ;
+          wdt:P175 ?dtlPerformer .
+  }
+
+  # --- Link DTL performer to a reconciled Wikidata entity (via P2888) ---
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    ?dtlPerformer wdt:P2888 ?wdArtist .
+  }
+
+  # --- Find the corresponding MusicBrainz artist reconciled to the same Wikidata entity ---
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?mbArtist rdf:type mb:Artist ;
+              wdt:P2888 ?wdArtist ;
+              wdt:P21 ?gender .
+    OPTIONAL { ?mbArtist rdfs:label ?mbArtistLabel . }
+  }
+
+  # --- Get a label for the gender from LinkedMusic if present; otherwise fall back to the URI ---
+  OPTIONAL {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?gender rdfs:label ?genderLabel .
+    }
+  }
+}
+GROUP BY ?gender
+ORDER BY DESC(?soloCount)

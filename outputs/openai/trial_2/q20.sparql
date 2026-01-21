@@ -1,0 +1,62 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX ts:   <https://linkedmusic.ca/graphs/thesession/>
+
+SELECT DISTINCT
+  ?event ?eventLabel
+  ?eventDate
+  ?label ?labelLabel
+  ?labelDissolvedDate
+WHERE {
+  # --- Music events in LinkedMusic (scan across relevant DBs) ---
+
+  {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?event rdf:type mb:Event ;
+             rdfs:label ?eventLabel .
+
+      # Prefer point-in-time; fall back to start time if needed
+      OPTIONAL { ?event wdt:P585 ?eventDate . }
+      OPTIONAL { ?event wdt:P580 ?eventStart . }
+
+      BIND(COALESCE(?eventDate, ?eventStart) AS ?eventDateRaw)
+      FILTER(BOUND(?eventDateRaw))
+
+      # Normalize to day (xsd:date)
+      BIND(xsd:date(?eventDateRaw) AS ?eventDate)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?event rdf:type ts:Events ;
+             rdfs:label ?eventLabel ;
+             wdt:P580 ?eventStart .
+
+      BIND(xsd:date(?eventStart) AS ?eventDate)
+    }
+  }
+
+  # --- South Korean music labels that dissolved on that same day (from LinkedMusic if present) ---
+  # We use MusicBrainz graph for labels, and use wdt:P17 -> mb:Area -> wdt:P2888 to get the country QID.
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?label rdf:type mb:Label ;
+           rdfs:label ?labelLabel ;
+           wdt:P576 ?labelDissolvedDateRaw ;
+           wdt:P17 ?labelCountryArea .
+
+    ?labelCountryArea rdf:type mb:Area ;
+                      wdt:P2888 ?labelCountryWikidata .
+
+    # South Korea (Q884)
+    FILTER(?labelCountryWikidata = <http://www.wikidata.org/entity/Q884>)
+
+    BIND(xsd:date(?labelDissolvedDateRaw) AS ?labelDissolvedDate)
+  }
+
+  # Same-day condition
+  FILTER(?eventDate = ?labelDissolvedDate)
+}
+ORDER BY ?eventDate ?eventLabel ?labelLabel

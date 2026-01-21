@@ -1,0 +1,58 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+
+SELECT DISTINCT
+  ?gjInstrument ?gjInstrumentLabel
+  ?mbInstrument ?mbInstrumentLabel
+  ?mbRecording ?mbRecordingLabel
+WHERE {
+  # --- Global Jukebox: instruments featured in songs indigenous to Madagascar ---
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?gjSong rdf:type gj:Song .
+
+    # "indigenous to" is modeled as wdt:P2341 and links directly to a Wikidata URI
+    # Madagascar (Q1019)
+    ?gjSong wdt:P2341 <http://www.wikidata.org/entity/Q1019> .
+
+    # Song instrumentation -> instruments
+    ?gjSong wdt:P870 ?gjInstrument .
+    ?gjInstrument rdf:type gj:Instrument .
+
+    OPTIONAL { ?gjInstrument rdfs:label ?gjInstrumentLabel . }
+
+    # Reconciliation to Wikidata for cross-dataset matching
+    ?gjInstrument wdt:P2888 ?wdInstrument .
+  }
+
+  # --- Subquery to avoid Virtuoso SP031 before federated SERVICE (even though we don't need SERVICE here) ---
+  {
+    SELECT DISTINCT ?wdInstrument WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+        ?gjSong rdf:type gj:Song ;
+                wdt:P2341 <http://www.wikidata.org/entity/Q1019> ;
+                wdt:P870 ?gjInstrument .
+        ?gjInstrument rdf:type gj:Instrument ;
+                      wdt:P2888 ?wdInstrument .
+      }
+    }
+  }
+
+  # --- MusicBrainz: recordings featuring the same instruments (matched via Wikidata exact match) ---
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?mbInstrument rdf:type mb:Instrument ;
+                  wdt:P2888 ?wdInstrument .
+    OPTIONAL { ?mbInstrument rdfs:label ?mbInstrumentLabel . }
+
+    ?mbRecording rdf:type mb:Recording ;
+                 wdt:P870 ?mbInstrument .
+    OPTIONAL { ?mbRecording rdfs:label ?mbRecordingLabel . }
+  }
+}
+ORDER BY
+  LCASE(STR(?gjInstrumentLabel))
+  LCASE(STR(?mbInstrumentLabel))
+  LCASE(STR(?mbRecordingLabel))

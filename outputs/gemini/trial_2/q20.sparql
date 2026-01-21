@@ -1,0 +1,42 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+
+SELECT DISTINCT ?event ?eventLabel
+WHERE {
+  # 1. Find the dates where a South Korean label dissolved
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?label rdf:type mb:Label .
+    ?label wdt:P576 ?date .         # Dissolved date
+    ?label wdt:P17 ?area .          # Linked Area
+    
+    # Verify the Area is South Korea via Wikidata matching
+    ?area rdf:type mb:Area .
+    ?area wdt:P2888 <http://www.wikidata.org/entity/Q884> . # Q884 = South Korea
+  }
+
+  # 2. Find events that happened on that date in relevant databases
+  {
+    # Check MusicBrainz Events
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?event rdf:type mb:Event .
+      # Match date against Point in Time OR Start Time
+      { ?event wdt:P585 ?date . } UNION { ?event wdt:P580 ?date . }
+      
+      OPTIONAL { ?event rdfs:label ?eventLabel . }
+    }
+  }
+  UNION
+  {
+    # Check The Session Events
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?event rdf:type ts:Events .
+      # Match date against Start Time
+      ?event wdt:P580 ?date .
+      
+      OPTIONAL { ?event rdfs:label ?eventLabel . }
+    }
+  }
+}

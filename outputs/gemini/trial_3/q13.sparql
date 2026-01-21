@@ -1,0 +1,34 @@
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT (AVG(?labelCount) AS ?averageLabels)
+WHERE {
+    # Subquery to identify female artists, their reconciled IDs, and count their local labels.
+    # This runs locally first to ensure efficiency and avoid SP031 errors.
+    {
+        SELECT ?artist ?wdArtist (COUNT(DISTINCT ?label) AS ?labelCount)
+        WHERE {
+            GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+                # 1. Verify Entity Type
+                ?artist rdf:type mb:Artist .
+                
+                # 2. Filter by Gender: Female (Q6581072)
+                ?artist wdt:P21 wd:Q6581072 .
+                
+                # 3. Get Reconciled Wikidata ID
+                ?artist wdt:P2888 ?wdArtist .
+                
+                # 4. Count Record Labels (P264)
+                ?artist wdt:P264 ?label .
+            }
+        }
+        GROUP BY ?artist ?wdArtist
+    }
+
+    # Federated query to verify the artist is a Singer (Q177220)
+    SERVICE <https://query.wikidata.org/sparql> {
+        ?wdArtist wdt:P106 wd:Q177220 .
+    }
+}

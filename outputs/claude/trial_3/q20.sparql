@@ -1,0 +1,88 @@
+I'll work through this step by step.
+
+## Step 1: Examine the Ontology
+
+Looking at the ontology, I need to find:
+1. **Music events** - I can see `mb:Event` in MusicBrainz and `ts:Events` in The Session
+2. **Music labels** - I can see `mb:Label` in MusicBrainz
+3. **South Korean** - Need to check country information
+4. **Dissolved date** - `mb:Label` has `wdt:P576 "dissolved, abolished or demolished date"`
+
+For mb:Event, I see:
+- `wdt:P585 "point in time"` - the date of the event
+- `wdt:P580 "start time"` and `wdt:P582 "end time"`
+
+For mb:Label:
+- `wdt:P576 "dissolved, abolished or demolished date"` 
+- `wdt:P17 mb:Area` - links to an Area (country)
+
+For mb:Area:
+- `wdt:P2888 "exact match"` - links to Wikidata
+
+## Step 2: Find Required Q-IDs
+
+I need to find the Q-ID for South Korea.
+
+Let me search for the South Korea Q-ID on Wikidata.
+
+**South Korea**: Q884 (Republic of Korea)
+
+Let me verify this is correct - South Korea's Wikidata ID is Q884.
+
+## Step 3: Build the SPARQL Query
+
+The logic:
+1. Find mb:Label entities that have `wdt:P17` pointing to an mb:Area
+2. That mb:Area should have `wdt:P2888` pointing to wd:Q884 (South Korea)
+3. Those labels should have a `wdt:P576` (dissolved date)
+4. Find mb:Event entities that have a date (`wdt:P585`, `wdt:P580`, or `wdt:P582`) matching the dissolution date
+5. Also check ts:Events which have `wdt:P580` and `wdt:P582`
+
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?event ?eventLabel ?eventDate WHERE {
+  # First, find dissolution dates of South Korean labels
+  {
+    SELECT DISTINCT ?dissolutionDate WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+        ?label rdf:type mb:Label .
+        ?label wdt:P576 ?dissolutionDate .
+        ?label wdt:P17 ?country .
+        ?country rdf:type mb:Area .
+        ?country wdt:P2888 wd:Q884 .
+      }
+    }
+  }
+  
+  # Now find events that happened on those dates
+  {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?event rdf:type mb:Event .
+      OPTIONAL { ?event rdfs:label ?eventLabel . }
+      {
+        ?event wdt:P585 ?eventDate .
+        FILTER(xsd:date(?eventDate) = xsd:date(?dissolutionDate))
+      }
+      UNION
+      {
+        ?event wdt:P580 ?eventDate .
+        FILTER(xsd:date(?eventDate) = xsd:date(?dissolutionDate))
+      }
+      UNION
+      {
+        ?event wdt:P582 ?eventDate .
+        FILTER(xsd:date(?eventDate) = xsd:date(?dissolutionDate))
+      }
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?event rdf:type ts:Events .
+      OPTIONAL { ?

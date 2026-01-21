@@ -1,0 +1,58 @@
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?label ?entity
+WHERE {
+  {
+    # DIAMM: Search Compositions
+    GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+      ?entity rdf:type diamm:Composition .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+    }
+  }
+  UNION
+  {
+    # Dig That Lick: Search Tracks
+    GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+      ?entity rdf:type dtl:Track .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+    }
+  }
+  UNION
+  {
+    # The Global Jukebox: Search Songs
+    GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+      ?entity rdf:type gj:Song .
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+    }
+  }
+  UNION
+  {
+    # The Session: Search Tunes and Recordings
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      { ?entity rdf:type ts:Tune . } UNION { ?entity rdf:type ts:Recording . }
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+    }
+  }
+  UNION
+  {
+    # MusicBrainz: Search Works and Recordings
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      { ?entity rdf:type mb:Work . } UNION { ?entity rdf:type mb:Recording . }
+      ?entity rdfs:label ?label .
+      FILTER(CONTAINS(LCASE(?label), "death"))
+    }
+  }
+}
+ORDER BY ?label

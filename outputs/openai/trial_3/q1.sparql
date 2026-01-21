@@ -1,0 +1,20 @@
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wdt:   <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT
+  ?composition ?compositionLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+    # Verify types (LinkedMusic types, not Wikidata)
+    ?composition rdf:type diamm:Composition ;
+                 wdt:P86 ?composer .
+
+    ?composer rdf:type diamm:Person ;
+              wdt:P2888 <http://www.wikidata.org/entity/Q170872> .
+
+    OPTIONAL { ?composition rdfs:label ?compositionLabel . }
+  }
+}
+ORDER BY LCASE(STR(?compositionLabel)) STR(?composition)

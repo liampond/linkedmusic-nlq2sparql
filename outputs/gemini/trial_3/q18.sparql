@@ -1,0 +1,45 @@
+SELECT DISTINCT ?entity ?label
+WHERE {
+  {
+    # Check DIAMM for Compositions
+    GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+      ?entity rdf:type diamm:Composition .
+      ?entity rdfs:label ?label .
+    }
+  }
+  UNION
+  {
+    # Check Dig That Lick for Tracks
+    GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+      ?entity rdf:type dtl:Track .
+      ?entity rdfs:label ?label .
+    }
+  }
+  UNION
+  {
+    # Check The Global Jukebox for Songs
+    GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+      ?entity rdf:type gj:Song .
+      ?entity rdfs:label ?label .
+    }
+  }
+  UNION
+  {
+    # Check The Session for Tunes (Compositions) and Recordings
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      { ?entity rdf:type ts:Tune . } UNION { ?entity rdf:type ts:Recording . }
+      ?entity rdfs:label ?label .
+    }
+  }
+  UNION
+  {
+    # Check MusicBrainz for Works (Compositions) and Recordings
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      { ?entity rdf:type mb:Work . } UNION { ?entity rdf:type mb:Recording . }
+      ?entity rdfs:label ?label .
+    }
+  }
+  
+  # Perform the string match as requested
+  FILTER (REGEX(?label, "death", "i"))
+}

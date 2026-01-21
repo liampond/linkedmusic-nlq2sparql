@@ -1,0 +1,15 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+
+SELECT DISTINCT ?timeSignature
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+    ?tuneSetting rdf:type ts:TuneSetting .
+    ?tuneSetting wdt:P136 wd:Q1221817 .
+    ?tuneSetting wdt:P3440 ?timeSignature .
+  }
+}
+ORDER BY ?timeSignature

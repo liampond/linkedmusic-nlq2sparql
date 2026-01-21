@@ -1,0 +1,29 @@
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+SELECT ?band ?bandLabel (COUNT(DISTINCT ?sharedMember) AS ?sharedMemberCount)
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+
+    # --- Find the MusicBrainz entity that is reconciled to Radiohead (Wikidata Q183)
+    ?radiohead rdf:type mb:Artist ;
+               wdt:P2888 wd:Q183 ;
+               wdt:P527 ?sharedMember .
+
+    # --- Candidate band that has the same member
+    ?band rdf:type mb:Artist ;
+          wdt:P527 ?sharedMember ;
+          wdt:P31 wd:Q215380 .
+
+    # --- Exclude Radiohead itself
+    FILTER(?band != ?radiohead)
+
+    OPTIONAL { ?band rdfs:label ?bandLabel }
+  }
+}
+GROUP BY ?band ?bandLabel
+HAVING (COUNT(DISTINCT ?sharedMember) >= 2)
+ORDER BY DESC(?sharedMemberCount) ?bandLabel ?band

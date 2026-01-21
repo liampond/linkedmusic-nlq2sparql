@@ -1,0 +1,22 @@
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT ?recording ?recordingLabel ?artist ?artistLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    # Find the artist that is reconciled to Taylor Swift (Q26876)
+    ?artist rdf:type mb:Artist .
+    ?artist wdt:P2888 wd:Q26876 .
+    
+    # Find recordings performed by this artist
+    ?recording rdf:type mb:Recording .
+    ?recording wdt:P175 ?artist .
+    
+    # Get labels
+    OPTIONAL { ?recording rdfs:label ?recordingLabel . }
+    OPTIONAL { ?artist rdfs:label ?artistLabel . }
+  }
+}

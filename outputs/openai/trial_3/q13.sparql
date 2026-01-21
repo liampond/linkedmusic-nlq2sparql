@@ -1,0 +1,29 @@
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT (AVG(?labelCount) AS ?avgRecordLabelsPerFemaleSinger)
+WHERE {
+  {
+    # Per-artist label count (then averaged in the outer query)
+    SELECT ?artist (COUNT(DISTINCT ?label) AS ?labelCount)
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+        # Verify types in LinkedMusic
+        ?artist rdf:type mb:Artist .
+        ?label  rdf:type mb:Label .
+
+        # Female (Wikidata Q6581072)
+        ?artist wdt:P21 <http://www.wikidata.org/entity/Q6581072> .
+
+        # Singer (Wikidata Q177220)
+        ?artist wdt:P106 <http://www.wikidata.org/entity/Q177220> .
+
+        # "signed with" / record label (MusicBrainz graph uses wdt:P264 -> mb:Label)
+        ?artist wdt:P264 ?label .
+      }
+    }
+    GROUP BY ?artist
+  }
+}

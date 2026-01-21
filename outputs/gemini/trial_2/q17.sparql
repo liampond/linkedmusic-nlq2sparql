@@ -1,0 +1,34 @@
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?mbWork ?mbWorkLabel
+WHERE {
+  # --- Dig That Lick Graph ---
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    # 1. Find the Solo entity
+    ?solo rdf:type dtl:Solo .
+    
+    # 2. Check that the performer is Charlie Parker (Q20874)
+    ?solo wdt:P175 <http://www.wikidata.org/entity/Q20874> .
+    
+    # 3. Find the Track the solo belongs to
+    ?solo wdt:P361 ?track .
+    ?track rdf:type dtl:Track .
+    
+    # 4. Get the reconciled Wikidata URI for the track
+    ?track wdt:P2888 ?reconciledEntity .
+  }
+
+  # --- MusicBrainz Graph ---
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    # 5. Find the MusicBrainz Work linked to the same Wikidata URI
+    ?mbWork rdf:type mb:Work .
+    ?mbWork wdt:P2888 ?reconciledEntity .
+    
+    # 6. Get the label
+    OPTIONAL { ?mbWork rdfs:label ?mbWorkLabel . }
+  }
+}

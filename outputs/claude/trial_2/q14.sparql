@@ -1,0 +1,20 @@
+gj:Song
+	rdfs:label	"label" ;
+	wdt:P136	"genre" ;
+	wdt:P585	"point in time" ;
+	wdt:P175	"performer" ;
+	wdt:P870	"instrumentation" ;
+	wdt:P2341	"indigenous to" ;
+	wdt:P2596	gj:Culture ;
+	wdt:P495	"country of origin" ;
+	wdt:P10893	"recordist" .
+
+gj:Culture
+	rdfs:label	"label" ;
+	wdt:P17	"country" ;
+	wdt:P2888	"exact match" ;
+	wdt:P361	"part of" ;
+	wdt:P2341	"indigenous to" ;
+	wdt:P2936	"language used" ;
+	wdt:P4970	"alternative name" ;
+	skos:altLabel	"alt label" .

@@ -1,0 +1,68 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX dtl:   <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX ts:    <https://linkedmusic.ca/graphs/thesession/>
+PREFIX gj:    <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX mb:    <https://linkedmusic.ca/graphs/musicbrainz/>
+
+SELECT DISTINCT ?entity ?label ?type ?sourceGraph
+WHERE {
+  {
+    GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+      ?entity rdf:type diamm:Composition ;
+              rdfs:label ?label .
+      BIND(diamm:Composition AS ?type)
+      BIND(<https://linkedmusic.ca/graphs/diamm/> AS ?sourceGraph)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?entity rdf:type mb:Work ;
+              rdfs:label ?label .
+      BIND(mb:Work AS ?type)
+      BIND(<https://linkedmusic.ca/graphs/musicbrainz/> AS ?sourceGraph)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?entity rdf:type mb:Recording ;
+              rdfs:label ?label .
+      BIND(mb:Recording AS ?type)
+      BIND(<https://linkedmusic.ca/graphs/musicbrainz/> AS ?sourceGraph)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?entity rdf:type ts:Recording ;
+              rdfs:label ?label .
+      BIND(ts:Recording AS ?type)
+      BIND(<https://linkedmusic.ca/graphs/thesession/> AS ?sourceGraph)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+      ?entity rdf:type dtl:Track ;
+              rdfs:label ?label .
+      BIND(dtl:Track AS ?type)
+      BIND(<https://linkedmusic.ca/graphs/dig-that-lick/> AS ?sourceGraph)
+    }
+  }
+  UNION
+  {
+    GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+      ?entity rdf:type gj:Song ;
+              rdfs:label ?label .
+      BIND(gj:Song AS ?type)
+      BIND(<https://linkedmusic.ca/graphs/theglobaljukebox/> AS ?sourceGraph)
+    }
+  }
+
+  FILTER(CONTAINS(LCASE(STR(?label)), "death"))
+}
+ORDER BY LCASE(STR(?label)) ?entity

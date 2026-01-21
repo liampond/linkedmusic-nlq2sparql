@@ -1,0 +1,17 @@
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT ?song ?songLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song .
+
+    # Ethiopian songs: country of origin = Ethiopia (Wikidata Q115)
+    ?song wdt:P495 <http://www.wikidata.org/entity/Q115> .
+
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+  }
+}
+ORDER BY LCASE(STR(?songLabel)) STR(?song)

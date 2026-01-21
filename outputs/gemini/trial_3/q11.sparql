@@ -1,0 +1,29 @@
+PREFIX diamm: <https://linkedmusic.ca/graphs/diamm/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?archive ?archiveLabel
+WHERE {
+    # Subquery to retrieve local DIAMM archives and their Wikidata links.
+    # This prevents the Service block from running on unbound variables or incorrect scopes.
+    {
+        SELECT ?archive ?archiveLabel ?wdEntity
+        WHERE {
+            GRAPH <https://linkedmusic.ca/graphs/diamm/> {
+                ?archive rdf:type diamm:Archive ;
+                         rdfs:label ?archiveLabel ;
+                         wdt:P2888 ?wdEntity .
+            }
+        }
+    }
+
+    # Federated query to retrieve the inception date from Wikidata
+    SERVICE <https://query.wikidata.org/sparql> {
+        ?wdEntity wdt:P571 ?inception .
+    }
+
+    # Filter for dates after the year 1900
+    FILTER(YEAR(?inception) > 1900)
+}

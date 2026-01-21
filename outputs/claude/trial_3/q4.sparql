@@ -1,0 +1,13 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT ?song ?songLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song a gj:Song .
+    ?song wdt:P495 wd:Q115 .
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+  }
+}

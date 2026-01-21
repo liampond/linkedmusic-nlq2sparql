@@ -1,0 +1,22 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?recording ?recordingLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    # Find Taylor Swift artist entity
+    ?artist rdf:type mb:Artist .
+    ?artist wdt:P2888 wd:Q26876 .
+    
+    # Find recordings performed by Taylor Swift
+    ?recording rdf:type mb:Recording .
+    ?recording wdt:P175 ?artist .
+    
+    # Get the label for the recording
+    OPTIONAL { ?recording rdfs:label ?recordingLabel . }
+  }
+}
+ORDER BY ?recordingLabel

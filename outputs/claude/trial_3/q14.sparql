@@ -1,0 +1,25 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?song ?songLabel ?countryURI
+WHERE {
+  # Get songs from Global Jukebox with their country of origin
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song .
+    ?song wdt:P495 ?countryURI .
+    OPTIONAL { ?song rdfs:label ?songLabel . }
+  }
+  
+  # Subquery to get the list of African countries
+  {
+    SELECT ?countryURI WHERE {
+      SERVICE <https://query.wikidata.org/sparql> {
+        ?countryURI wdt:P30 wd:Q15 .
+      }
+    }
+  }
+}
+ORDER BY ?songLabel

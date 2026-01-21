@@ -1,0 +1,24 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+
+SELECT DISTINCT ?culture ?cultureLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    # Find songs with flute instrumentation
+    ?song rdf:type gj:Song .
+    ?song wdt:P870 wd:Q11405 .
+    
+    # Get the culture associated with the song
+    ?song wdt:P2596 ?culture .
+    
+    # Verify culture type
+    ?culture rdf:type gj:Culture .
+    
+    # Get the culture label
+    ?culture rdfs:label ?cultureLabel .
+  }
+}
+ORDER BY ?cultureLabel

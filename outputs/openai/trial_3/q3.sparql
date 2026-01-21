@@ -1,0 +1,25 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT
+  ?recording ?recordingLabel
+  ?artist ?artistLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+
+    # Verify types explicitly in LinkedMusic
+    ?recording rdf:type mb:Recording ;
+               wdt:P175 ?artist .
+
+    ?artist rdf:type mb:Artist ;
+            wdt:P2888 wd:Q26876 .
+
+    # Labels from LinkedMusic (when available)
+    OPTIONAL { ?recording rdfs:label ?recordingLabel . }
+    OPTIONAL { ?artist rdfs:label ?artistLabel . }
+  }
+}
+ORDER BY LCASE(STR(?recordingLabel)) STR(?recording)

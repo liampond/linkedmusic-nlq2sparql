@@ -1,0 +1,25 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?work ?workLabel
+WHERE {
+  # Find solos in Dig That Lick performed by Charlie Parker
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    ?solo rdf:type dtl:Solo .
+    ?solo wdt:P175 wd:Q103767 .
+    ?solo wdt:P361 ?track .
+    ?track rdf:type dtl:Track .
+    ?track wdt:P2888 ?trackMatch .
+  }
+  
+  # Find MusicBrainz works that match the track's exact match URI
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?work rdf:type mb:Work .
+    ?work wdt:P2888 ?trackMatch .
+    OPTIONAL { ?work rdfs:label ?workLabel . }
+  }
+}

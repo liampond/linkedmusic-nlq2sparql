@@ -1,0 +1,18 @@
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?session ?sessionLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+    # Verify the type of the entity
+    ?session rdf:type ts:Session .
+    
+    # Filter for sessions where the country (P17) is France (Q142)
+    ?session wdt:P17 <http://www.wikidata.org/entity/Q142> .
+    
+    # Get the label if available
+    OPTIONAL { ?session rdfs:label ?sessionLabel }
+  }
+}

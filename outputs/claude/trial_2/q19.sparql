@@ -1,0 +1,71 @@
+I'll work through this step-by-step.
+
+## Step 1: Examine the ontology and extract relevant parts
+
+From the Global Jukebox ontology:
+- `gj:Song` has `wdt:P2341 "indigenous to"` and `wdt:P870 "instrumentation"`
+- `gj:Instrument` has `rdfs:label "label"`, `wdt:P2888 "exact match"`, and `wdt:P2341 gj:Culture, "indigenous to"`
+
+From MusicBrainz ontology:
+- `mb:Recording` has `wdt:P870 mb:Instrument` (instrumentation)
+- `mb:Instrument` has `rdfs:label "label"` and `wdt:P2888 "exact match"`
+
+The key insight is:
+1. Find gj:Song entities that are indigenous to Madagascar (wdt:P2341)
+2. Get their instruments (wdt:P870)
+3. Match those instruments to MusicBrainz instruments via wdt:P2888 (Wikidata reconciliation)
+4. Find mb:Recording entities that feature those instruments
+
+## Step 2: Find the Q-ID for Madagascar
+
+Let me search for Madagascar's Wikidata Q-ID.
+
+Madagascar is **Q1019** on Wikidata.
+
+Let me verify: Madagascar (country in Africa) - Q1019 is correct.
+
+## Step 3: Build the SPARQL query
+
+Looking at the ontology:
+- `gj:Song wdt:P2341 "indigenous to"` - this links directly to a Wikidata URI
+- `gj:Song wdt:P870 "instrumentation"` - this is instrumentation
+- `gj:Instrument wdt:P2888 "exact match"` - links to Wikidata
+- `mb:Recording wdt:P870 mb:Instrument` - links to mb:Instrument
+- `mb:Instrument wdt:P2888 "exact match"` - links to Wikidata
+
+The strategy is:
+1. Find gj:Song indigenous to Madagascar (Q1019)
+2. Get instruments from those songs
+3. Get the Wikidata Q-IDs for those instruments
+4. Find mb:Instrument with matching Q-IDs
+5. Find mb:Recording featuring those instruments
+
+```sparql
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?gjInstrument ?gjInstrumentLabel ?gjInstrumentWikidata 
+                ?mbInstrument ?mbInstrumentLabel 
+                ?mbRecording ?mbRecordingLabel
+WHERE {
+  # Step 1: Find songs in Global Jukebox indigenous to Madagascar
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song .
+    ?song wdt:P2341 wd:Q1019 .  # indigenous to Madagascar
+    ?song wdt:P870 ?gjInstrument .  # instrumentation
+    
+    # Verify instrument type and get its label and Wikidata match
+    ?gjInstrument rdf:type gj:Instrument .
+    OPTIONAL { ?gjInstrument rdfs:label ?gjInstrumentLabel . }
+    OPTIONAL { ?gjInstrument wdt:P2888 ?gjInstrumentWikidata . }
+  }
+  
+  # Step 2: Find MusicBrainz instruments that match the same Wikidata entity
+  OPTIONAL {
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?mbInstrument rdf:type mb:Instrument .
+      ?mbInstrument wdt:P2888 ?gjInstrumentWikidata .

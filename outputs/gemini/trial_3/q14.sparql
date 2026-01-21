@@ -1,0 +1,26 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT ?song ?songLabel
+WHERE {
+  # 1. Federated Query (Subquery): Find all countries in Africa (Q15)
+  # This retrieves the list of Country URIs from Wikidata first.
+  {
+    SELECT ?country
+    WHERE {
+      SERVICE <https://query.wikidata.org/sparql> {
+        ?country wdt:P30 wd:Q15 . # P30 = continent, Q15 = Africa
+      }
+    }
+  }
+
+  # 2. Local Query: Find GJ Songs from those countries
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?song rdf:type gj:Song .
+    ?song rdfs:label ?songLabel .
+    ?song wdt:P495 ?country . # P495 = country of origin
+  }
+}

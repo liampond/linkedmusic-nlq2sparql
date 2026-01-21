@@ -1,0 +1,27 @@
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT ?track ?trackLabel
+WHERE {
+  # Subquery to retrieve local DTL data and populate variables for the SERVICE call
+  # This prevents Virtuoso Error SP031
+  {
+    SELECT ?track ?trackLabel ?location
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+        ?track rdf:type dtl:Track .
+        ?track rdfs:label ?trackLabel .
+        ?track wdt:P8546 ?location .
+      }
+    }
+  }
+
+  # Federated query to verify if the location is New York City (Q60) 
+  # or recursively located within New York City.
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?location wdt:P131* wd:Q60 .
+  }
+}

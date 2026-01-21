@@ -1,0 +1,26 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?culture ?cultureLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    # Find instruments that are reconciled to Wikidata flute (Q11405)
+    ?instrument rdf:type gj:Instrument .
+    ?instrument wdt:P2888 <http://www.wikidata.org/entity/Q11405> .
+    
+    # Find songs that use this instrument
+    ?song rdf:type gj:Song .
+    ?song wdt:P870 ?instrument .
+    
+    # Find the culture associated with the song
+    ?song wdt:P2596 ?culture .
+    ?culture rdf:type gj:Culture .
+    
+    # Get the culture label
+    OPTIONAL { ?culture rdfs:label ?cultureLabel . }
+  }
+}
+ORDER BY ?cultureLabel

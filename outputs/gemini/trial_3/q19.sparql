@@ -1,0 +1,32 @@
+PREFIX gj: <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT ?gjSong ?gjSongLabel ?instrumentWD ?mbInstrumentLabel ?mbRecording ?mbRecordingLabel
+WHERE {
+  # --- Part 1: Global Jukebox ---
+  # Find songs indigenous to Madagascar and their instruments
+  GRAPH gj: {
+    ?gjSong rdf:type gj:Song ;
+            rdfs:label ?gjSongLabel ;
+            wdt:P2596 ?culture ;           # Link Song to Culture
+            wdt:P870 ?instrumentWD .       # Link Song to Instrument (Wikidata URI)
+
+    ?culture rdf:type gj:Culture ;
+             wdt:P17 <http://www.wikidata.org/entity/Q1019> . # Madagascar (Q1019)
+  }
+
+  # --- Part 2: MusicBrainz ---
+  # Find recordings featuring the same instruments found in Part 1
+  GRAPH mb: {
+    ?mbRecording rdf:type mb:Recording ;
+                 rdfs:label ?mbRecordingLabel ;
+                 wdt:P870 ?mbInstrument .  # Link Recording to MB Instrument
+
+    ?mbInstrument rdf:type mb:Instrument ;
+                  rdfs:label ?mbInstrumentLabel ;
+                  wdt:P2888 ?instrumentWD . # Match against the Wikidata URI from GJ
+  }
+}

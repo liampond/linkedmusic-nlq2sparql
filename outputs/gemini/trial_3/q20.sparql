@@ -1,0 +1,46 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX ts: <https://linkedmusic.ca/graphs/thesession/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?event ?eventLabel
+WHERE {
+  # Step 1: Find South Korean Labels and their dissolution date (in MusicBrainz)
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?label rdf:type mb:Label .
+    ?label wdt:P17 ?countryArea .
+    ?label wdt:P576 ?dissolvedDate .
+    
+    # Verify the area is South Korea (Q884)
+    ?countryArea rdf:type mb:Area .
+    ?countryArea wdt:P2888 wd:Q884 .
+  }
+
+  # Step 2: Find Events that match this date (scanning both relevant graphs)
+  {
+    # Check MusicBrainz Events
+    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+      ?event rdf:type mb:Event .
+      ?event wdt:P585 ?eventDate . # point in time
+      ?event rdfs:label ?eventLabel .
+      
+      # Match the date (casting to xsd:date to ignore time components)
+      FILTER(xsd:date(?eventDate) = xsd:date(?dissolvedDate))
+    }
+  }
+  UNION
+  {
+    # Check TheSession Events
+    GRAPH <https://linkedmusic.ca/graphs/thesession/> {
+      ?event rdf:type ts:Events .
+      ?event wdt:P580 ?eventDate . # start time
+      ?event rdfs:label ?eventLabel .
+      
+      # Match the date
+      FILTER(xsd:date(?eventDate) = xsd:date(?dissolvedDate))
+    }
+  }
+}

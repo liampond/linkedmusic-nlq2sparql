@@ -1,0 +1,18 @@
+PREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT DISTINCT ?recording ?recordingLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    # Find the local Artist entity reconciled to Taylor Swift's Wikidata QID
+    ?artist rdf:type mb:Artist ;
+            wdt:P2888 <http://www.wikidata.org/entity/Q26876> .
+
+    # Find Recordings performed (P175) by this Artist
+    ?recording rdf:type mb:Recording ;
+               wdt:P175 ?artist ;
+               rdfs:label ?recordingLabel .
+  }
+}

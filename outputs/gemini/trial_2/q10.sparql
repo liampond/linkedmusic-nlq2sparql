@@ -1,0 +1,16 @@
+PREFIX dtl: <https://linkedmusic.ca/graphs/dig-that-lick/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?track ?trackLabel
+WHERE {
+  GRAPH <https://linkedmusic.ca/graphs/dig-that-lick/> {
+    # Verify the entity is a dtl:Track
+    ?track rdf:type dtl:Track ;
+           # Get the label
+           rdfs:label ?trackLabel ;
+           # Match the recording location to New York City (Q60)
+           wdt:P8546 <http://www.wikidata.org/entity/Q60> .
+  }
+}

@@ -1,0 +1,30 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+SELECT DISTINCT
+  ?song ?songLabel
+  ?country ?countryLabel
+WHERE {
+  # --- Pull candidate GJ songs + their country of origin from the LinkedMusic graph ---
+  {
+    SELECT DISTINCT ?song ?songLabel ?country ?countryLabel
+    WHERE {
+      GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+        ?song rdf:type gj:Song ;
+              rdfs:label ?songLabel ;
+              wdt:P495 ?country .
+
+        OPTIONAL { ?country rdfs:label ?countryLabel . }
+      }
+    }
+  }
+
+  # --- Federated check: country is in Africa (continent = Africa) ---
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?country wdt:P30 wd:Q15 .
+  }
+}
+ORDER BY LCASE(STR(?songLabel))

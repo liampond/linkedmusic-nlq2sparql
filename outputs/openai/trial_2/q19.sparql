@@ -1,0 +1,41 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+PREFIX gj:   <https://linkedmusic.ca/graphs/theglobaljukebox/>
+PREFIX mb:   <https://linkedmusic.ca/graphs/musicbrainz/>
+
+SELECT DISTINCT
+  ?gjInstrument ?gjInstrumentLabel
+  ?instrumentWikidata
+  ?mbInstrument ?mbInstrumentLabel
+  ?mbRecording ?mbRecordingLabel
+WHERE {
+  # --- Global Jukebox: instruments featured in songs indigenous to Madagascar ---
+  GRAPH <https://linkedmusic.ca/graphs/theglobaljukebox/> {
+    ?gjSong rdf:type gj:Song ;
+            wdt:P2341 wd:Q1019 ;          # indigenous to Madagascar
+            wdt:P870 ?gjInstrument .
+
+    ?gjInstrument rdf:type gj:Instrument ;
+                  wdt:P2888 ?instrumentWikidata .
+
+    OPTIONAL { ?gjInstrument rdfs:label ?gjInstrumentLabel . }
+  }
+
+  # --- MusicBrainz: recordings featuring instruments with the same Wikidata reconciliation ---
+  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {
+    ?mbRecording rdf:type mb:Recording ;
+                 wdt:P870 ?mbInstrument .
+
+    ?mbInstrument rdf:type mb:Instrument ;
+                  wdt:P2888 ?instrumentWikidata .
+
+    OPTIONAL { ?mbInstrument rdfs:label ?mbInstrumentLabel . }
+    OPTIONAL { ?mbRecording rdfs:label ?mbRecordingLabel . }
+  }
+}
+ORDER BY
+  LCASE(STR(?gjInstrumentLabel))
+  LCASE(STR(?mbRecordingLabel))
