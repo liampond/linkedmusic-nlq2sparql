@@ -20,7 +20,7 @@ models:
     env_key: "GOOGLE_API_KEY"
 
 batch:
-  metadata_file: "outputs/batch_jobs.json"
+  metadata_file: "raw_outputs/batch_jobs.json"
   check_interval: 60 # seconds (if running in a loop)
 evaluation:
   metric: "count_match" # Options: count_match, set_match (future)
