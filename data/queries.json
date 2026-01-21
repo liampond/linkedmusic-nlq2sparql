@@ -100,7 +100,7 @@
     "query": "What\u2019s the average number of record labels that female singers in MusicBrainz have signed with?",
     "target_databases": "MusicBrainz",
     "ground_truth_sparql": "SELECT (AVG(?labelCount) AS ?averageLabelsPerSinger)\nWHERE {\n  {\n    SELECT ?artist (COUNT(DISTINCT ?label) AS ?labelCount)\n    WHERE {\n      GRAPH mb: {\n        ?artist a mb:Artist .\n        ?artist wdt:P2888 ?artistWikidata .\n        ?artist wdt:P264 ?label .\n        ?artist wdt:P21 wd:Q6581072 .\n      }\n      SERVICE <https://query.wikidata.org/sparql> {\n        ?artistWikidata wdt:P106 wd:Q177220 . \n      }\n    }\n    GROUP BY ?artist\n  }\n}",
-    "expected_count": 1,
+    "expected_count": 1.396153846153846,
     "id": "13"
   },
   {

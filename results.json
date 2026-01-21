@@ -169,8 +169,8 @@
     },
     "13": {
         "claude": [
-            "N/A",
-            "FAIL - Query not executed?"
+            "0",
+            "FAIL — Expected 1.396153846153846"
         ],
         "gemini": [
             "Timeout",
