@@ -1,0 +1,523 @@
+{
+  "ground_truth": [
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/630"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/640"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/641"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/647"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/655"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/658"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/662"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/66485"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/66998"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/67090"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/672"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/695"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/700"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/77"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/87417"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/94633"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/94634"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/52262"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/550"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/553"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/554"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/555"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/559"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/567"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/569"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/570"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/572"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/574"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/582"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/587"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/588"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/601"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/605"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/611"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/612"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24664"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24665"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24666"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24667"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24668"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24669"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24671"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24672"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24673"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24674"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24675"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24676"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24678"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24679"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24680"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24682"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24683"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24685"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24686"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24687"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24690"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24691"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24692"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24694"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24695"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24696"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24698"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24700"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24701"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24702"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24703"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24704"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24705"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24706"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24708"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24709"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24711"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24712"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24713"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24714"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24716"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24717"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24719"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24720"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24723"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24725"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24727"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24728"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24730"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24731"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24732"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24733"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24734"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24735"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24736"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/24737"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/33"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/372"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/474"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/106785"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1084"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1099"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1106"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1107"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1109"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1111"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1112"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1113"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1114"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1116"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1119"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1120"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1121"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1123"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1124"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1125"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1126"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1127"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1129"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1130"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1132"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1134"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1135"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1136"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1141"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1142"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1143"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1144"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1145"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1146"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1148"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1149"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1157"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1158"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1159"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1160"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1161"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1162"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1163"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1164"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1165"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1166"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1168"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1169"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1171"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1174"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1176"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1179"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1180"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1181"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1183"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1185"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1187"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1188"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1189"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1191"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1193"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1251"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1254"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1256"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1260"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1341"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/137"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1373"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1407"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1412"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1417"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1419"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1449"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1453"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1458"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/14648"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1474"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1479"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1480"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/1492"
+    },
+    {
+      "composition": "https://www.diamm.ac.uk/compositions/15027"
+    }
+  ],
+  "generated": [],
+  "gt_error": null,
+  "gen_error": null
+}

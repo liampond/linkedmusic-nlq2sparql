@@ -1,0 +1,13 @@
+{
+  "ground_truth": [
+    {
+      "timeSignature": "http://www.wikidata.org/entity/Q50353378"
+    },
+    {
+      "timeSignature": "http://www.wikidata.org/entity/Q50353381"
+    }
+  ],
+  "generated": [],
+  "gt_error": null,
+  "gen_error": null
+}

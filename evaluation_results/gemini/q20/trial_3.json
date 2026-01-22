@@ -1,0 +1,853 @@
+{
+  "ground_truth": [
+    {
+      "event": "https://thesession.org/events/2280"
+    },
+    {
+      "event": "https://thesession.org/events/7876"
+    },
+    {
+      "event": "https://thesession.org/events/7822"
+    },
+    {
+      "event": "https://thesession.org/events/2979"
+    },
+    {
+      "event": "https://thesession.org/events/6728"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1130ede9-90de-403f-a670-4116b7d4f366"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d2a8fff3-a43c-4d87-b625-f1650cd5566d"
+    }
+  ],
+  "generated": [
+    {
+      "event": "https://musicbrainz.org/event/d6982298-4834-49c7-bf60-1580545cf35b",
+      "eventLabel": "Neujahrskonzert der Wiener Philharmoniker 2020"
+    },
+    {
+      "event": "https://musicbrainz.org/event/da552c73-e612-4c8f-b67c-2337881c529d",
+      "eventLabel": "Enuff Z\u2019Nuff at Funhouse"
+    },
+    {
+      "event": "https://musicbrainz.org/event/dad9cc23-e4c7-40e2-84d0-3089bc31db89",
+      "eventLabel": "Fear and Dreams Eason Chan in Concert 19/20, Show 20"
+    },
+    {
+      "event": "https://musicbrainz.org/event/55d59672-e148-492b-b60d-0451c371fcad",
+      "eventLabel": "2019\u5e74\u5ea6\u53f1\u54a4\u6a02\u58c7\u6d41\u884c\u699c\u9812\u734e\u5178\u79ae"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d8c6c7da-3089-4918-a4c6-6c8b414c022b",
+      "eventLabel": "3FM Serious Request: Laat ze niet stikken"
+    },
+    {
+      "event": "https://musicbrainz.org/event/2583ece6-1034-4d96-9d0c-37baf6beac33",
+      "eventLabel": "Trans\u2010Siberian Orchestra at American Airlines Center"
+    },
+    {
+      "event": "https://musicbrainz.org/event/36c00539-659c-4372-adaf-230d52eb8345",
+      "eventLabel": "\u4e09\u53c8\u30ce\u756a\u7d44\u300c\u30a2\u30a4\u30c9\u30eb\u30d5\u30a7\u30b9\u300d"
+    },
+    {
+      "event": "https://musicbrainz.org/event/91ebd47b-544e-4f0c-a2b4-d71917894843",
+      "eventLabel": "Goodiepal & Pals at Colchester Arts Centre"
+    },
+    {
+      "event": "https://musicbrainz.org/event/9de64145-6948-4a72-8190-5fb27c40cd40",
+      "eventLabel": "Mannheim Steamroller at Lexington Opera House"
+    },
+    {
+      "event": "https://musicbrainz.org/event/3abbc68e-4a59-4ef3-80e0-6dd249ec0642",
+      "eventLabel": "Trans\u2010Siberian Orchestra at Van Andel Arena"
+    },
+    {
+      "event": "https://musicbrainz.org/event/4271b7ca-b39c-4ee0-9937-bf98d8bef3c3",
+      "eventLabel": "The Wizards of Winter at Maryland Theater"
+    },
+    {
+      "event": "https://musicbrainz.org/event/4c28e69b-72c4-4e3d-9cdf-41a8d1da04a8",
+      "eventLabel": "\u65b0\u57ce\u52c1\u7206\u9812\u734e\u79ae2016"
+    },
+    {
+      "event": "https://musicbrainz.org/event/84886f87-a16a-4e89-8697-9b9d6be7f113",
+      "eventLabel": "Night of the Living Death Ray"
+    },
+    {
+      "event": "https://musicbrainz.org/event/0c23fea6-fe7d-4c9f-a555-759c37c05fa4",
+      "eventLabel": "Mannheim Steamroller at Orpheum Theatre"
+    },
+    {
+      "event": "https://musicbrainz.org/event/0cd42a89-967f-43cf-88d8-8e835bfd717b",
+      "eventLabel": "Trans\u2010Siberian Orchestra at Van Andel Arena"
+    },
+    {
+      "event": "https://musicbrainz.org/event/15da6444-46fb-4e27-bbfe-7237db867b31",
+      "eventLabel": "Mannheim Steamroller at Lexington Opera House"
+    },
+    {
+      "event": "https://musicbrainz.org/event/dee991f5-277e-4eb1-abde-b56f7634b0a1",
+      "eventLabel": "Trans\u2010Siberian Orchestra at American Airlines Center"
+    },
+    {
+      "event": "https://musicbrainz.org/event/ac07e3a0-9b34-41dc-aa70-f46c359feaa3",
+      "eventLabel": "\u30b7\u30f3\u30c7\u30ec\u30e9\u5ba3\u8a00\uff01\u4e3b\u50ac\u30e9\u30a4\u30d6\u300e\u30b7\u30f3\u30c7\u30ec\u30e9\u9769\u547d\u300fVol.5 \u2212 Last Formation \u2212"
+    },
+    {
+      "event": "https://musicbrainz.org/event/6986d60a-ec51-484a-89d6-9bed1a4d57f2",
+      "eventLabel": "2021\u201003\u201031: SiriusXM Studio, New York City, NY, USA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/bdb1a437-46d5-4c1c-8273-3500fa8d15a3",
+      "eventLabel": "Lambert at The Hotel Caf\u00e9"
+    },
+    {
+      "event": "https://musicbrainz.org/event/299e45a2-aac0-4019-b59f-bd32eaa6c397",
+      "eventLabel": "Def Leppard at Pensacola Bay Center"
+    },
+    {
+      "event": "https://musicbrainz.org/event/8d4cbeab-7a24-44cb-97ca-95ef2b36f423",
+      "eventLabel": "Shokalsky Revenge at New Bar"
+    },
+    {
+      "event": "https://musicbrainz.org/event/3eb903cb-db79-4635-8f8d-f6c5b11ae55c",
+      "eventLabel": "An Evening With Alice Cooper at Tennessee Performing Arts Center"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d6dc4993-9d92-40c7-b417-70861d8a93d9",
+      "eventLabel": "Hello!Project 20th Anniversary!! Hello!Project \u3072\u306a\u30d5\u30a7\u30b9 2019 \u3010\u30a2\u30f3\u30b8\u30e5\u30eb\u30e0 \u30d7\u30ec\u30df\u30a2\u30e0\u3011"
+    },
+    {
+      "event": "https://musicbrainz.org/event/b2bf44ea-7c52-4140-966c-17ed34dfe23e",
+      "eventLabel": "Hufeisen at Waldschl\u00f6sschen Dresden"
+    },
+    {
+      "event": "https://musicbrainz.org/event/b9a721bf-41f5-473e-be60-61f7f2c485ca",
+      "eventLabel": "The Midnight at Cat's Cradle"
+    },
+    {
+      "event": "https://musicbrainz.org/event/23c1f124-ad93-471b-ad75-44ea01d4e718",
+      "eventLabel": "Sandra Monfort Oliver at Pub Quatre Estacions"
+    },
+    {
+      "event": "https://musicbrainz.org/event/8d79a8ad-ee53-474f-aee6-ac02f821c818",
+      "eventLabel": "Hello!Project 20th Anniversary!! Hello!Project \u3072\u306a\u30d5\u30a7\u30b9 2019 \u3010\u30e2\u30fc\u30cb\u30f3\u30b0\u5a18\u3002\u201919 \u30d7\u30ec\u30df\u30a2\u30e0\u3011"
+    },
+    {
+      "event": "https://musicbrainz.org/event/f7dba0e6-e3b1-4499-92a0-3c9bd2a02a8c",
+      "eventLabel": "TOUR19 The Insulated World"
+    },
+    {
+      "event": "https://musicbrainz.org/event/793bed57-8faf-42a4-8113-f25c4ad8216c",
+      "eventLabel": "no apologies tour: san diego"
+    },
+    {
+      "event": "https://musicbrainz.org/event/07d311af-7141-4369-91fc-433d71853eec",
+      "eventLabel": "Mutz & The Lurking Extras at Caf\u00e9 \u00e1 Gogo"
+    },
+    {
+      "event": "https://musicbrainz.org/event/0d6b1614-8a37-4f10-8d2c-c08667595230",
+      "eventLabel": "Below The Bridge March All Dayer"
+    },
+    {
+      "event": "https://musicbrainz.org/event/a836af34-b943-47ae-af41-d4460cbad4a9",
+      "eventLabel": "Black \u2019N Blue on The KISS Kruise X"
+    },
+    {
+      "event": "https://musicbrainz.org/event/0164a634-28b6-4224-8207-7fdc294d95e6",
+      "eventLabel": "KISS Indoor Show #2"
+    },
+    {
+      "event": "https://musicbrainz.org/event/3ad9eb72-17b3-4e2e-afb5-ced1dfed99fd",
+      "eventLabel": "Queensr\u00ffche on The KISS Kruise X"
+    },
+    {
+      "event": "https://musicbrainz.org/event/3ba80ede-da0a-4d79-bb42-ea03e0450e93",
+      "eventLabel": "Kaleido on The KISS Kruise X"
+    },
+    {
+      "event": "https://musicbrainz.org/event/66cbb1c0-8432-4919-8ecc-17931641d680",
+      "eventLabel": "Liliac on The KISS Kruise X"
+    },
+    {
+      "event": "https://musicbrainz.org/event/8c77c5e7-583c-4636-85f9-4f196034289a",
+      "eventLabel": "Sebastian Bach on The KISS Kruise X"
+    },
+    {
+      "event": "https://musicbrainz.org/event/9e102ae7-5739-443c-84bf-c72d65d64fd3",
+      "eventLabel": "2023\u5e74\u5ea6\u53f1\u54a4\u6a02\u58c7\u6d41\u884c\u699c\u9812\u734e\u5178\u79ae"
+    },
+    {
+      "event": "https://musicbrainz.org/event/512dfb92-08ae-4140-8cd8-aea00b088d25",
+      "eventLabel": "\"Tango Nuevo\" Hommage \u00e0 Astor Piazzolla"
+    },
+    {
+      "event": "https://musicbrainz.org/event/19d6e5a9-9aa1-4460-99cf-b22f0bfabbf4",
+      "eventLabel": "Schubert, Ella Milch-Sheriff & Beethoven"
+    },
+    {
+      "event": "https://musicbrainz.org/event/53b4795a-d65e-4df1-9636-ed2bcaadce7d",
+      "eventLabel": "Festi'Vaux 2021, Day 1"
+    },
+    {
+      "event": "https://musicbrainz.org/event/cc3d4123-1de2-441d-a4ac-8c70670056cb",
+      "eventLabel": "Shortparis at Zvezda, Samara"
+    },
+    {
+      "event": "https://musicbrainz.org/event/3283dd46-cd77-42e7-ad96-9ec185ec38a6",
+      "eventLabel": "PRS Spring Gig 2022"
+    },
+    {
+      "event": "https://musicbrainz.org/event/a4a2c801-6d3e-4ac8-b811-96aa611ccd6a",
+      "eventLabel": "Neujahrskonzert 2022"
+    },
+    {
+      "event": "https://musicbrainz.org/event/33d9d3df-51a5-481a-afef-4461b959b93a",
+      "eventLabel": "2021\u5e74\u5ea6\u53f1\u54a4\u6a02\u58c7\u6d41\u884c\u699c\u9812\u734e\u5178\u79ae"
+    },
+    {
+      "event": "https://musicbrainz.org/event/535144a9-cbd2-45da-8f0b-a180014deac1",
+      "eventLabel": "The Next 20 Hins Live in Hong Kong, Show 8"
+    },
+    {
+      "event": "https://musicbrainz.org/event/a58883e9-a967-4235-b0bf-acc663bfd6fe",
+      "eventLabel": "2017\u5e74\u5ea6\u53f1\u54a4\u6a02\u58c7\u6d41\u884c\u699c\u9812\u734e\u5178\u79ae"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1fa88bf8-3dc3-42eb-afdb-24968eb4923c",
+      "eventLabel": "Preview"
+    },
+    {
+      "event": "https://musicbrainz.org/event/34b7126b-d34a-47ff-8b12-a7ae044e678c",
+      "eventLabel": "Preview II"
+    },
+    {
+      "event": "https://musicbrainz.org/event/98c60585-9471-40af-9d86-2a6c8599d841",
+      "eventLabel": "Lollapalooza Aftershow with Tycho"
+    },
+    {
+      "event": "https://musicbrainz.org/event/e80b6f47-b4f4-4b63-a115-22d0788b9ab0",
+      "eventLabel": "Chicago and REO Speedwagon at BB&T Pavilion"
+    },
+    {
+      "event": "https://musicbrainz.org/event/eef7a5a0-331e-4a77-9319-dbec51f2fd6e",
+      "eventLabel": "Eyegum (Free) Wednesdays: Transistor + Death Petal"
+    },
+    {
+      "event": "https://musicbrainz.org/event/6b4f0906-d6db-4629-a865-febe29c3aedb",
+      "eventLabel": "2022\u5e74\u5ea6\u53f1\u54a4\u6a02\u58c7\u6d41\u884c\u699c\u9812\u734e\u5178\u79ae"
+    },
+    {
+      "event": "https://musicbrainz.org/event/2f6fec24-65f4-4465-9db6-673d71b4f082",
+      "eventLabel": "Osborne likur Shostakovitsj"
+    },
+    {
+      "event": "https://musicbrainz.org/event/8c5d637b-3f2d-47ae-ba9e-8e5d7175e596",
+      "eventLabel": "The Late Late Show with James Corden, Episode 179"
+    },
+    {
+      "event": "https://musicbrainz.org/event/fd452e7f-59c8-4299-bad2-c6470863c423",
+      "eventLabel": "FolkBALTICA: Nye Horisonter - Anja Pr\u00e6st Trio feat. Karen Mose"
+    },
+    {
+      "event": "https://musicbrainz.org/event/e819fb74-575e-4d69-8769-e2231b1aaed4",
+      "eventLabel": "Courtney Barnett at Riviera Theatre"
+    },
+    {
+      "event": "https://musicbrainz.org/event/20b3892f-4ab7-45ca-ab5d-612e45b55ce2",
+      "eventLabel": "Trans\u2010Siberian Orchestra at Dunkin\u2019 Donuts Center"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d6889a0c-00db-460b-9d82-fe59949af47c",
+      "eventLabel": "2018\u201003\u201001: Walter Kerr Theatre, New York City, NY, USA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/a4fb608f-9fd1-4d92-bdc9-a6e2879d6708",
+      "eventLabel": "\u201cWeird Al\u201d Yankovic at Tarrytown Music Hall"
+    },
+    {
+      "event": "https://musicbrainz.org/event/bc5a0490-be6f-48de-b051-b20713b21149",
+      "eventLabel": "Alice Cooper at The Colosseum at Caesars Windsor"
+    },
+    {
+      "event": "https://musicbrainz.org/event/4f2d1589-dcd7-4650-a4c6-67fb3713319c",
+      "eventLabel": "Gulbenkian M\u00fasica 17/18: Nikolai Lugansky & Orquestra Gulbenkian"
+    },
+    {
+      "event": "https://musicbrainz.org/event/de4a4762-2751-43b5-9fc5-dd1f3718c27c",
+      "eventLabel": "North Island Domination: Wellington, Secret Location"
+    },
+    {
+      "event": "https://musicbrainz.org/event/7d7b6c38-60be-46d2-aaa4-2f45abc9d165",
+      "eventLabel": "Soulfly perform \"Point Blank\" by Nailbomb"
+    },
+    {
+      "event": "https://musicbrainz.org/event/19e5ee7f-f04a-4f88-92f7-9dbd361ccbff",
+      "eventLabel": "Charlie Parr at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/de36e301-f497-4e5b-a3d2-b1c38d5b1c1f",
+      "eventLabel": "Beethoven's Fate Symphony"
+    },
+    {
+      "event": "https://musicbrainz.org/event/42b7704c-6bea-4f73-81c6-6619176b82ba",
+      "eventLabel": "Chris Acquavella & Lauren Scott"
+    },
+    {
+      "event": "https://musicbrainz.org/event/177bbcb5-cd1b-4ae0-877b-d99200dae0d5",
+      "eventLabel": "Lambert at Evanston SPACE"
+    },
+    {
+      "event": "https://musicbrainz.org/event/bd1892a6-6536-4005-bcde-6e5c4c31a7b7",
+      "eventLabel": "Lisa Stansfield at The Queen\u2019s Hall"
+    },
+    {
+      "event": "https://musicbrainz.org/event/2fcb0633-eb55-4edc-8e35-ef1470f6b1a5",
+      "eventLabel": "24K Magic World Tour, Saitama"
+    },
+    {
+      "event": "https://musicbrainz.org/event/fd10c8bb-e88e-4cd4-9c44-1923c94bf028",
+      "eventLabel": "2018\u201004\u201011: Walter Kerr Theatre, New York City, NY, USA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/4e9e4c8a-39f4-4496-8514-eb8cfb5b7ed7",
+      "eventLabel": "Sheesham & Lotus & 'Son at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/029afbf9-18d4-4579-9b2c-b8fe178cb442",
+      "eventLabel": "A Hawk and a Hacksaw at Slaktkyrkan"
+    },
+    {
+      "event": "https://musicbrainz.org/event/0edfec92-51b5-47c6-8f82-1da3591fda4c",
+      "eventLabel": "THE ALFEE at \u5e02\u5ddd\u5e02\u6587\u5316\u4f1a\u9928"
+    },
+    {
+      "event": "https://musicbrainz.org/event/30e7a322-3b4f-4b26-9f9d-4e6a2366ad08",
+      "eventLabel": "Rock en Plaza"
+    },
+    {
+      "event": "https://musicbrainz.org/event/f88632a3-20bd-4d0a-9f50-a73944b35fc9",
+      "eventLabel": "Kalafina LIVE THE BEST 2015 \u201cBlue Day\u201d"
+    },
+    {
+      "event": "https://musicbrainz.org/event/7197aab1-7ae0-40d9-bda9-c6b186365e19",
+      "eventLabel": "Berryz\u5de5\u623f\u796d\u308a"
+    },
+    {
+      "event": "https://musicbrainz.org/event/7490c5cc-29c0-444c-aa39-087895c3be36",
+      "eventLabel": "Charlies Mannen at Waldschl\u00f6sschen Dresden"
+    },
+    {
+      "event": "https://musicbrainz.org/event/07acb5df-518b-41d8-859e-07702a7a6bee",
+      "eventLabel": "Ecuador Jazz 2015, Day 4"
+    },
+    {
+      "event": "https://musicbrainz.org/event/31114182-7931-4f13-ab87-0e5cbc173ca9",
+      "eventLabel": "Betty 20th Anniversary Tour: Groningen"
+    },
+    {
+      "event": "https://musicbrainz.org/event/97d1564c-1029-4fa5-af7c-9c70de16fdb4",
+      "eventLabel": "Charlies Mannen at Waldschl\u00f6sschen Dresden"
+    },
+    {
+      "event": "https://musicbrainz.org/event/53ad7b6c-f0df-4c90-ae83-08e8c7bf613e",
+      "eventLabel": "2016\u5e74\u5ea6\u53f1\u54a4\u6a02\u58c7\u6d41\u884c\u699c\u9812\u734e\u5178\u79ae"
+    },
+    {
+      "event": "https://musicbrainz.org/event/6fdd2278-a647-4157-82e6-463da50d9425",
+      "eventLabel": "Hayley Ross supporting Sandi Thom at Brighton Komedia"
+    },
+    {
+      "event": "https://musicbrainz.org/event/e995c858-3a09-4d1e-ac2b-96642c5c9c22",
+      "eventLabel": "White Hills at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/f3410cad-047b-4e03-a8f9-a879ae4b9a11",
+      "eventLabel": "Pet Sounds 50th Anniversary World Tour: Ra`ananna"
+    },
+    {
+      "event": "https://musicbrainz.org/event/c4e8bf03-0e7c-4bd2-9327-be1436619ec5",
+      "eventLabel": "DISPARO, WOUNDED PIG New Zealand Tour, Auckland"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1c0795cc-677a-4d45-9aae-a917cb168ad0",
+      "eventLabel": "\u201cWeird Al\u201d Yankovic at Orpheum Theatre"
+    },
+    {
+      "event": "https://musicbrainz.org/event/0a3df73b-303d-478e-9943-012bf89d24c4",
+      "eventLabel": "Peter Weening 35 Jaar Programmeur"
+    },
+    {
+      "event": "https://musicbrainz.org/event/a2ecb8e6-4d5b-4943-abff-cb7b567ba233",
+      "eventLabel": "The Dynasty Tour: Manchester"
+    },
+    {
+      "event": "https://musicbrainz.org/event/02a6a041-c1ef-454a-aec6-c6b852f70266",
+      "eventLabel": "Phosphorescent at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/22a4db0f-d8bc-4391-87ac-833158fb5a3c",
+      "eventLabel": "ASTRO Random \u301cvol.14\u301c\u300e\u862d\u4e38\u751f\u8a95\u796d\u300f"
+    },
+    {
+      "event": "https://musicbrainz.org/event/6ddb026d-df6c-4eca-bfa7-27d095abae77",
+      "eventLabel": "Crazy Times Tour"
+    },
+    {
+      "event": "https://musicbrainz.org/event/82ea890c-6b3c-4828-ba36-95ebaeb82422",
+      "eventLabel": "After Hours til Dawn Tour: Glendale"
+    },
+    {
+      "event": "https://musicbrainz.org/event/306bd33b-43ee-429c-91da-f98e575dabe4",
+      "eventLabel": "Public Service Broadcasting \u2013 This New Noise"
+    },
+    {
+      "event": "https://musicbrainz.org/event/a83f5d72-6061-435d-983a-eee4a04936ba",
+      "eventLabel": "Journey and Def Leppard at AT&T Center"
+    },
+    {
+      "event": "https://musicbrainz.org/event/2615cc72-63f1-4444-a885-8cfcd63b7c05",
+      "eventLabel": "Moaning at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/8d77f726-a07b-478a-bb90-85010c09ac36",
+      "eventLabel": "2018\u201008\u201031: Walter Kerr Theatre, New York City, NY, USA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/e94fd169-ba2d-43c7-b455-fdfc6e46afed",
+      "eventLabel": "Gene Simmons Band at Enmore Theatre"
+    },
+    {
+      "event": "https://musicbrainz.org/event/70fbb522-67ea-4283-8182-e9d5ec3b5582",
+      "eventLabel": "Roger Hodgson at Sauerlandpark Hemer"
+    },
+    {
+      "event": "https://musicbrainz.org/event/067f1afd-a768-41ca-ba09-96e21ca0cf2d",
+      "eventLabel": "TOUR18 WEARING HUMAN SKIN"
+    },
+    {
+      "event": "https://musicbrainz.org/event/5cca501c-4b68-40a6-872b-edc55d3fc8a9",
+      "eventLabel": "HEX with Waterfalls and Linen"
+    },
+    {
+      "event": "https://musicbrainz.org/event/f25b54ca-0a6b-455f-8010-ea2be4847d4f",
+      "eventLabel": "\u8f1d\u591c \u6708 LIVE@Zepp VR"
+    },
+    {
+      "event": "https://musicbrainz.org/event/7a92c8bf-4687-416d-83b1-44af8b7b3f4e",
+      "eventLabel": "Anime Diva Night powered by Anisong World Matsuri"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d0dbdb1a-48a7-4a5e-8839-5c4c650341d8",
+      "eventLabel": "Lambert at Bunker Ulmenwall"
+    },
+    {
+      "event": "https://musicbrainz.org/event/add301e6-0a18-4fc2-be6a-1ba0aad45031",
+      "eventLabel": "Acoustic concert: I Am Dive at Electropura"
+    },
+    {
+      "event": "https://musicbrainz.org/event/200eeb53-24a4-4b80-af2f-cd59108fea3a",
+      "eventLabel": "Dream Ami 1st. Live Tour 2017 \u2661 Re: Dream"
+    },
+    {
+      "event": "https://musicbrainz.org/event/2d7e2ead-1912-481e-a313-3d17a57698ad",
+      "eventLabel": "2017\u201011\u201017: Walter Kerr Theatre, New York City, NY, USA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/2f16b27d-96e5-4e01-9b95-cd026ccd56eb",
+      "eventLabel": "Trans\u2010Siberian Orchestra at Royal Farms Arena"
+    },
+    {
+      "event": "https://musicbrainz.org/event/38ca7154-6f47-4911-aaf0-a04d5f8ad75d",
+      "eventLabel": "Rock City"
+    },
+    {
+      "event": "https://musicbrainz.org/event/885af3a6-570a-4dfc-b818-61edb248f87a",
+      "eventLabel": "Mannheim Steamroller at Salem Civic Center"
+    },
+    {
+      "event": "https://musicbrainz.org/event/0343afba-b066-4a24-89f5-7f25f1a216f4",
+      "eventLabel": "Kansas at Capitol Theater"
+    },
+    {
+      "event": "https://musicbrainz.org/event/0967f57b-08bb-4646-9fcd-51f8aa438160",
+      "eventLabel": "Za \u0107m\u0105 w dym 2017 at Progresja"
+    },
+    {
+      "event": "https://musicbrainz.org/event/138474ef-af45-4f11-a9bf-de94fd9f7f1f",
+      "eventLabel": "\"955 feet above the ground\": Dr. Woo rocks M\u00fcnchen"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1aec25cd-fcc4-4a11-89a5-d5164ccd99c7",
+      "eventLabel": "Filippa Gojo/Sven Decker at Terminis"
+    },
+    {
+      "event": "https://musicbrainz.org/event/e1373f65-deb3-4e83-b39f-fa68da44148b",
+      "eventLabel": "Nachtschade"
+    },
+    {
+      "event": "https://musicbrainz.org/event/f1936592-33b8-4a39-935e-e26ffd9c96b1",
+      "eventLabel": "The Wizards of Winter at Maxwell C. King Center for the Performing Arts"
+    },
+    {
+      "event": "https://musicbrainz.org/event/f301008b-e7fd-4cca-88c6-ce73f9b47556",
+      "eventLabel": "Homestead Cider Release Party"
+    },
+    {
+      "event": "https://musicbrainz.org/event/9dfaadbb-bd6c-48a7-a446-5eec2e096ee3",
+      "eventLabel": "RAP mod Racisme"
+    },
+    {
+      "event": "https://musicbrainz.org/event/4b7b0c87-f945-4659-b308-c211f96cbf95",
+      "eventLabel": "Syvi\u00e4 sointuja"
+    },
+    {
+      "event": "https://musicbrainz.org/event/7ecb0321-872f-46d3-9ec9-3ec5e382476f",
+      "eventLabel": "Old Man Diode at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/39499eee-db0c-4d6e-be43-44d86c4a0f0a",
+      "eventLabel": "Sarrasine / Mi primer a\u00f1o sab\u00e1tico / \u00c1valon"
+    },
+    {
+      "event": "https://musicbrainz.org/event/3239a2d8-d851-4b3a-a96d-24dc0a6aef48",
+      "eventLabel": "Porkie & Bass at Waldschl\u00f6sschen Dresden"
+    },
+    {
+      "event": "https://musicbrainz.org/event/4a3d3e7a-523c-4160-81d3-ae57599d2c03",
+      "eventLabel": "Die H\u00f6chste Eisenbahn at Astra Kulturhaus"
+    },
+    {
+      "event": "https://musicbrainz.org/event/5c18a18b-9d6d-45d8-9217-9d7483c20792",
+      "eventLabel": "2014-06-01: Toad's Place, New Haven, CT, USA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/a05de3d2-77cb-4140-8b1e-c80909f8660a",
+      "eventLabel": "EZ3kiel"
+    },
+    {
+      "event": "https://musicbrainz.org/event/a85c8a3b-aaf4-410d-8a68-7a272a2f7cb7",
+      "eventLabel": "The Dynasty Tour: Minneapolis"
+    },
+    {
+      "event": "https://musicbrainz.org/event/2b5e93ab-56b3-4b74-b9d1-ca7778c3e184",
+      "eventLabel": "10 Things I wish I knew before enrolling in Law School"
+    },
+    {
+      "event": "https://musicbrainz.org/event/ef938b82-d90f-403a-99a7-3177469e0c58",
+      "eventLabel": "Kansas at Salem Civic Center"
+    },
+    {
+      "event": "https://musicbrainz.org/event/fa2b5917-1bd7-4572-b6e0-474114d81798",
+      "eventLabel": "Soulful Journeys: Puerto Rican Choral Music"
+    },
+    {
+      "event": "https://musicbrainz.org/event/597c6f2e-8755-4b81-9bbb-05c4793d9473",
+      "eventLabel": "M\u00e1s All\u00e1 at Falcons Direct"
+    },
+    {
+      "event": "https://musicbrainz.org/event/f45f08ff-ce55-43af-b6fb-023dbb6be226",
+      "eventLabel": "The Delta Machine Tour"
+    },
+    {
+      "event": "https://musicbrainz.org/event/bf9286b5-e756-4688-b955-d618fbd4ca35",
+      "eventLabel": "Copenhagen Folk Marathon: Jam night"
+    },
+    {
+      "event": "https://musicbrainz.org/event/839d5ab9-033c-4e95-bb7e-ae026c000863",
+      "eventLabel": "\u041d\u043e\u0432\u043e\u0433\u043e\u0434\u043d\u044f\u044f Metal-\u0451\u043b\u043a\u0430"
+    },
+    {
+      "event": "https://musicbrainz.org/event/c28fb642-1eb1-4552-b87a-70d75a317d46",
+      "eventLabel": "Zorionak Zika (Concierto)"
+    },
+    {
+      "event": "https://musicbrainz.org/event/c99a29b5-ddb3-4fe8-b70c-aebb32607d83",
+      "eventLabel": "Saariaho og Sibelius"
+    },
+    {
+      "event": "https://musicbrainz.org/event/360abff6-4afe-45a8-abf1-c74ca8f161c1",
+      "eventLabel": "Batushka at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/f981c67e-7d64-4007-8604-33ad30376e04",
+      "eventLabel": "Paul Jones & Dave Kelly at Colchester Arts Centre"
+    },
+    {
+      "event": "https://musicbrainz.org/event/4c114ed7-9862-4ca2-894b-3936e2aadb53",
+      "eventLabel": "Ace Frehley at Scout Bar"
+    },
+    {
+      "event": "https://musicbrainz.org/event/6970d11d-31e8-4fea-bd35-d2f4493d50c5",
+      "eventLabel": "\u05e4\u05e1\u05e7\u05d5\u05dc \u05d9\u05e9\u05e8\u05d0\u05dc\u05d9 \u05e2\u05dd \u05d9\u05d5\u05d0\u05d1 \u05e7\u05d5\u05d8\u05e0\u05e8 \u05de\u05d0\u05e8\u05d7 \u05d0\u05ea \u05de\u05d0\u05e8\u05d9\u05e0\u05d4 \u05de\u05e7\u05e1\u05d9\u05de\u05d9\u05dc\u05d9\u05d0\u05df \u05d1\u05dc\u05d5\u05de\u05d9\u05df"
+    },
+    {
+      "event": "https://musicbrainz.org/event/e9e009eb-4cdb-44f1-8d18-8540cb119260",
+      "eventLabel": "8th Hong Kong International Chamber Music Festival: Opening Night Concert"
+    },
+    {
+      "event": "https://musicbrainz.org/event/af891547-0711-487a-a1f1-1387453fbe91",
+      "eventLabel": "The Amazing Snakeheads at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/b9963e29-86c7-499a-bc6a-21afe19814b1",
+      "eventLabel": "2e Northern Prog Festival Siegerswoude"
+    },
+    {
+      "event": "https://musicbrainz.org/event/dcb97670-ecf3-44e7-b131-75e7baa25035",
+      "eventLabel": "CR\u00dcED on The KISS Kruise IV"
+    },
+    {
+      "event": "https://musicbrainz.org/event/2549d7d8-10f7-413f-ad66-8e1da0a6e18d",
+      "eventLabel": "The Frozen North @ Gramy w Domu #1 | Warsaw"
+    },
+    {
+      "event": "https://musicbrainz.org/event/904902ee-5ac2-4097-b678-0bd36702130f",
+      "eventLabel": "SYN/\\PSI \u2013 Cyber-halloween"
+    },
+    {
+      "event": "https://musicbrainz.org/event/927d59f8-ff04-4824-b980-19cffc109291",
+      "eventLabel": "Meadowlake at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/0f24732c-6f51-4648-99f6-897dbb7f2fae",
+      "eventLabel": "KISS Beach Show"
+    },
+    {
+      "event": "https://musicbrainz.org/event/2d0b6a1c-1983-44a2-94f8-1b0abe5640e1",
+      "eventLabel": "Pat Travers Band on The KISS Kruise IV"
+    },
+    {
+      "event": "https://musicbrainz.org/event/09d641e2-078f-42c9-b6b8-842568e1f6ce",
+      "eventLabel": "V on The KISS Kruise IV"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1130ede9-90de-403f-a670-4116b7d4f366",
+      "eventLabel": "DJ Noiz on The KISS Kruise IV"
+    },
+    {
+      "event": "https://musicbrainz.org/event/5b2ba1b6-514a-4ce5-b156-c2642806516c",
+      "eventLabel": "PRISS on The KISS Kruise IV"
+    },
+    {
+      "event": "https://musicbrainz.org/event/7c2a9005-4a78-472b-98f2-39d58f7c675c",
+      "eventLabel": "Robin Zander on The KISS Kruise IV"
+    },
+    {
+      "event": "https://musicbrainz.org/event/3f1c5729-ebaa-40be-ac6f-0b6926812132",
+      "eventLabel": "Purson on The KISS Kruise IV"
+    },
+    {
+      "event": "https://musicbrainz.org/event/6ec4e03a-a03d-4780-920c-d7275b1ef028",
+      "eventLabel": "NeeDeep on The KISS Kruise IV"
+    },
+    {
+      "event": "https://musicbrainz.org/event/37c5680f-2221-4bdf-a7b5-ff378ce655d2",
+      "eventLabel": "Carpet Crawlers - Genesis Tribute 40th Anniversary of the Lamb Lies Down on Broadway at Boerderij"
+    },
+    {
+      "event": "https://musicbrainz.org/event/09c37de0-3bf7-45bc-b35d-5ef4f2b71d21",
+      "eventLabel": "Anathema + Mother's Cake at Sticky Fingers"
+    },
+    {
+      "event": "https://musicbrainz.org/event/ee8bfcf7-5ef6-412a-8fab-a5a4e3811ed8",
+      "eventLabel": "THE ALFEE 40th Anniversary 2014 GENESIS \u2161 @ \u795e\u6238\u56fd\u969b\u4f1a\u9928\u30fb\u3053\u304f\u3055\u3044\u30db\u30fc\u30eb"
+    },
+    {
+      "event": "https://musicbrainz.org/event/ab0d0d2b-13f8-4c92-a7aa-433a6057be39",
+      "eventLabel": "Trans\u2010Siberian Orchestra at Gibson Amphitheatre"
+    },
+    {
+      "event": "https://musicbrainz.org/event/893e77f2-dc57-4c7c-8ee2-a768dbd88d98",
+      "eventLabel": "Cheryl Wheeler w/ Kenny White at the Triple Door"
+    },
+    {
+      "event": "https://musicbrainz.org/event/f9b2f7df-d653-4d31-a64f-778fecb62080",
+      "eventLabel": "2012\u201004\u201001: Verizon Center, Washington, DC, USA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/ebbaeb64-0d19-487e-b1f9-43fe971faa4c",
+      "eventLabel": "Jacuzzi Boys at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d2a8fff3-a43c-4d87-b625-f1650cd5566d",
+      "eventLabel": "Leogun on The KISS Kruise III"
+    },
+    {
+      "event": "https://musicbrainz.org/event/a350678b-55c6-4424-adee-1978c608fb4e",
+      "eventLabel": "Bleached at VERA"
+    },
+    {
+      "event": "https://musicbrainz.org/event/ad992270-8397-4dee-9a60-d3496b545c99",
+      "eventLabel": "Nils Frahm at New Fall Festival 2013"
+    },
+    {
+      "event": "https://thesession.org/events/8135",
+      "eventLabel": "Laid Back Irish Session Tunes with Rowan Leslie"
+    },
+    {
+      "event": "https://thesession.org/events/8138",
+      "eventLabel": "Niall and The Durty Nelly's Livestream"
+    },
+    {
+      "event": "https://thesession.org/events/8087",
+      "eventLabel": "Steady Speed Session with WiseWood Folk (UK)"
+    },
+    {
+      "event": "https://thesession.org/events/8136",
+      "eventLabel": "Dezi Donnelly Fiddle Masterclass"
+    },
+    {
+      "event": "https://thesession.org/events/8277",
+      "eventLabel": "Bloom of Youth - Gavin / Glancy Quartet - FleadhFest: Trad@Lunch"
+    },
+    {
+      "event": "https://thesession.org/events/8599",
+      "eventLabel": "Sal Heneghan, Cieara Kilkenny and Orla Leavy"
+    },
+    {
+      "event": "https://thesession.org/events/7303",
+      "eventLabel": "Half Day In Cavan  Dermot Healy RIP  Sonny Mc Dermott  Noel Sweeney Celebrated"
+    },
+    {
+      "event": "https://thesession.org/events/9038",
+      "eventLabel": "New Year's Day Irish Session"
+    },
+    {
+      "event": "https://thesession.org/events/9039",
+      "eventLabel": "New Year's Day Celebrations"
+    },
+    {
+      "event": "https://thesession.org/events/2212",
+      "eventLabel": "Altan"
+    },
+    {
+      "event": "https://thesession.org/events/2242",
+      "eventLabel": "Altan"
+    },
+    {
+      "event": "https://thesession.org/events/7834",
+      "eventLabel": "Cancelled: Sorcha N\u00ed Scola\u00ed, P\u00e1draic Mac Math\u00fana, Se\u00e1n Keane, Noel O\u2019Grady and Stephen Rea"
+    },
+    {
+      "event": "https://thesession.org/events/3806",
+      "eventLabel": "Caitl\u00edn Nic Gabhann (concertina) & Ciar\u00e1n \u00d3 Maonaigh (fiddle)"
+    },
+    {
+      "event": "https://thesession.org/events/3692",
+      "eventLabel": "35th Cork Folk Festival"
+    },
+    {
+      "event": "https://thesession.org/events/3707",
+      "eventLabel": "One last Trad Session in The Stables"
+    },
+    {
+      "event": "https://thesession.org/events/6484",
+      "eventLabel": "Irish session - All instruments welcome!"
+    },
+    {
+      "event": "https://thesession.org/events/6483",
+      "eventLabel": "Edel Vaughan, Francis Cunningham, Eimear Coughlan & P\u00e1draig O'Reilly"
+    },
+    {
+      "event": "https://thesession.org/events/6490",
+      "eventLabel": "Session with Dennis Spring (NC, USA)"
+    },
+    {
+      "event": "https://thesession.org/events/744",
+      "eventLabel": "M\u00e1ire N\u00ed Chathasaigh and Chris Newman"
+    },
+    {
+      "event": "https://thesession.org/events/767",
+      "eventLabel": "Linda Hickman Whistle Workshop"
+    },
+    {
+      "event": "https://thesession.org/events/732",
+      "eventLabel": "Evening Of Traditional Irish Music"
+    },
+    {
+      "event": "https://thesession.org/events/763",
+      "eventLabel": "Comhaltas 2008 UK Concert Tour"
+    },
+    {
+      "event": "https://thesession.org/events/7314",
+      "eventLabel": "Dylan Foley and John Whelan, house concert in the Wee Ceili Room"
+    },
+    {
+      "event": "https://thesession.org/events/7023",
+      "eventLabel": "Hastings Fleadh"
+    },
+    {
+      "event": "https://thesession.org/events/7028",
+      "eventLabel": "Br\u00edd Harper and Diarmuid Johnson (with Jon Turton and Jennie Nolan)"
+    },
+    {
+      "event": "https://thesession.org/events/2280",
+      "eventLabel": "2nd George Carruthers Irish Music School"
+    },
+    {
+      "event": "https://thesession.org/events/2444",
+      "eventLabel": "Carmel Gunning International Summer School Festival Of Irish Music"
+    },
+    {
+      "event": "https://thesession.org/events/6254",
+      "eventLabel": "bohola: Jimmy Keane & Pat Broaders"
+    },
+    {
+      "event": "https://thesession.org/events/6273",
+      "eventLabel": "36th Cork Folk Festival"
+    },
+    {
+      "event": "https://thesession.org/events/3575",
+      "eventLabel": "The House Devils"
+    },
+    {
+      "event": "https://thesession.org/events/3587",
+      "eventLabel": "Ragged Rascals"
+    },
+    {
+      "event": "https://thesession.org/events/7822",
+      "eventLabel": "Cancelled: Feile Chois Cuain 2020"
+    },
+    {
+      "event": "https://thesession.org/events/7876",
+      "eventLabel": "Cancelled: Cup of Tae Festival"
+    },
+    {
+      "event": "https://thesession.org/events/3189",
+      "eventLabel": "Mai Hernon - Master Class/Workshop in Traditional Singing"
+    },
+    {
+      "event": "https://thesession.org/events/2979",
+      "eventLabel": "Steeple Sessions Summer Festival 2013"
+    },
+    {
+      "event": "https://thesession.org/events/3190",
+      "eventLabel": "Mai Hernon & Celtic Font in Concert"
+    },
+    {
+      "event": "https://thesession.org/events/6728",
+      "eventLabel": "Celtic Connections"
+    },
+    {
+      "event": "https://thesession.org/events/3710",
+      "eventLabel": "Perry Hall Folk Music Night, featuring Abigail Palmer"
+    },
+    {
+      "event": "https://thesession.org/events/3700",
+      "eventLabel": "Halloween Irish Dance Ceili"
+    },
+    {
+      "event": "https://thesession.org/events/3732",
+      "eventLabel": "Hanz Araki - 'Foreign Shore' CD Release"
+    },
+    {
+      "event": "https://thesession.org/events/3371",
+      "eventLabel": "IrishFest Atlanta"
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}

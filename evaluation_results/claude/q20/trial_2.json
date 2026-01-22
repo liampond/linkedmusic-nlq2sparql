@@ -1,0 +1,28 @@
+{
+  "ground_truth": [
+    {
+      "event": "https://thesession.org/events/2280"
+    },
+    {
+      "event": "https://thesession.org/events/7876"
+    },
+    {
+      "event": "https://thesession.org/events/7822"
+    },
+    {
+      "event": "https://thesession.org/events/2979"
+    },
+    {
+      "event": "https://thesession.org/events/6728"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1130ede9-90de-403f-a670-4116b7d4f366"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d2a8fff3-a43c-4d87-b625-f1650cd5566d"
+    }
+  ],
+  "generated": [],
+  "gt_error": null,
+  "gen_error": "EndPointInternalError: The endpoint returned the HTTP status code 500. \n\nResponse:\nb'Virtuoso 22003 Error SR586: Incomplete RDF box as argument 0 for year().\\n\\nSPARQL query:\\n#output-format:application/sparql-results+json\\nPREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>\\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\nPREFIX wd: <http://www.wikidata.org/entity/>\\n\\nSELECT DISTINCT ?event ?eventLabel ?eventDate ?label ?labelName ?dissolutionDate\\nWHERE {\\n  # Find South Korean labels with dissolution dates\\n  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {\\n    ?label rdf:type mb:Label .\\n    ?label wdt:P576 ?dissolutionDate .\\n    ?label wdt:P17 ?country .\\n    ?country rdf:type mb:Area .\\n    ?country wdt:P2888 wd:Q884 .\\n    \\n    OPTIONAL { ?label rdfs:label ?labelName . }\\n  }\\n  \\n  # Find events with dates\\n  GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {\\n    ?event rdf:type mb:Event .\\n    \\n    # Check various date properties for events\\n    {\\n      ?event wdt:P585 ?eventDate .\\n    } UNION {\\n      ?event wdt:P580 ?eventDate .\\n    } UNION {\\n      ?event wdt:P582 ?eventDate .\\n    }\\n    \\n    OPTIONAL { ?event rdfs:label ?eventLabel . }\\n  }\\n  \\n  # Match events that happened on the same day as a label dissolution\\n  FILTER (\\n    (YEAR(?eventDate) = YEAR(?dissolutionDate)) &&\\n    (MONTH(?eventDate) = MONTH(?dissolutionDate)) &&\\n    (DAY(?eventDate) = DAY(?dissolutionDate))\\n  )\\n}\\nORDER BY ?eventDate'"
+}

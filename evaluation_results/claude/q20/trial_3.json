@@ -1,0 +1,28 @@
+{
+  "ground_truth": [
+    {
+      "event": "https://thesession.org/events/2280"
+    },
+    {
+      "event": "https://thesession.org/events/7876"
+    },
+    {
+      "event": "https://thesession.org/events/7822"
+    },
+    {
+      "event": "https://thesession.org/events/2979"
+    },
+    {
+      "event": "https://thesession.org/events/6728"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1130ede9-90de-403f-a670-4116b7d4f366"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d2a8fff3-a43c-4d87-b625-f1650cd5566d"
+    }
+  ],
+  "generated": [],
+  "gt_error": null,
+  "gen_error": "QueryBadFormed: A bad request has been sent to the endpoint: probably the SPARQL query is badly formed. \n\nResponse:\nb\"Virtuoso 37000 Error SP030: SPARQL compiler, line 48: syntax error at '?' before '}'\\n\\nSPARQL query:\\n#output-format:application/sparql-results+json\\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\\nPREFIX wd: <http://www.wikidata.org/entity/>\\nPREFIX mb: <https://linkedmusic.ca/graphs/musicbrainz/>\\nPREFIX ts: <https://linkedmusic.ca/graphs/thesession/>\\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\\nSELECT DISTINCT ?event ?eventLabel ?eventDate WHERE {\\n  # First, find dissolution dates of South Korean labels\\n  {\\n    SELECT DISTINCT ?dissolutionDate WHERE {\\n      GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {\\n        ?label rdf:type mb:Label .\\n        ?label wdt:P576 ?dissolutionDate .\\n        ?label wdt:P17 ?country .\\n        ?country rdf:type mb:Area .\\n        ?country wdt:P2888 wd:Q884 .\\n      }\\n    }\\n  }\\n  \\n  # Now find events that happened on those dates\\n  {\\n    GRAPH <https://linkedmusic.ca/graphs/musicbrainz/> {\\n      ?event rdf:type mb:Event .\\n      OPTIONAL { ?event rdfs:label ?eventLabel . }\\n      {\\n        ?event wdt:P585 ?eventDate .\\n        FILTER(xsd:date(?eventDate) = xsd:date(?dissolutionDate))\\n      }\\n      UNION\\n      {\\n        ?event wdt:P580 ?eventDate .\\n        FILTER(xsd:date(?eventDate) = xsd:date(?dissolutionDate))\\n      }\\n      UNION\\n      {\\n        ?event wdt:P582 ?eventDate .\\n        FILTER(xsd:date(?eventDate) = xsd:date(?dissolutionDate))\\n      }\\n    }\\n  }\\n  UNION\\n  {\\n    GRAPH <https://linkedmusic.ca/graphs/thesession/> {\\n      ?event rdf:type ts:Events .\\n      OPTIONAL { ?\""
+}

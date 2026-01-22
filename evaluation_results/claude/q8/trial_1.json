@@ -1,0 +1,44 @@
+{
+  "ground_truth": [
+    {
+      "band": "https://musicbrainz.org/artist/c74f4726-2671-4011-81b6-f70da905c05a",
+      "sharedMemberCount": "5"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/0860ed05-2e3a-4872-a44a-8e6d8a7e9696",
+      "sharedMemberCount": "2"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/9055fca5-69bc-4d47-b569-ab2012a19565",
+      "sharedMemberCount": "2"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/cd1cfb42-4b49-4f86-9518-37b1dfd1a2a8",
+      "sharedMemberCount": "2"
+    }
+  ],
+  "generated": [
+    {
+      "band": "https://musicbrainz.org/artist/c74f4726-2671-4011-81b6-f70da905c05a",
+      "bandLabel": "On a Friday",
+      "sharedMembers": "5"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/9055fca5-69bc-4d47-b569-ab2012a19565",
+      "bandLabel": "The Smile",
+      "sharedMembers": "2"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/cd1cfb42-4b49-4f86-9518-37b1dfd1a2a8",
+      "bandLabel": "7 Worlds Collide",
+      "sharedMembers": "2"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/0860ed05-2e3a-4872-a44a-8e6d8a7e9696",
+      "bandLabel": "The Venus in Furs",
+      "sharedMembers": "2"
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}

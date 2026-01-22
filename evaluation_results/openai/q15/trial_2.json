@@ -1,0 +1,15 @@
+{
+  "ground_truth": [
+    {
+      "gender": "http://www.wikidata.org/entity/Q6581097",
+      "soloCount": "1055"
+    },
+    {
+      "gender": "http://www.wikidata.org/entity/Q6581072",
+      "soloCount": "18"
+    }
+  ],
+  "generated": [],
+  "gt_error": null,
+  "gen_error": null
+}

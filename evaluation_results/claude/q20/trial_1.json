@@ -1,0 +1,28 @@
+{
+  "ground_truth": [
+    {
+      "event": "https://thesession.org/events/2280"
+    },
+    {
+      "event": "https://thesession.org/events/7876"
+    },
+    {
+      "event": "https://thesession.org/events/7822"
+    },
+    {
+      "event": "https://thesession.org/events/2979"
+    },
+    {
+      "event": "https://thesession.org/events/6728"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1130ede9-90de-403f-a670-4116b7d4f366"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d2a8fff3-a43c-4d87-b625-f1650cd5566d"
+    }
+  ],
+  "generated": [],
+  "gt_error": null,
+  "gen_error": null
+}

@@ -1,0 +1,639 @@
+{
+  "ground_truth": [
+    {
+      "culture": "https://theglobaljukebox.org/culture/24102"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/17667"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/17887"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62580"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14598"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12365"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/10495"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14136"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62558"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/10451"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/27028"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14675"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13135"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/26379"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/22045"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11507"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/24091"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/15687"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12849"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62410"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11133"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62578"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30045"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/19691"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/20615"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14994"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/19064"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/15412"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/16919"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11936"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13663"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30054"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14477"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/18833"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30053"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/23145"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62489"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13894"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12046"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/27457"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/17535"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/21176"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/10847"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/16655"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/17183"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/24540"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/18932"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/26973"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62528"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/20362"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/28986"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/16869"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/28133"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13987"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/21693"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/10528"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/23607"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13762"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/27743"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13558"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/18596"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/18173"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13927"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62565"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11859"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/23343"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/25427"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/19196"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/21170"
+    }
+  ],
+  "generated": [
+    {
+      "culture": "https://theglobaljukebox.org/culture/10495",
+      "cultureLabel": "Amhara"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12849",
+      "cultureLabel": "Burmese"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/10451",
+      "cultureLabel": "Amdo"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11936",
+      "cultureLabel": "Kathiri Bedouin"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11133",
+      "cultureLabel": "Aymara"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12365",
+      "cultureLabel": "West Java"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11507",
+      "cultureLabel": "Balinese"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12365",
+      "cultureLabel": "Sundanese"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12046",
+      "cultureLabel": "Bengal"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/10099",
+      "cultureLabel": "Acoli"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11672",
+      "cultureLabel": "Bara"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11529",
+      "cultureLabel": "Bambara"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12871",
+      "cultureLabel": "Buryat"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/11859",
+      "cultureLabel": "Karo"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/10528",
+      "cultureLabel": "Anaguta"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/10847",
+      "cultureLabel": "Tucuman Gaucho"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12409",
+      "cultureLabel": "Bohemian"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/10902",
+      "cultureLabel": "Aromanian"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/12772",
+      "cultureLabel": "Thrace"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13135",
+      "cultureLabel": "Ash\u00e1ninka"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13894",
+      "cultureLabel": "Cluj"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14136",
+      "cultureLabel": "Mvskoke"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13663",
+      "cultureLabel": "Chinese Urban Elite"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14994",
+      "cultureLabel": "Egypt"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14598",
+      "cultureLabel": "Jola-Fonyi"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/15412",
+      "cultureLabel": "Forest Bira"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14477",
+      "cultureLabel": "Dhurwa Gond"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/14675",
+      "cultureLabel": "Dogon"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/15280",
+      "cultureLabel": "Fante"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13806",
+      "cultureLabel": "Chopi"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13762",
+      "cultureLabel": "Ember\u00e1"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13558",
+      "cultureLabel": "Venustiano Carranza Tzotzil"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13927",
+      "cultureLabel": "Cocama"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/13987",
+      "cultureLabel": "P\u00e1ez"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/17183",
+      "cultureLabel": "S Indian Folk"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/15687",
+      "cultureLabel": "Kottu"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/16869",
+      "cultureLabel": "Hui"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/16655",
+      "cultureLabel": "Yemenite Jews"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/17183",
+      "cultureLabel": "Andhra Pradesh"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/16919",
+      "cultureLabel": "Magyar"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/17667",
+      "cultureLabel": "Jivaro"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/17535",
+      "cultureLabel": "Bankalawa Jarawa"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/16028",
+      "cultureLabel": "Maria Gond"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/16028",
+      "cultureLabel": "Gond"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/17887",
+      "cultureLabel": "Kalina"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/21176",
+      "cultureLabel": "Meitei"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/19064",
+      "cultureLabel": "Canela"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/19691",
+      "cultureLabel": "Lao"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/20615",
+      "cultureLabel": "Malinke"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/18833",
+      "cultureLabel": "Konda-Dora"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/20813",
+      "cultureLabel": "Manus"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/19614",
+      "cultureLabel": "Lala"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/19614",
+      "cultureLabel": "Bantu Lala"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/21110",
+      "cultureLabel": "Mbum"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/20219",
+      "cultureLabel": "Luba-Lulua"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/19196",
+      "cultureLabel": "Kullu"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/20362",
+      "cultureLabel": "Madang"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/18932",
+      "cultureLabel": "Urban S Korea"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/18596",
+      "cultureLabel": "Kyrgyz"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/21170",
+      "cultureLabel": "Meherza"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/21825",
+      "cultureLabel": "Motu"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/24091",
+      "cultureLabel": "S Peruvian Quechua"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/24540",
+      "cultureLabel": "Madras"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/24102",
+      "cultureLabel": "Ch'unchu"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/23145",
+      "cultureLabel": "Kurukh"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/22100",
+      "cultureLabel": "Naha-shi"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/24311",
+      "cultureLabel": "Rio"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/22254",
+      "cultureLabel": "N Bulgaria"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/24597",
+      "cultureLabel": "Kursk"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/24564",
+      "cultureLabel": "Village S Korea"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/23343",
+      "cultureLabel": "Paiwan"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/23607",
+      "cultureLabel": "N Peruvian Quechua"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/25427",
+      "cultureLabel": "Shina"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/28133",
+      "cultureLabel": "Uyghur"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/27457",
+      "cultureLabel": "Trinidad Creole"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/27028",
+      "cultureLabel": "Tibetans"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/27457",
+      "cultureLabel": "Trinidad"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/26379",
+      "cultureLabel": "Tagbanua"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/27589",
+      "cultureLabel": "Tucano"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/27743",
+      "cultureLabel": "Turkmen"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30054",
+      "cultureLabel": "Kanto"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30045",
+      "cultureLabel": "Adamawa Fulani"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30053",
+      "cultureLabel": "Chugoku"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30016",
+      "cultureLabel": "Aari"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/29316",
+      "cultureLabel": "Zinacantan Tzotzil"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30056",
+      "cultureLabel": "Kyushu"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30051",
+      "cultureLabel": "Tohoku"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/30026",
+      "cultureLabel": "Ouldeme"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/28986",
+      "cultureLabel": "Yaqui"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/50250",
+      "cultureLabel": "Dublin"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62410",
+      "cultureLabel": "Catania"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62407",
+      "cultureLabel": "Urban Kyushu"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62489",
+      "cultureLabel": "Argentina Unspecified"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62528",
+      "cultureLabel": "Hausa Unspecified"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62578",
+      "cultureLabel": "Wassoulou"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62528",
+      "cultureLabel": "Northern Gondi"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62558",
+      "cultureLabel": "Inner Mongolia"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62580",
+      "cultureLabel": "Krah\u00f4"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62489",
+      "cultureLabel": "Iruya"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62565",
+      "cultureLabel": "Moroccan Arabs"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62559",
+      "cultureLabel": "Tsonga (Mozambique)"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62474",
+      "cultureLabel": "Cincinnati S Black"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62589",
+      "cultureLabel": "Bairu"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62554",
+      "cultureLabel": "Hokkaido Japanese"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62483",
+      "cultureLabel": "Hill Country Black"
+    },
+    {
+      "culture": "https://theglobaljukebox.org/culture/62426",
+      "cultureLabel": "Hampton Roads"
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}

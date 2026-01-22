@@ -1,0 +1,36 @@
+{
+  "ground_truth": [
+    {
+      "work": "https://musicbrainz.org/work/a2f9419b-b3a4-382a-8d1b-db86822c3256"
+    },
+    {
+      "work": "https://musicbrainz.org/work/4eae36e1-cc71-38b6-8a32-d1a404bd7e02"
+    },
+    {
+      "work": "https://musicbrainz.org/work/8e897f2c-285a-327b-bb74-6dff23096b62"
+    },
+    {
+      "work": "https://musicbrainz.org/work/c06b8498-ad26-3048-ac3b-c3acb5087885"
+    }
+  ],
+  "generated": [
+    {
+      "mbWork": "https://musicbrainz.org/work/a2f9419b-b3a4-382a-8d1b-db86822c3256",
+      "mbWorkLabel": "They Can\u2019t Take That Away From Me"
+    },
+    {
+      "mbWork": "https://musicbrainz.org/work/4eae36e1-cc71-38b6-8a32-d1a404bd7e02",
+      "mbWorkLabel": "Dancing in the Dark"
+    },
+    {
+      "mbWork": "https://musicbrainz.org/work/8e897f2c-285a-327b-bb74-6dff23096b62",
+      "mbWorkLabel": "Milestones"
+    },
+    {
+      "mbWork": "https://musicbrainz.org/work/c06b8498-ad26-3048-ac3b-c3acb5087885",
+      "mbWorkLabel": "Just Friends"
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}

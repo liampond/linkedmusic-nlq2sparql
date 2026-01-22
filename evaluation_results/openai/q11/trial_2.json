@@ -1,0 +1,157 @@
+{
+  "ground_truth": [
+    {
+      "archive": "https://www.diamm.ac.uk/archives/123"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/240"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/255"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/310"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/482"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/551"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/691"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/695"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/110"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/154"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/2"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/216"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/261"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/275"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/276"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/282"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/291"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/300"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/32"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/332"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/335"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/340"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/35"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/353"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/362"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/368"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/371"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/39"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/400"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/418"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/430"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/435"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/486"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/487"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/498"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/502"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/520"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/533"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/540"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/547"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/558"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/603"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/616"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/618"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/620"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/67"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/71"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/81"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/83"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/95"
+    }
+  ],
+  "generated": [],
+  "gt_error": null,
+  "gen_error": null
+}

@@ -1,0 +1,44 @@
+{
+  "ground_truth": [
+    {
+      "band": "https://musicbrainz.org/artist/c74f4726-2671-4011-81b6-f70da905c05a",
+      "sharedMemberCount": "5"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/0860ed05-2e3a-4872-a44a-8e6d8a7e9696",
+      "sharedMemberCount": "2"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/9055fca5-69bc-4d47-b569-ab2012a19565",
+      "sharedMemberCount": "2"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/cd1cfb42-4b49-4f86-9518-37b1dfd1a2a8",
+      "sharedMemberCount": "2"
+    }
+  ],
+  "generated": [
+    {
+      "band": "https://musicbrainz.org/artist/bc57af6d-769b-490e-822d-94fab4afc135",
+      "bandLabel": "Hale & Pace and the Stonkers",
+      "sharedMemberCount": "2"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/7e07a487-5438-4128-b2d0-f0f18ac08384",
+      "bandLabel": "Queen + Adam Lambert",
+      "sharedMemberCount": "2"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/9dcffd99-eca6-4a09-8dbd-c6c4ed2f20fd",
+      "bandLabel": "Queen + Paul Rodgers",
+      "sharedMemberCount": "2"
+    },
+    {
+      "band": "https://musicbrainz.org/artist/41337bb4-2ca9-42a9-8409-daf0081f004e",
+      "bandLabel": "Smile",
+      "sharedMemberCount": "2"
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}

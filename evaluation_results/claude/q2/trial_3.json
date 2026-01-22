@@ -1,0 +1,816 @@
+{
+  "ground_truth": [
+    {
+      "session": "https://thesession.org/sessions/1081"
+    },
+    {
+      "session": "https://thesession.org/sessions/1293"
+    },
+    {
+      "session": "https://thesession.org/sessions/1314"
+    },
+    {
+      "session": "https://thesession.org/sessions/1606"
+    },
+    {
+      "session": "https://thesession.org/sessions/1608"
+    },
+    {
+      "session": "https://thesession.org/sessions/1625"
+    },
+    {
+      "session": "https://thesession.org/sessions/167"
+    },
+    {
+      "session": "https://thesession.org/sessions/1714"
+    },
+    {
+      "session": "https://thesession.org/sessions/208"
+    },
+    {
+      "session": "https://thesession.org/sessions/2213"
+    },
+    {
+      "session": "https://thesession.org/sessions/2233"
+    },
+    {
+      "session": "https://thesession.org/sessions/2287"
+    },
+    {
+      "session": "https://thesession.org/sessions/2310"
+    },
+    {
+      "session": "https://thesession.org/sessions/2311"
+    },
+    {
+      "session": "https://thesession.org/sessions/2519"
+    },
+    {
+      "session": "https://thesession.org/sessions/274"
+    },
+    {
+      "session": "https://thesession.org/sessions/2856"
+    },
+    {
+      "session": "https://thesession.org/sessions/298"
+    },
+    {
+      "session": "https://thesession.org/sessions/299"
+    },
+    {
+      "session": "https://thesession.org/sessions/3166"
+    },
+    {
+      "session": "https://thesession.org/sessions/319"
+    },
+    {
+      "session": "https://thesession.org/sessions/3226"
+    },
+    {
+      "session": "https://thesession.org/sessions/3246"
+    },
+    {
+      "session": "https://thesession.org/sessions/3326"
+    },
+    {
+      "session": "https://thesession.org/sessions/3789"
+    },
+    {
+      "session": "https://thesession.org/sessions/3793"
+    },
+    {
+      "session": "https://thesession.org/sessions/3874"
+    },
+    {
+      "session": "https://thesession.org/sessions/3904"
+    },
+    {
+      "session": "https://thesession.org/sessions/444"
+    },
+    {
+      "session": "https://thesession.org/sessions/5936"
+    },
+    {
+      "session": "https://thesession.org/sessions/6037"
+    },
+    {
+      "session": "https://thesession.org/sessions/6140"
+    },
+    {
+      "session": "https://thesession.org/sessions/6210"
+    },
+    {
+      "session": "https://thesession.org/sessions/6215"
+    },
+    {
+      "session": "https://thesession.org/sessions/6275"
+    },
+    {
+      "session": "https://thesession.org/sessions/6386"
+    },
+    {
+      "session": "https://thesession.org/sessions/6409"
+    },
+    {
+      "session": "https://thesession.org/sessions/6419"
+    },
+    {
+      "session": "https://thesession.org/sessions/6537"
+    },
+    {
+      "session": "https://thesession.org/sessions/6899"
+    },
+    {
+      "session": "https://thesession.org/sessions/6906"
+    },
+    {
+      "session": "https://thesession.org/sessions/6910"
+    },
+    {
+      "session": "https://thesession.org/sessions/6956"
+    },
+    {
+      "session": "https://thesession.org/sessions/6961"
+    },
+    {
+      "session": "https://thesession.org/sessions/7021"
+    },
+    {
+      "session": "https://thesession.org/sessions/7022"
+    },
+    {
+      "session": "https://thesession.org/sessions/7026"
+    },
+    {
+      "session": "https://thesession.org/sessions/7140"
+    },
+    {
+      "session": "https://thesession.org/sessions/7187"
+    },
+    {
+      "session": "https://thesession.org/sessions/7269"
+    },
+    {
+      "session": "https://thesession.org/sessions/7282"
+    },
+    {
+      "session": "https://thesession.org/sessions/7291"
+    },
+    {
+      "session": "https://thesession.org/sessions/7360"
+    },
+    {
+      "session": "https://thesession.org/sessions/7368"
+    },
+    {
+      "session": "https://thesession.org/sessions/7430"
+    },
+    {
+      "session": "https://thesession.org/sessions/7432"
+    },
+    {
+      "session": "https://thesession.org/sessions/7433"
+    },
+    {
+      "session": "https://thesession.org/sessions/7435"
+    },
+    {
+      "session": "https://thesession.org/sessions/7444"
+    },
+    {
+      "session": "https://thesession.org/sessions/7456"
+    },
+    {
+      "session": "https://thesession.org/sessions/7459"
+    },
+    {
+      "session": "https://thesession.org/sessions/7516"
+    },
+    {
+      "session": "https://thesession.org/sessions/7561"
+    },
+    {
+      "session": "https://thesession.org/sessions/7592"
+    },
+    {
+      "session": "https://thesession.org/sessions/7661"
+    },
+    {
+      "session": "https://thesession.org/sessions/7662"
+    },
+    {
+      "session": "https://thesession.org/sessions/7724"
+    },
+    {
+      "session": "https://thesession.org/sessions/7742"
+    },
+    {
+      "session": "https://thesession.org/sessions/7766"
+    },
+    {
+      "session": "https://thesession.org/sessions/7798"
+    },
+    {
+      "session": "https://thesession.org/sessions/7805"
+    },
+    {
+      "session": "https://thesession.org/sessions/7806"
+    },
+    {
+      "session": "https://thesession.org/sessions/7807"
+    },
+    {
+      "session": "https://thesession.org/sessions/7826"
+    },
+    {
+      "session": "https://thesession.org/sessions/7940"
+    },
+    {
+      "session": "https://thesession.org/sessions/7941"
+    },
+    {
+      "session": "https://thesession.org/sessions/7944"
+    },
+    {
+      "session": "https://thesession.org/sessions/7957"
+    },
+    {
+      "session": "https://thesession.org/sessions/7958"
+    },
+    {
+      "session": "https://thesession.org/sessions/8002"
+    },
+    {
+      "session": "https://thesession.org/sessions/834"
+    },
+    {
+      "session": "https://thesession.org/sessions/8826"
+    },
+    {
+      "session": "https://thesession.org/sessions/8828"
+    },
+    {
+      "session": "https://thesession.org/sessions/8830"
+    },
+    {
+      "session": "https://thesession.org/sessions/8834"
+    },
+    {
+      "session": "https://thesession.org/sessions/8896"
+    },
+    {
+      "session": "https://thesession.org/sessions/8898"
+    },
+    {
+      "session": "https://thesession.org/sessions/8903"
+    },
+    {
+      "session": "https://thesession.org/sessions/8908"
+    },
+    {
+      "session": "https://thesession.org/sessions/8910"
+    },
+    {
+      "session": "https://thesession.org/sessions/8923"
+    },
+    {
+      "session": "https://thesession.org/sessions/8954"
+    },
+    {
+      "session": "https://thesession.org/sessions/8975"
+    },
+    {
+      "session": "https://thesession.org/sessions/90"
+    },
+    {
+      "session": "https://thesession.org/sessions/9035"
+    },
+    {
+      "session": "https://thesession.org/sessions/9055"
+    },
+    {
+      "session": "https://thesession.org/sessions/9077"
+    },
+    {
+      "session": "https://thesession.org/sessions/9119"
+    },
+    {
+      "session": "https://thesession.org/sessions/9125"
+    },
+    {
+      "session": "https://thesession.org/sessions/9126"
+    },
+    {
+      "session": "https://thesession.org/sessions/9198"
+    }
+  ],
+  "generated": [
+    {
+      "session": "https://thesession.org/sessions/1081",
+      "location": "The Galway Inn",
+      "coordinates": "POINT(-3.37654328 47.758255)"
+    },
+    {
+      "session": "https://thesession.org/sessions/1293",
+      "location": "La Cit\u00e9 D'Ys",
+      "coordinates": "POINT(-1.67726004 48.10860062)"
+    },
+    {
+      "session": "https://thesession.org/sessions/1314",
+      "location": "Corrigan's",
+      "coordinates": "POINT(-1.14855611 46.1624794)"
+    },
+    {
+      "session": "https://thesession.org/sessions/1606",
+      "location": "Le Medi\u00e9val",
+      "coordinates": "POINT(6.17747021 48.69601822)"
+    },
+    {
+      "session": "https://thesession.org/sessions/1608",
+      "location": "Le Grand Caf\u00e9",
+      "coordinates": "POINT(6.44631195 48.17453003)"
+    },
+    {
+      "session": "https://thesession.org/sessions/1625",
+      "location": "Chez Denis",
+      "coordinates": "POINT(-61.69471741 16.03412056)"
+    },
+    {
+      "session": "https://thesession.org/sessions/167",
+      "location": "Le Shamrock",
+      "coordinates": "POINT(7.31647682 47.73841095)"
+    },
+    {
+      "session": "https://thesession.org/sessions/1714",
+      "location": "Ty Anna Tavarn",
+      "coordinates": "POINT(-1.6813035 48.11473846)"
+    },
+    {
+      "session": "https://thesession.org/sessions/208",
+      "location": "O'Sullivan's Pub",
+      "coordinates": "POINT(2.07884645 49.03593826)"
+    },
+    {
+      "session": "https://thesession.org/sessions/2213",
+      "location": "Fitzpatrick's",
+      "coordinates": "POINT(3.8765502 43.6080513)"
+    },
+    {
+      "session": "https://thesession.org/sessions/2233",
+      "location": "L'Antidote",
+      "coordinates": "POINT(4.82408476 45.75593567)"
+    },
+    {
+      "session": "https://thesession.org/sessions/2287",
+      "location": "Blue Zinc",
+      "coordinates": "POINT(0.1889794 48.00587082)"
+    },
+    {
+      "session": "https://thesession.org/sessions/2310",
+      "location": "Bar Le Kervi",
+      "coordinates": "POINT(-3.22054291 47.31149292)"
+    },
+    {
+      "session": "https://thesession.org/sessions/2311",
+      "location": "Auberge De La Tourelle",
+      "coordinates": "POINT(-3.11067319 47.97940063)"
+    },
+    {
+      "session": "https://thesession.org/sessions/2519",
+      "location": "O'Brady's",
+      "coordinates": "POINT(5.39412498 43.25880432)"
+    },
+    {
+      "session": "https://thesession.org/sessions/274",
+      "location": "An Poitin Still",
+      "coordinates": "POINT(-4.09149408 47.99378967)"
+    },
+    {
+      "session": "https://thesession.org/sessions/2856",
+      "location": "De Dannan Pub",
+      "coordinates": "POINT(-1.54877079 47.21627426)"
+    },
+    {
+      "session": "https://thesession.org/sessions/298",
+      "location": "O'Connell's",
+      "coordinates": "POINT(-1.6771878 48.11208344)"
+    },
+    {
+      "session": "https://thesession.org/sessions/299",
+      "location": "The Westport Inn",
+      "coordinates": "POINT(-1.68466854 48.11507797)"
+    },
+    {
+      "session": "https://thesession.org/sessions/3166",
+      "location": "Le Synthi",
+      "coordinates": "POINT(-1.66565466 48.11051559)"
+    },
+    {
+      "session": "https://thesession.org/sessions/319",
+      "location": "Le Skipper",
+      "coordinates": "POINT(-2.46041012 47.39989853)"
+    },
+    {
+      "session": "https://thesession.org/sessions/3226",
+      "location": "Fox And Friends",
+      "coordinates": "POINT(-1.68312502 48.11212158)"
+    },
+    {
+      "session": "https://thesession.org/sessions/3246",
+      "location": "La Taverne",
+      "coordinates": "POINT(-3.35187554 47.70005035)"
+    },
+    {
+      "session": "https://thesession.org/sessions/3326",
+      "location": "The Irish Pub",
+      "coordinates": "POINT(6.1753087 49.1210289)"
+    },
+    {
+      "session": "https://thesession.org/sessions/3789",
+      "location": "Caf\u00e9 Le 3c",
+      "coordinates": "POINT(5.4547863 43.52585983)"
+    },
+    {
+      "session": "https://thesession.org/sessions/3793",
+      "location": "O'Flaherty's Irish Pub",
+      "coordinates": "POINT(4.36312723 43.83836746)"
+    },
+    {
+      "session": "https://thesession.org/sessions/3874",
+      "location": "Le Biblio Caf\u00e9",
+      "coordinates": "POINT(0.3437933 46.58238983)"
+    },
+    {
+      "session": "https://thesession.org/sessions/3904",
+      "location": "Connemara Queen Pub",
+      "coordinates": "POINT(-2.77176237 48.51499939)"
+    },
+    {
+      "session": "https://thesession.org/sessions/444",
+      "location": "Dubliners",
+      "coordinates": "POINT(1.45062435 43.58356094)"
+    },
+    {
+      "session": "https://thesession.org/sessions/5936",
+      "location": "McNulty's Irish Pub",
+      "coordinates": "POINT(-1.15484095 46.15797424)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6037",
+      "location": "The Green Linnet",
+      "coordinates": "POINT(2.34978628 48.85741806)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6140",
+      "location": "Kerelshof II (L'estaminet De La Fontaine)",
+      "coordinates": "POINT(2.48638248 50.80013275)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6210",
+      "location": "Brasserie Du Jugement Dernier",
+      "coordinates": "POINT(3.19255996 46.13006973)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6215",
+      "location": "La M\u00e9canique Des Fluides",
+      "coordinates": "POINT(1.45378006 43.6072197)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6275",
+      "location": "Bar Le Coquelicot",
+      "coordinates": "POINT(-1.20364773 48.34975815)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6386",
+      "location": "Caf\u00e9 La Rotonde",
+      "coordinates": "POINT(0.36988509 48.35017776)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6409",
+      "location": "La Peau De L'Ours",
+      "coordinates": "POINT(-3.35391569 47.7074852)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6419",
+      "location": "Le Comptoir Des Pirates",
+      "coordinates": "POINT(1.08286989 49.44097519)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6537",
+      "location": "Connemara Pub",
+      "coordinates": "POINT(-0.58141738 44.83837509)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6899",
+      "location": "The Cottage",
+      "coordinates": "POINT(-4.49142075 48.38331985)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6906",
+      "location": "Ceili Bar",
+      "coordinates": "POINT(-4.09719133 47.9959259)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6910",
+      "location": "Gigg's Irish Pub",
+      "coordinates": "POINT(-1.55171371 47.21802521)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6956",
+      "location": "Ma Nolan's (Port De Nice)",
+      "coordinates": "POINT(7.28659391 43.69769669)"
+    },
+    {
+      "session": "https://thesession.org/sessions/6961",
+      "location": "The Shamrock",
+      "coordinates": "POINT(0.0732533 43.23319626)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7021",
+      "location": "Le Swing",
+      "coordinates": "POINT(2.70241284 48.4063797)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7022",
+      "location": "Bar Des Capitaines - Librairie Du Quai",
+      "coordinates": "POINT(2.80479908 48.38737488)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7026",
+      "location": "Pub My Goodness",
+      "coordinates": "POINT(2.30092978 49.89926147)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7140",
+      "location": "La Taverne Des 3 Lutins",
+      "coordinates": "POINT(3.08413291 45.77793884)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7187",
+      "location": "Johnny's Kitchen",
+      "coordinates": "POINT(4.82495022 45.75759125)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7269",
+      "location": "Le Balkanic",
+      "coordinates": "POINT(0.69052207 47.39580154)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7282",
+      "location": "The Irishman",
+      "coordinates": "POINT(2.34599519 48.83525467)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7291",
+      "location": "Caf\u00e9 Associatif Le Coup De T\u00eate",
+      "coordinates": "POINT(-2.08013391 47.77616119)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7360",
+      "location": "Mod'Kozh Kaf\u00e9",
+      "coordinates": "POINT(-3.07193613 48.74536133)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7368",
+      "location": "La Porte Ouverte",
+      "coordinates": "POINT(1.10030353 49.44083023)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7430",
+      "location": "Le Ti'Boussa",
+      "coordinates": "POINT(-1.35952997 48.68962097)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7432",
+      "location": "La Lune Rousse",
+      "coordinates": "POINT(-1.41691601 48.83614731)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7433",
+      "location": "The Irish Corner",
+      "coordinates": "POINT(-0.83600318 48.93688583)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7435",
+      "location": "Le Jardin Des Dunes",
+      "coordinates": "POINT(-1.5252645 48.72505188)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7444",
+      "location": "O'Pogues",
+      "coordinates": "POINT(5.92551947 45.56416702)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7456",
+      "location": "Corcoran's Sacr\u00e9 Coeur",
+      "coordinates": "POINT(2.34228659 48.88542557)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7459",
+      "location": "Caf\u00e9 Au Pais",
+      "coordinates": "POINT(-0.26323101 43.34539032)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7516",
+      "location": "Le Bardac'",
+      "coordinates": "POINT(-1.39823866 48.26106644)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7561",
+      "location": "LE 12 (Bar \u00e0 Vins)",
+      "coordinates": "POINT(1.33560431 47.58721924)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7592",
+      "location": "Le Bizart Caf\u00e9",
+      "coordinates": "POINT(2.38994336 48.85126114)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7661",
+      "location": "Ma\u00ebly's Caf\u00e9",
+      "coordinates": "POINT(5.89238691 43.12355804)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7662",
+      "location": "Bouc Ness Pub",
+      "coordinates": "POINT(5.93015146 43.12752533)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7724",
+      "location": "L'Highlander",
+      "coordinates": "POINT(-1.43613088 46.66873932)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7742",
+      "location": "Brasserie De L'Amour",
+      "coordinates": "POINT(4.88321495 45.77190399)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7766",
+      "location": "Le Caf\u00e9 Fran\u00e7ais",
+      "coordinates": "POINT(0.24037001 47.16680908)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7798",
+      "location": "Brasserie De La Fourche",
+      "coordinates": "POINT(1.60807097 42.96733475)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7805",
+      "location": "Jack's Bar",
+      "coordinates": "POINT(4.82759428 45.76552963)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7806",
+      "location": "Wallace Pub",
+      "coordinates": "POINT(4.80698013 45.78030777)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7807",
+      "location": "Liberty's",
+      "coordinates": "POINT(4.7181344 45.98483658)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7826",
+      "location": "Le Bar D'en Face (BDF)",
+      "coordinates": "POINT(-3.35869956 47.74686432)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7940",
+      "location": "Ti Devine's",
+      "coordinates": "POINT(-3.31710982 48.23648453)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7941",
+      "location": "An S\u00edb\u00edn Sp\u00e9zet",
+      "coordinates": "POINT(-3.71632075 48.19247437)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7944",
+      "location": "Le Mayflower",
+      "coordinates": "POINT(2.34925723 48.84512329)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7957",
+      "location": "Kraken",
+      "coordinates": "POINT(-2.94889569 47.6401825)"
+    },
+    {
+      "session": "https://thesession.org/sessions/7958",
+      "location": "Le TAC (Toutes Aides Caf\u00e9)",
+      "coordinates": "POINT(-1.52363026 47.22568512)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8002",
+      "location": "La Lanterne",
+      "coordinates": "POINT(-2.05819917 48.53435898)"
+    },
+    {
+      "session": "https://thesession.org/sessions/834",
+      "location": "Caf\u00e9 Bayard",
+      "coordinates": "POINT(5.73135996 45.1921196)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8826",
+      "location": "Le Caribou Caf\u00e9",
+      "coordinates": "POINT(0.3424488 46.58365631)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8828",
+      "location": "Pub La Moustache",
+      "coordinates": "POINT(0.64723521 46.56837463)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8830",
+      "location": "L\u2019Envers Du Bocal",
+      "coordinates": "POINT(0.34253401 46.58347702)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8834",
+      "location": "Pub Le LA\u00c0B - L'Amer \u00e0 Boire",
+      "coordinates": "POINT(7.74228621 48.57909393)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8896",
+      "location": "Cafe De La Halle",
+      "coordinates": "POINT(0.54782599 45.27729416)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8898",
+      "location": "Le Dropkick",
+      "coordinates": "POINT(1.90664303 47.89926529)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8903",
+      "location": "Cafe Du Coin",
+      "coordinates": "POINT(1.0583564 42.94828796)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8908",
+      "location": "Paddy Mullin's",
+      "coordinates": "POINT(4.62736988 43.67549515)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8910",
+      "location": "O-Varieties",
+      "coordinates": "POINT(4.83242941 43.78768921)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8923",
+      "location": "H\u00f4p Hop Hop",
+      "coordinates": "POINT(6.02139044 47.2351265)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8954",
+      "location": "Baba Yaga Bar",
+      "coordinates": "POINT(1.08576465 49.44109726)"
+    },
+    {
+      "session": "https://thesession.org/sessions/8975",
+      "location": "Caf\u00e9 De La Place",
+      "coordinates": "POINT(-3.58424711 47.79557037)"
+    },
+    {
+      "session": "https://thesession.org/sessions/90",
+      "location": "Tara Inn",
+      "coordinates": "POINT(-4.48544598 48.38297272)"
+    },
+    {
+      "session": "https://thesession.org/sessions/9035",
+      "location": "Mod Koz",
+      "coordinates": "POINT(-1.67328799 48.10887909)"
+    },
+    {
+      "session": "https://thesession.org/sessions/9055",
+      "location": "Bistrot Lab'",
+      "coordinates": "POINT(-1.44083118 47.88358688)"
+    },
+    {
+      "session": "https://thesession.org/sessions/9077",
+      "location": "Le Ninkasi",
+      "coordinates": "POINT(1.05842292 49.39009094)"
+    },
+    {
+      "session": "https://thesession.org/sessions/9119",
+      "location": "Filokaf\u00e9",
+      "coordinates": "POINT(-0.99233001 46.65753174)"
+    },
+    {
+      "session": "https://thesession.org/sessions/9125",
+      "location": "Le Grenier \u00e0 Biere",
+      "coordinates": "POINT(-2.96223998 48.06819916)"
+    },
+    {
+      "session": "https://thesession.org/sessions/9126",
+      "location": "Le Lapsuce",
+      "coordinates": "POINT(5.79307985 43.82077026)"
+    },
+    {
+      "session": "https://thesession.org/sessions/9198",
+      "location": "Smokey Monkey",
+      "coordinates": "POINT(7.76618004 48.57376862)"
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}

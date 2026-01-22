@@ -1,0 +1,1008 @@
+{
+  "ground_truth": [
+    {
+      "song": "https://theglobaljukebox.org/song/1686",
+      "songLabel": "Folk Song in Modern Arrangement"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1853",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1854",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1855",
+      "songLabel": "Popular love song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1856",
+      "songLabel": "Warrior's Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1857",
+      "songLabel": "War Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1858",
+      "songLabel": "Traditional Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1859",
+      "songLabel": "War Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1860",
+      "songLabel": "Popular Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1861",
+      "songLabel": "Zemadie"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2042",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2043",
+      "songLabel": "Greeting Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2044",
+      "songLabel": "Chant"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2047",
+      "songLabel": "Male Antiphonal Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2048",
+      "songLabel": "Marriage Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2049",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2518",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2519",
+      "songLabel": "Amusement Song 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2520",
+      "songLabel": "Amusement Song 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2521",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2522",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2523",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2524",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2525",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2526",
+      "songLabel": "Male Chorus"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2527",
+      "songLabel": "Religious Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30069",
+      "songLabel": "Alla"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30070",
+      "songLabel": "Ishka"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30071",
+      "songLabel": "Babi Weyssa"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30072",
+      "songLabel": "Bam Maysssak"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30073",
+      "songLabel": "Wbabi Bona Monde"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30074",
+      "songLabel": "Lalare"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/3450",
+      "songLabel": "Romantic Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/3452",
+      "songLabel": "My Medicine"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/3453",
+      "songLabel": "My Medicine 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4348",
+      "songLabel": "Burji Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4349",
+      "songLabel": "Circle Dance"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4350",
+      "songLabel": "Garri Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4351",
+      "songLabel": "Garri Song 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4352",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4353",
+      "songLabel": "Oken Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4354",
+      "songLabel": "Gamo Story"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4393",
+      "songLabel": "Gamo Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4395",
+      "songLabel": "Mixed Chorus with Lyre"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4396",
+      "songLabel": "Mhelando"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4397",
+      "songLabel": "Doss\u00e9"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4398",
+      "songLabel": "Gamo Song with Sticks"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4399",
+      "songLabel": "Helo Helelio"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4400",
+      "songLabel": "Boiadlele"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4401",
+      "songLabel": "Circle Dance Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4422",
+      "songLabel": "Male Chorus with Clapping 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4423",
+      "songLabel": "Male Chorus with Clapping 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4424",
+      "songLabel": "Male Chorus with Yodelling and Clapping"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4425",
+      "songLabel": "Male Chorus with Clapping"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4426",
+      "songLabel": "Male Chorus with Clapping"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4427",
+      "songLabel": "Male Chorus with Clapping"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4432",
+      "songLabel": "Hermana"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4433",
+      "songLabel": "Sanga"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4434",
+      "songLabel": "Jabie"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4435",
+      "songLabel": "Male Chorus with Trumpets"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4436",
+      "songLabel": "Sabbath Service"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4437",
+      "songLabel": "Garri Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4438",
+      "songLabel": "Group Celebration Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4439",
+      "songLabel": "Ahello"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4440",
+      "songLabel": "Hoby, Hoby"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4441",
+      "songLabel": "Women's Celebration 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4442",
+      "songLabel": "Women's Celebration 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4443",
+      "songLabel": "Konso Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4444",
+      "songLabel": "Kongo"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4445",
+      "songLabel": "Konso"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4454",
+      "songLabel": "Love song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4455",
+      "songLabel": "Kotu"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/708",
+      "songLabel": "Song of Praise 'Eritrea'"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/709",
+      "songLabel": "Oh, My Country (Ethiopia)"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/718",
+      "songLabel": "Prayer for Passover"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/719",
+      "songLabel": "Responsive Reading"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9104",
+      "songLabel": "Dorz\u00e9 Music, Canon"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9208",
+      "songLabel": "Song for the Emperor"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9268",
+      "songLabel": "Ethiopian Style"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9420",
+      "songLabel": "Song to a Bride"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9421",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9422",
+      "songLabel": "Harvest Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9423",
+      "songLabel": "Wedding music"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9424",
+      "songLabel": "Aderi Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9425",
+      "songLabel": "Sidamo Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9426",
+      "songLabel": "Incitement to Battle"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9427",
+      "songLabel": "Girls' Age-Grade Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9428",
+      "songLabel": "Maji Dance Music"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9429",
+      "songLabel": "Underarm Music"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9975",
+      "songLabel": "Camel Song and Dance"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9976",
+      "songLabel": "Praise of King"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9977",
+      "songLabel": "Cow Song & Dance"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9978",
+      "songLabel": "Baby Dance"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9979",
+      "songLabel": "Introduction of a Man to a Woman"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9980",
+      "songLabel": "Wolamo Song 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9981",
+      "songLabel": "Wolamo Song 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9982",
+      "songLabel": "Wolamo Song 3"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9983",
+      "songLabel": "Lembola"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9984",
+      "songLabel": "Wanko herana worge herana"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9985",
+      "songLabel": "Faro"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9986",
+      "songLabel": "Lewbuyo"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9987",
+      "songLabel": "Faro"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9988",
+      "songLabel": "Wanko Herana"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9989",
+      "songLabel": "Luba"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9990",
+      "songLabel": "Tigrinya Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9991",
+      "songLabel": "Song for Haile Selassie's Birthday"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9992",
+      "songLabel": "Tigre Song 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9993",
+      "songLabel": "Tigre Song 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9994",
+      "songLabel": "Tigre Song 3"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9995",
+      "songLabel": "Tigre Song 4"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9996",
+      "songLabel": "Tesola"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9997",
+      "songLabel": "Wew"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9998",
+      "songLabel": "Sikere"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9999",
+      "songLabel": "Celebratory song"
+    }
+  ],
+  "generated": [
+    {
+      "song": "https://theglobaljukebox.org/song/9424",
+      "songLabel": "Aderi Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4439",
+      "songLabel": "Ahello"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30069",
+      "songLabel": "Alla"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2519",
+      "songLabel": "Amusement Song 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2520",
+      "songLabel": "Amusement Song 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30071",
+      "songLabel": "Babi Weyssa"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9978",
+      "songLabel": "Baby Dance"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30072",
+      "songLabel": "Bam Maysssak"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4400",
+      "songLabel": "Boiadlele"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2031",
+      "songLabel": "Bull Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4348",
+      "songLabel": "Burji Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9975",
+      "songLabel": "Camel Song and Dance"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9999",
+      "songLabel": "Celebratory song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2044",
+      "songLabel": "Chant"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2033",
+      "songLabel": "Chief's Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4349",
+      "songLabel": "Circle Dance"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4401",
+      "songLabel": "Circle Dance Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9977",
+      "songLabel": "Cow Song & Dance"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9104",
+      "songLabel": "Dorz\u00e9 Music, Canon"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4397",
+      "songLabel": "Doss\u00e9"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9268",
+      "songLabel": "Ethiopian Style"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9985",
+      "songLabel": "Faro"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9987",
+      "songLabel": "Faro"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1686",
+      "songLabel": "Folk Song in Modern Arrangement"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4393",
+      "songLabel": "Gamo Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4398",
+      "songLabel": "Gamo Song with Sticks"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4354",
+      "songLabel": "Gamo Story"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4350",
+      "songLabel": "Garri Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4437",
+      "songLabel": "Garri Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4351",
+      "songLabel": "Garri Song 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9427",
+      "songLabel": "Girls' Age-Grade Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2043",
+      "songLabel": "Greeting Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4438",
+      "songLabel": "Group Celebration Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4219",
+      "songLabel": "Harad"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9422",
+      "songLabel": "Harvest Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4220",
+      "songLabel": "Hassiss"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4399",
+      "songLabel": "Helo Helelio"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4432",
+      "songLabel": "Hermana"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4440",
+      "songLabel": "Hoby, Hoby"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9426",
+      "songLabel": "Incitement to Battle"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9979",
+      "songLabel": "Introduction of a Man to a Woman"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30070",
+      "songLabel": "Ishka"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4434",
+      "songLabel": "Jabie"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4221",
+      "songLabel": "Kedandaya"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4444",
+      "songLabel": "Kongo"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4445",
+      "songLabel": "Konso"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4443",
+      "songLabel": "Konso Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4455",
+      "songLabel": "Kotu"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30074",
+      "songLabel": "Lalare"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4222",
+      "songLabel": "Lebada"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4223",
+      "songLabel": "Lebada"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9983",
+      "songLabel": "Lembola"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9986",
+      "songLabel": "Lewbuyo"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1853",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1854",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2042",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2049",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2518",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2521",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2522",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2523",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2524",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2525",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4352",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9421",
+      "songLabel": "Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2035",
+      "songLabel": "Love Story"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4454",
+      "songLabel": "Love song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9989",
+      "songLabel": "Luba"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9428",
+      "songLabel": "Maji Dance Music"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2047",
+      "songLabel": "Male Antiphonal Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2526",
+      "songLabel": "Male Chorus"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4425",
+      "songLabel": "Male Chorus with Clapping"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4426",
+      "songLabel": "Male Chorus with Clapping"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4427",
+      "songLabel": "Male Chorus with Clapping"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4422",
+      "songLabel": "Male Chorus with Clapping 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4423",
+      "songLabel": "Male Chorus with Clapping 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4435",
+      "songLabel": "Male Chorus with Trumpets"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4424",
+      "songLabel": "Male Chorus with Yodelling and Clapping"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2048",
+      "songLabel": "Marriage Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4396",
+      "songLabel": "Mhelando"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4395",
+      "songLabel": "Mixed Chorus with Lyre"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/3452",
+      "songLabel": "My Medicine"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/3453",
+      "songLabel": "My Medicine 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2029",
+      "songLabel": "Nuer Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2030",
+      "songLabel": "Nuer Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/709",
+      "songLabel": "Oh, My Country (Ethiopia)"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4353",
+      "songLabel": "Oken Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1860",
+      "songLabel": "Popular Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1855",
+      "songLabel": "Popular love song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2025",
+      "songLabel": "Possession by a Spirit"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2028",
+      "songLabel": "Possession by a Spirit"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4224",
+      "songLabel": "Praise Song to Nazir Mansour of Hamar"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2027",
+      "songLabel": "Praise Song to a Bull"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2032",
+      "songLabel": "Praise of Bull Madjok"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9976",
+      "songLabel": "Praise of King"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/718",
+      "songLabel": "Prayer for Passover"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2527",
+      "songLabel": "Religious Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/719",
+      "songLabel": "Responsive Reading"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/3450",
+      "songLabel": "Romantic Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4436",
+      "songLabel": "Sabbath Service"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4433",
+      "songLabel": "Sanga"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9425",
+      "songLabel": "Sidamo Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9998",
+      "songLabel": "Sikere"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9991",
+      "songLabel": "Song for Haile Selassie's Birthday"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9208",
+      "songLabel": "Song for the Emperor"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/708",
+      "songLabel": "Song of Praise 'Eritrea'"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2046",
+      "songLabel": "Song to Make Camels Drink"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2026",
+      "songLabel": "Song to Spirit Ngundeng"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9420",
+      "songLabel": "Song to a Bride"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4225",
+      "songLabel": "Tambur"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4226",
+      "songLabel": "Tambur"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9996",
+      "songLabel": "Tesola"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9992",
+      "songLabel": "Tigre Song 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9993",
+      "songLabel": "Tigre Song 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9994",
+      "songLabel": "Tigre Song 3"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9995",
+      "songLabel": "Tigre Song 4"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9990",
+      "songLabel": "Tigrinya Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1858",
+      "songLabel": "Traditional Love Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9429",
+      "songLabel": "Underarm Music"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9988",
+      "songLabel": "Wanko Herana"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9984",
+      "songLabel": "Wanko herana worge herana"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1857",
+      "songLabel": "War Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1859",
+      "songLabel": "War Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2034",
+      "songLabel": "Warrior's Lament"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1856",
+      "songLabel": "Warrior's Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/30073",
+      "songLabel": "Wbabi Bona Monde"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/2045",
+      "songLabel": "Wedding Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4218",
+      "songLabel": "Wedding Song"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9423",
+      "songLabel": "Wedding music"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9997",
+      "songLabel": "Wew"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9980",
+      "songLabel": "Wolamo Song 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9981",
+      "songLabel": "Wolamo Song 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/9982",
+      "songLabel": "Wolamo Song 3"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4441",
+      "songLabel": "Women's Celebration 1"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/4442",
+      "songLabel": "Women's Celebration 2"
+    },
+    {
+      "song": "https://theglobaljukebox.org/song/1861",
+      "songLabel": "Zemadie"
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}

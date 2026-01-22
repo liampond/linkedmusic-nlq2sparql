@@ -1,0 +1,358 @@
+{
+  "ground_truth": [
+    {
+      "archive": "https://www.diamm.ac.uk/archives/123"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/240"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/255"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/310"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/482"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/551"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/691"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/695"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/110"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/154"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/2"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/216"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/261"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/275"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/276"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/282"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/291"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/300"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/32"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/332"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/335"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/340"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/35"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/353"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/362"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/368"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/371"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/39"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/400"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/418"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/430"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/435"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/486"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/487"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/498"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/502"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/520"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/533"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/540"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/547"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/558"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/603"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/616"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/618"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/620"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/67"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/71"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/81"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/83"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/95"
+    }
+  ],
+  "generated": [
+    {
+      "archive": "https://www.diamm.ac.uk/archives/123",
+      "archiveLabel": "Nieders\u00e4chsisches Staatsarchiv"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/240",
+      "archiveLabel": "Church of Notre Dame"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/255",
+      "archiveLabel": "Archiwum Archidiecezjalne"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/310",
+      "archiveLabel": "Biblioth\u00e8que de la Ville"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/482",
+      "archiveLabel": "Muzeum Diecezjalne"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/551",
+      "archiveLabel": "Archivio di Stato Udine"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/691",
+      "archiveLabel": "Abbey Museum of Art and Archaeology"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/695",
+      "archiveLabel": "Biblioth\u00e8que cantonale jurassienne"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/110",
+      "archiveLabel": "Hessische Landes- und Hochschulbibliothek"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/154",
+      "archiveLabel": "Museo Internazionale e Biblioteca della Musica di Bologna"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/2",
+      "archiveLabel": "National Library of Wales"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/216",
+      "archiveLabel": "Museum Mayer van den Bergh"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/261",
+      "archiveLabel": "Sibley Musical Library"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/275",
+      "archiveLabel": "Biblioteca Narodowa"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/276",
+      "archiveLabel": "National Gallery of Art"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/282",
+      "archiveLabel": "Yale University, School of Music Library"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/291",
+      "archiveLabel": "Jean Gray Hargrove Music Library"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/300",
+      "archiveLabel": "Universit\u00e4tsbibliothek"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/32",
+      "archiveLabel": "British Library"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/332",
+      "archiveLabel": "Muzeum hlavn\u00edho m\u011bsta"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/335",
+      "archiveLabel": "Muzeum a galerie Orlick\u00fdch hor"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/340",
+      "archiveLabel": "S\u00e4chsische Landesbibliothek"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/35",
+      "archiveLabel": "The National Archives"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/353",
+      "archiveLabel": "Det Arnamagn\u00e6anske Institut"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/362",
+      "archiveLabel": "Instituto Espanol de Musicologia"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/368",
+      "archiveLabel": "Essex Record Office"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/371",
+      "archiveLabel": "Stadtarchiv"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/39",
+      "archiveLabel": "Kent History and Library Centre"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/400",
+      "archiveLabel": "Stedelijk Museum in de Lakenhal"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/418",
+      "archiveLabel": "Yale University, Beinecke Library for Rare Books and Manuscripts"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/430",
+      "archiveLabel": "Landsb\u00f3kasafn \u00cdslands H\u00e1sk\u00f3lab\u00f3kasafn"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/435",
+      "archiveLabel": "Ksi\u0105\u017cnica Cieszy\u0144ska"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/486",
+      "archiveLabel": "Biblioth\u00e8que de la Ville"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/487",
+      "archiveLabel": "Muzeum"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/498",
+      "archiveLabel": "Parroquia de Santiago"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/502",
+      "archiveLabel": "Folger Shakespeare Library"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/520",
+      "archiveLabel": "National Library of South Africa"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/533",
+      "archiveLabel": "Evangelische Kirchengemeinde, Varnhagen Bibliothek"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/540",
+      "archiveLabel": "Muzeum Mladoboleslavska"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/547",
+      "archiveLabel": "Rijksmuseum Catharijneconvent"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/558",
+      "archiveLabel": "Nacionalna i sveu\u010dili\u0161na knji\u017enica"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/603",
+      "archiveLabel": "Metropolitan Archives"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/616",
+      "archiveLabel": "Archivo de la Real Chanciller\u00eda"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/618",
+      "archiveLabel": "Museo L\u00e1zaro Galdiano"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/620",
+      "archiveLabel": "Archivo Hist\u00f3rico Provincial"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/67",
+      "archiveLabel": "Pierpont Morgan Library"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/71",
+      "archiveLabel": "Columbia University, Rare Book and Manuscript Library"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/81",
+      "archiveLabel": "National Library of Scotland"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/83",
+      "archiveLabel": "Huntington Library"
+    },
+    {
+      "archive": "https://www.diamm.ac.uk/archives/95",
+      "archiveLabel": "St Chad's College"
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}

@@ -1,0 +1,565 @@
+{
+  "ground_truth": [
+    {
+      "event": "https://thesession.org/events/2280"
+    },
+    {
+      "event": "https://thesession.org/events/7876"
+    },
+    {
+      "event": "https://thesession.org/events/7822"
+    },
+    {
+      "event": "https://thesession.org/events/2979"
+    },
+    {
+      "event": "https://thesession.org/events/6728"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1130ede9-90de-403f-a670-4116b7d4f366"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d2a8fff3-a43c-4d87-b625-f1650cd5566d"
+    }
+  ],
+  "generated": [
+    {
+      "event": "https://thesession.org/events/763",
+      "eventLabel": "Comhaltas 2008 UK Concert Tour",
+      "eventDate": "2008-03-01",
+      "label": "https://musicbrainz.org/label/9b8f9038-3b21-4b12-9372-d289123b1cbf",
+      "labelLabel": "Seoul Records",
+      "labelDissolvedDate": "2008-03-01"
+    },
+    {
+      "event": "https://thesession.org/events/763",
+      "eventLabel": "Comhaltas 2008 UK Concert Tour",
+      "eventDate": "2008-03-01",
+      "label": "https://musicbrainz.org/label/0cfa8b0d-2e5f-4f22-b137-a4a013d08a29",
+      "labelLabel": "Seoul Records, Inc.",
+      "labelDissolvedDate": "2008-03-01"
+    },
+    {
+      "event": "https://thesession.org/events/732",
+      "eventLabel": "Evening Of Traditional Irish Music",
+      "eventDate": "2008-03-01",
+      "label": "https://musicbrainz.org/label/9b8f9038-3b21-4b12-9372-d289123b1cbf",
+      "labelLabel": "Seoul Records",
+      "labelDissolvedDate": "2008-03-01"
+    },
+    {
+      "event": "https://thesession.org/events/732",
+      "eventLabel": "Evening Of Traditional Irish Music",
+      "eventDate": "2008-03-01",
+      "label": "https://musicbrainz.org/label/0cfa8b0d-2e5f-4f22-b137-a4a013d08a29",
+      "labelLabel": "Seoul Records, Inc.",
+      "labelDissolvedDate": "2008-03-01"
+    },
+    {
+      "event": "https://thesession.org/events/767",
+      "eventLabel": "Linda Hickman Whistle Workshop",
+      "eventDate": "2008-03-01",
+      "label": "https://musicbrainz.org/label/9b8f9038-3b21-4b12-9372-d289123b1cbf",
+      "labelLabel": "Seoul Records",
+      "labelDissolvedDate": "2008-03-01"
+    },
+    {
+      "event": "https://thesession.org/events/767",
+      "eventLabel": "Linda Hickman Whistle Workshop",
+      "eventDate": "2008-03-01",
+      "label": "https://musicbrainz.org/label/0cfa8b0d-2e5f-4f22-b137-a4a013d08a29",
+      "labelLabel": "Seoul Records, Inc.",
+      "labelDissolvedDate": "2008-03-01"
+    },
+    {
+      "event": "https://thesession.org/events/744",
+      "eventLabel": "M\u00e1ire N\u00ed Chathasaigh and Chris Newman",
+      "eventDate": "2008-03-01",
+      "label": "https://musicbrainz.org/label/9b8f9038-3b21-4b12-9372-d289123b1cbf",
+      "labelLabel": "Seoul Records",
+      "labelDissolvedDate": "2008-03-01"
+    },
+    {
+      "event": "https://thesession.org/events/744",
+      "eventLabel": "M\u00e1ire N\u00ed Chathasaigh and Chris Newman",
+      "eventDate": "2008-03-01",
+      "label": "https://musicbrainz.org/label/0cfa8b0d-2e5f-4f22-b137-a4a013d08a29",
+      "labelLabel": "Seoul Records, Inc.",
+      "labelDissolvedDate": "2008-03-01"
+    },
+    {
+      "event": "https://thesession.org/events/2212",
+      "eventLabel": "Altan",
+      "eventDate": "2011-01-01",
+      "label": "https://musicbrainz.org/label/4f2ec2fd-80b1-4f2c-a60b-cf3dacf9802d",
+      "labelLabel": "Mnet Media",
+      "labelDissolvedDate": "2011-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/2242",
+      "eventLabel": "Altan",
+      "eventDate": "2011-01-01",
+      "label": "https://musicbrainz.org/label/4f2ec2fd-80b1-4f2c-a60b-cf3dacf9802d",
+      "labelLabel": "Mnet Media",
+      "labelDissolvedDate": "2011-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/2212",
+      "eventLabel": "Altan",
+      "eventDate": "2011-01-01",
+      "label": "https://musicbrainz.org/label/76c00b2b-3f18-4c17-bb0c-d5433a887643",
+      "labelLabel": "Playcube Inc.",
+      "labelDissolvedDate": "2011-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/2242",
+      "eventLabel": "Altan",
+      "eventDate": "2011-01-01",
+      "label": "https://musicbrainz.org/label/76c00b2b-3f18-4c17-bb0c-d5433a887643",
+      "labelLabel": "Playcube Inc.",
+      "labelDissolvedDate": "2011-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/2212",
+      "eventLabel": "Altan",
+      "eventDate": "2011-01-01",
+      "label": "https://musicbrainz.org/label/10388e16-1d54-4d16-9bee-35a0459863ba",
+      "labelLabel": "Soul Company",
+      "labelDissolvedDate": "2011-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/2242",
+      "eventLabel": "Altan",
+      "eventDate": "2011-01-01",
+      "label": "https://musicbrainz.org/label/10388e16-1d54-4d16-9bee-35a0459863ba",
+      "labelLabel": "Soul Company",
+      "labelDissolvedDate": "2011-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/2280",
+      "eventLabel": "2nd George Carruthers Irish Music School",
+      "eventDate": "2011-08-01",
+      "label": "https://musicbrainz.org/label/f29cea90-8539-45b3-b5a8-b7e49d23947b",
+      "labelLabel": "MBC PRODUCTION",
+      "labelDissolvedDate": "2011-08-01"
+    },
+    {
+      "event": "https://thesession.org/events/2444",
+      "eventLabel": "Carmel Gunning International Summer School Festival Of Irish Music",
+      "eventDate": "2011-08-01",
+      "label": "https://musicbrainz.org/label/f29cea90-8539-45b3-b5a8-b7e49d23947b",
+      "labelLabel": "MBC PRODUCTION",
+      "labelDissolvedDate": "2011-08-01"
+    },
+    {
+      "event": "https://thesession.org/events/3190",
+      "eventLabel": "Mai Hernon & Celtic Font in Concert",
+      "eventDate": "2013-06-01",
+      "label": "https://musicbrainz.org/label/4fc1b7bf-eee8-46b9-a6e8-bae3a2063a67",
+      "labelLabel": "KMP Holdings",
+      "labelDissolvedDate": "2013-06-01"
+    },
+    {
+      "event": "https://thesession.org/events/3189",
+      "eventLabel": "Mai Hernon - Master Class/Workshop in Traditional Singing",
+      "eventDate": "2013-06-01",
+      "label": "https://musicbrainz.org/label/4fc1b7bf-eee8-46b9-a6e8-bae3a2063a67",
+      "labelLabel": "KMP Holdings",
+      "labelDissolvedDate": "2013-06-01"
+    },
+    {
+      "event": "https://thesession.org/events/2979",
+      "eventLabel": "Steeple Sessions Summer Festival 2013",
+      "eventDate": "2013-06-01",
+      "label": "https://musicbrainz.org/label/4fc1b7bf-eee8-46b9-a6e8-bae3a2063a67",
+      "labelLabel": "KMP Holdings",
+      "labelDissolvedDate": "2013-06-01"
+    },
+    {
+      "event": "https://thesession.org/events/3371",
+      "eventLabel": "IrishFest Atlanta",
+      "eventDate": "2013-11-01",
+      "label": "https://musicbrainz.org/label/c23b8b11-83b9-4c25-bef7-308e8684fbc5",
+      "labelLabel": "J. Tune Entertainment",
+      "labelDissolvedDate": "2013-11-01"
+    },
+    {
+      "event": "https://musicbrainz.org/event/d2a8fff3-a43c-4d87-b625-f1650cd5566d",
+      "eventLabel": "Leogun on The KISS Kruise III",
+      "eventDate": "2013-11-01T00:00:00",
+      "label": "https://musicbrainz.org/label/c23b8b11-83b9-4c25-bef7-308e8684fbc5",
+      "labelLabel": "J. Tune Entertainment",
+      "labelDissolvedDate": "2013-11-01"
+    },
+    {
+      "event": "https://thesession.org/events/3587",
+      "eventLabel": "Ragged Rascals",
+      "eventDate": "2014-06-01",
+      "label": "https://musicbrainz.org/label/d697cd47-b0e5-4407-b27f-673c69011948",
+      "labelLabel": "Secret Love Affair",
+      "labelDissolvedDate": "2014-06-01"
+    },
+    {
+      "event": "https://thesession.org/events/3575",
+      "eventLabel": "The House Devils",
+      "eventDate": "2014-06-01",
+      "label": "https://musicbrainz.org/label/d697cd47-b0e5-4407-b27f-673c69011948",
+      "labelLabel": "Secret Love Affair",
+      "labelDissolvedDate": "2014-06-01"
+    },
+    {
+      "event": "https://thesession.org/events/3692",
+      "eventLabel": "35th Cork Folk Festival",
+      "eventDate": "2014-10-01",
+      "label": "https://musicbrainz.org/label/d8ccb7cb-b447-44f0-af40-1dbd85ecd500",
+      "labelLabel": "Core Contents Media",
+      "labelDissolvedDate": "2014-10-01"
+    },
+    {
+      "event": "https://thesession.org/events/3707",
+      "eventLabel": "One last Trad Session in The Stables",
+      "eventDate": "2014-10-01",
+      "label": "https://musicbrainz.org/label/d8ccb7cb-b447-44f0-af40-1dbd85ecd500",
+      "labelLabel": "Core Contents Media",
+      "labelDissolvedDate": "2014-10-01"
+    },
+    {
+      "event": "https://musicbrainz.org/event/1130ede9-90de-403f-a670-4116b7d4f366",
+      "eventLabel": "DJ Noiz on The KISS Kruise IV",
+      "eventDate": "2014-11-01T00:00:00",
+      "label": "https://musicbrainz.org/label/9d879986-3c65-4343-ab7b-d9bd4eddaf8a",
+      "labelLabel": "Phoenix Holdings, Inc.",
+      "labelDissolvedDate": "2014-11-01"
+    },
+    {
+      "event": "https://thesession.org/events/3700",
+      "eventLabel": "Halloween Irish Dance Ceili",
+      "eventDate": "2014-11-01",
+      "label": "https://musicbrainz.org/label/9d879986-3c65-4343-ab7b-d9bd4eddaf8a",
+      "labelLabel": "Phoenix Holdings, Inc.",
+      "labelDissolvedDate": "2014-11-01"
+    },
+    {
+      "event": "https://thesession.org/events/3732",
+      "eventLabel": "Hanz Araki - 'Foreign Shore' CD Release",
+      "eventDate": "2014-11-01",
+      "label": "https://musicbrainz.org/label/9d879986-3c65-4343-ab7b-d9bd4eddaf8a",
+      "labelLabel": "Phoenix Holdings, Inc.",
+      "labelDissolvedDate": "2014-11-01"
+    },
+    {
+      "event": "https://thesession.org/events/3710",
+      "eventLabel": "Perry Hall Folk Music Night, featuring Abigail Palmer",
+      "eventDate": "2014-11-01",
+      "label": "https://musicbrainz.org/label/9d879986-3c65-4343-ab7b-d9bd4eddaf8a",
+      "labelLabel": "Phoenix Holdings, Inc.",
+      "labelDissolvedDate": "2014-11-01"
+    },
+    {
+      "event": "https://thesession.org/events/3806",
+      "eventLabel": "Caitl\u00edn Nic Gabhann (concertina) & Ciar\u00e1n \u00d3 Maonaigh (fiddle)",
+      "eventDate": "2015-03-01",
+      "label": "https://musicbrainz.org/label/ce664836-dba5-4161-9039-a25840f4e321",
+      "labelLabel": "WA Entertainment",
+      "labelDissolvedDate": "2015-03-01"
+    },
+    {
+      "event": "https://thesession.org/events/6273",
+      "eventLabel": "36th Cork Folk Festival",
+      "eventDate": "2015-10-01",
+      "label": "https://musicbrainz.org/label/d2bea8a7-6236-4845-9f57-45a956241a03",
+      "labelLabel": "RealCollabo",
+      "labelDissolvedDate": "2015-10-01"
+    },
+    {
+      "event": "https://thesession.org/events/6254",
+      "eventLabel": "bohola: Jimmy Keane & Pat Broaders",
+      "eventDate": "2015-10-01",
+      "label": "https://musicbrainz.org/label/d2bea8a7-6236-4845-9f57-45a956241a03",
+      "labelLabel": "RealCollabo",
+      "labelDissolvedDate": "2015-10-01"
+    },
+    {
+      "event": "https://thesession.org/events/6483",
+      "eventLabel": "Edel Vaughan, Francis Cunningham, Eimear Coughlan & P\u00e1draig O'Reilly",
+      "eventDate": "2016-06-08",
+      "label": "https://musicbrainz.org/label/512cda7f-d017-45fa-8832-a4d14dcbd9cf",
+      "labelLabel": "LOEN Tree",
+      "labelDissolvedDate": "2016-06-08"
+    },
+    {
+      "event": "https://thesession.org/events/6484",
+      "eventLabel": "Irish session - All instruments welcome!",
+      "eventDate": "2016-06-08",
+      "label": "https://musicbrainz.org/label/512cda7f-d017-45fa-8832-a4d14dcbd9cf",
+      "labelLabel": "LOEN Tree",
+      "labelDissolvedDate": "2016-06-08"
+    },
+    {
+      "event": "https://thesession.org/events/6490",
+      "eventLabel": "Session with Dennis Spring (NC, USA)",
+      "eventDate": "2016-06-08",
+      "label": "https://musicbrainz.org/label/512cda7f-d017-45fa-8832-a4d14dcbd9cf",
+      "labelLabel": "LOEN Tree",
+      "labelDissolvedDate": "2016-06-08"
+    },
+    {
+      "event": "https://thesession.org/events/6728",
+      "eventLabel": "Celtic Connections",
+      "eventDate": "2017-01-19",
+      "label": "https://musicbrainz.org/label/56847655-e5ea-4489-859f-c69d0530a791",
+      "labelLabel": "AQ Entertainment",
+      "labelDissolvedDate": "2017-01-19"
+    },
+    {
+      "event": "https://thesession.org/events/7028",
+      "eventLabel": "Br\u00edd Harper and Diarmuid Johnson (with Jon Turton and Jennie Nolan)",
+      "eventDate": "2017-11-17",
+      "label": "https://musicbrainz.org/label/28e1d79b-76f0-45b6-aa59-ad760f518a78",
+      "labelLabel": "SANTAMUSIC",
+      "labelDissolvedDate": "2017-11-17"
+    },
+    {
+      "event": "https://thesession.org/events/7023",
+      "eventLabel": "Hastings Fleadh",
+      "eventDate": "2017-11-17",
+      "label": "https://musicbrainz.org/label/28e1d79b-76f0-45b6-aa59-ad760f518a78",
+      "labelLabel": "SANTAMUSIC",
+      "labelDissolvedDate": "2017-11-17"
+    },
+    {
+      "event": "https://thesession.org/events/7303",
+      "eventLabel": "Half Day In Cavan  Dermot Healy RIP  Sonny Mc Dermott  Noel Sweeney Celebrated",
+      "eventDate": "2018-08-01",
+      "label": "https://musicbrainz.org/label/c94faf36-c376-4cee-b3ec-9938e422a713",
+      "labelLabel": "CJ E&M",
+      "labelDissolvedDate": "2018-08-01"
+    },
+    {
+      "event": "https://thesession.org/events/7314",
+      "eventLabel": "Dylan Foley and John Whelan, house concert in the Wee Ceili Room",
+      "eventDate": "2018-08-31",
+      "label": "https://musicbrainz.org/label/5f983851-07ca-48de-8278-5d3d136b7dcb",
+      "labelLabel": "Kakao M",
+      "labelDissolvedDate": "2018-08-31"
+    },
+    {
+      "event": "https://thesession.org/events/7314",
+      "eventLabel": "Dylan Foley and John Whelan, house concert in the Wee Ceili Room",
+      "eventDate": "2018-08-31",
+      "label": "https://musicbrainz.org/label/1f13236d-5650-4051-b552-eb29c8416dd7",
+      "labelLabel": "Kakao M Corp.",
+      "labelDissolvedDate": "2018-08-31"
+    },
+    {
+      "event": "https://thesession.org/events/7834",
+      "eventLabel": "Cancelled: Sorcha N\u00ed Scola\u00ed, P\u00e1draic Mac Math\u00fana, Se\u00e1n Keane, Noel O\u2019Grady and Stephen Rea",
+      "eventDate": "2020-03-25",
+      "label": "https://musicbrainz.org/label/d396511e-b619-45ef-a3ab-2a59743efa41",
+      "labelLabel": "Banana Culture",
+      "labelDissolvedDate": "2020-03-25"
+    },
+    {
+      "event": "https://thesession.org/events/7876",
+      "eventLabel": "Cancelled: Cup of Tae Festival",
+      "eventDate": "2020-05-01",
+      "label": "https://musicbrainz.org/label/1274393f-0e9d-48cc-8c26-eddfdd28677f",
+      "labelLabel": "Dmost Entertainment",
+      "labelDissolvedDate": "2020-05-01"
+    },
+    {
+      "event": "https://thesession.org/events/7822",
+      "eventLabel": "Cancelled: Feile Chois Cuain 2020",
+      "eventDate": "2020-05-01",
+      "label": "https://musicbrainz.org/label/1274393f-0e9d-48cc-8c26-eddfdd28677f",
+      "labelLabel": "Dmost Entertainment",
+      "labelDissolvedDate": "2020-05-01"
+    },
+    {
+      "event": "https://thesession.org/events/8136",
+      "eventLabel": "Dezi Donnelly Fiddle Masterclass",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/b64c91bb-68db-43d2-bb3f-af8d63904441",
+      "labelLabel": "Big Hit Entertainment Co., Ltd.",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8136",
+      "eventLabel": "Dezi Donnelly Fiddle Masterclass",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/9f305551-4000-4919-adf2-22e3d7c1d787",
+      "labelLabel": "BigHit Entertainment",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8136",
+      "eventLabel": "Dezi Donnelly Fiddle Masterclass",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/25290ad0-ee86-4de3-acb4-38c74af801b4",
+      "labelLabel": "Stone Music Entertainment",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8135",
+      "eventLabel": "Laid Back Irish Session Tunes with Rowan Leslie",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/b64c91bb-68db-43d2-bb3f-af8d63904441",
+      "labelLabel": "Big Hit Entertainment Co., Ltd.",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8135",
+      "eventLabel": "Laid Back Irish Session Tunes with Rowan Leslie",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/9f305551-4000-4919-adf2-22e3d7c1d787",
+      "labelLabel": "BigHit Entertainment",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8135",
+      "eventLabel": "Laid Back Irish Session Tunes with Rowan Leslie",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/25290ad0-ee86-4de3-acb4-38c74af801b4",
+      "labelLabel": "Stone Music Entertainment",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8138",
+      "eventLabel": "Niall and The Durty Nelly's Livestream",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/b64c91bb-68db-43d2-bb3f-af8d63904441",
+      "labelLabel": "Big Hit Entertainment Co., Ltd.",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8138",
+      "eventLabel": "Niall and The Durty Nelly's Livestream",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/9f305551-4000-4919-adf2-22e3d7c1d787",
+      "labelLabel": "BigHit Entertainment",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8138",
+      "eventLabel": "Niall and The Durty Nelly's Livestream",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/25290ad0-ee86-4de3-acb4-38c74af801b4",
+      "labelLabel": "Stone Music Entertainment",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8087",
+      "eventLabel": "Steady Speed Session with WiseWood Folk (UK)",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/b64c91bb-68db-43d2-bb3f-af8d63904441",
+      "labelLabel": "Big Hit Entertainment Co., Ltd.",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8087",
+      "eventLabel": "Steady Speed Session with WiseWood Folk (UK)",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/9f305551-4000-4919-adf2-22e3d7c1d787",
+      "labelLabel": "BigHit Entertainment",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8087",
+      "eventLabel": "Steady Speed Session with WiseWood Folk (UK)",
+      "eventDate": "2021-03-31",
+      "label": "https://musicbrainz.org/label/25290ad0-ee86-4de3-acb4-38c74af801b4",
+      "labelLabel": "Stone Music Entertainment",
+      "labelDissolvedDate": "2021-03-31"
+    },
+    {
+      "event": "https://thesession.org/events/8277",
+      "eventLabel": "Bloom of Youth - Gavin / Glancy Quartet - FleadhFest: Trad@Lunch",
+      "eventDate": "2021-08-03",
+      "label": "https://musicbrainz.org/label/7e194fbb-6764-4f97-b212-74c452011cb2",
+      "labelLabel": "MMO Entertainment",
+      "labelDissolvedDate": "2021-08-03"
+    },
+    {
+      "event": "https://thesession.org/events/8277",
+      "eventLabel": "Bloom of Youth - Gavin / Glancy Quartet - FleadhFest: Trad@Lunch",
+      "eventDate": "2021-08-03",
+      "label": "https://musicbrainz.org/label/50b59e4c-97df-418c-bfca-3af301d62b98",
+      "labelLabel": "OFF THE RECORD Entertainment",
+      "labelDissolvedDate": "2021-08-03"
+    },
+    {
+      "event": "https://thesession.org/events/8277",
+      "eventLabel": "Bloom of Youth - Gavin / Glancy Quartet - FleadhFest: Trad@Lunch",
+      "eventDate": "2021-08-03",
+      "label": "https://musicbrainz.org/label/adf55e24-5422-43d2-8a60-80f9e3d46ec9",
+      "labelLabel": "ONEFECT Entertainment",
+      "labelDissolvedDate": "2021-08-03"
+    },
+    {
+      "event": "https://thesession.org/events/8277",
+      "eventLabel": "Bloom of Youth - Gavin / Glancy Quartet - FleadhFest: Trad@Lunch",
+      "eventDate": "2021-08-03",
+      "label": "https://musicbrainz.org/label/4ec08258-6679-430b-9f45-eb8b2a9351ea",
+      "labelLabel": "Studio Blu",
+      "labelDissolvedDate": "2021-08-03"
+    },
+    {
+      "event": "https://thesession.org/events/8599",
+      "eventLabel": "Sal Heneghan, Cieara Kilkenny and Orla Leavy",
+      "eventDate": "2022-04-20",
+      "label": "https://musicbrainz.org/label/acfd62a9-c83a-4681-aeac-de8909ba9ff0",
+      "labelLabel": "Hi-Lite Records",
+      "labelDissolvedDate": "2022-04-20"
+    },
+    {
+      "event": "https://thesession.org/events/9039",
+      "eventLabel": "New Year's Day Celebrations",
+      "eventDate": "2023-01-01",
+      "label": "https://musicbrainz.org/label/d48f8c87-9aca-4a55-b5e9-1cfecdfe9946",
+      "labelLabel": "J9 Entertainment",
+      "labelDissolvedDate": "2023-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/9039",
+      "eventLabel": "New Year's Day Celebrations",
+      "eventDate": "2023-01-01",
+      "label": "https://musicbrainz.org/label/d94501ae-fb8c-4cd2-9f83-f4585be221f8",
+      "labelLabel": "SD Entertainment",
+      "labelDissolvedDate": "2023-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/9039",
+      "eventLabel": "New Year's Day Celebrations",
+      "eventDate": "2023-01-01",
+      "label": "https://musicbrainz.org/label/5b9a6671-dec4-4c13-a76d-16e96c950e1b",
+      "labelLabel": "The Muze Production",
+      "labelDissolvedDate": "2023-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/9038",
+      "eventLabel": "New Year's Day Irish Session",
+      "eventDate": "2023-01-01",
+      "label": "https://musicbrainz.org/label/d48f8c87-9aca-4a55-b5e9-1cfecdfe9946",
+      "labelLabel": "J9 Entertainment",
+      "labelDissolvedDate": "2023-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/9038",
+      "eventLabel": "New Year's Day Irish Session",
+      "eventDate": "2023-01-01",
+      "label": "https://musicbrainz.org/label/d94501ae-fb8c-4cd2-9f83-f4585be221f8",
+      "labelLabel": "SD Entertainment",
+      "labelDissolvedDate": "2023-01-01"
+    },
+    {
+      "event": "https://thesession.org/events/9038",
+      "eventLabel": "New Year's Day Irish Session",
+      "eventDate": "2023-01-01",
+      "label": "https://musicbrainz.org/label/5b9a6671-dec4-4c13-a76d-16e96c950e1b",
+      "labelLabel": "The Muze Production",
+      "labelDissolvedDate": "2023-01-01"
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}

@@ -1,0 +1,16 @@
+{
+  "ground_truth": [
+    {
+      "capitalCity": "http://www.wikidata.org/entity/Q61",
+      "capitalCityLabel": "Washington, D.C."
+    }
+  ],
+  "generated": [
+    {
+      "capital": "http://www.wikidata.org/entity/Q61",
+      "capitalLabel": "Washington, D.C."
+    }
+  ],
+  "gt_error": null,
+  "gen_error": null
+}
